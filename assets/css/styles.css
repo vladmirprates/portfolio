@@ -437,13 +437,10 @@ header {
 .header-content h1 {
   font-family: var(--fonte-tech);
   font-size: 2rem;
-  background: linear-gradient(
-    90deg,
-    #9c7bff,
-    #4ade80
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: inherit;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
   position: relative;
   display: inline-block;
 }
@@ -1238,20 +1235,20 @@ nav ul li a:hover i {
 }
 
 .categoria-ferramentas h3 {
-  color: #2ecc71;
+  color: #008c4a;
 }
 
 .categoria-ferramentas h3::after {
-  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  background: linear-gradient(90deg, #008c4a, #008c4a);
 }
 
 .categoria-ferramentas .skill-tag {
-  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  background: linear-gradient(135deg, #008c4a, #008c4a);
   box-shadow: 0 3px 10px rgba(46, 204, 113, 0.3);
 }
 
 .categoria-ferramentas .skill-tag:hover {
-  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.5);
+  box-shadow: 0 5px 15px #2ecc7180;
 }
 
 .categoria-metodologias h3 {
@@ -1577,8 +1574,8 @@ nav ul li a:hover i {
 
 /* Cores para nomes e cargos nos depoimentos */
 .autor-info h4 {
-  color: #4ade80; /* Verde neon */
-  text-shadow: 0 0 5px rgba(0, 230, 118, 0.4); /* Brilho suave */
+  color: #7e57c2;
+  /* text-shadow: 0 0 2px #866ab6; /* Brilho suave */
   font-weight: 600;
 }
 
