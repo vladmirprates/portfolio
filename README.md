@@ -5,7 +5,7 @@
 ## ⚙️ Como Acessar o Projeto
 
 Para visualizar o projeto, acesse:
-[Portfolio](https://github.com/vladmirprates/portfolio/)
+[Portfolio](https://vladmirprates.github.io/portfolio/)
 
 ## 🚀 Visão Geral do Projeto
 
