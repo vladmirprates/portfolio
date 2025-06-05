@@ -2,6 +2,11 @@
 
  Bem-vindo ao repositório do meu portfólio pessoal! Este projeto é um showcase das minhas habilidades e experiências como profissional de Quality Assurance e entusiasta de games, com um foco especial em UX/UI. O site foi desenvolvido para ser responsivo, interativo e visualmente atraente, utilizando tecnologias web modernas e uma arquitetura multi-página.
 
+## ⚙️ Como Acessar o Projeto
+
+Para visualizar o projeto, acesse:
+[Portfolio](https://github.com/vladmirprates/portfolio/)
+
 ## 🚀 Visão Geral do Projeto
 
 Este portfólio é um **site web com uma página principal e páginas de entrada/saída**, projetado para apresentar meu perfil profissional de forma abrangente. Ele é estruturado para guiar o visitante através de diferentes aspectos da minha carreira:
@@ -93,15 +98,6 @@ Este portfólio é um **site web com uma página principal e páginas de entrada
     * **Função:** Armazena todas as strings de texto utilizadas na página principal (`main.html`), traduzidas para o idioma **português do Brasil**.
     * **Estrutura:** Segue a mesma estrutura de chaves do `en.json`, garantindo a compatibilidade com o sistema de internacionalização.
 
-## ⚙️ Como Rodar o Projeto Localmente
-
-Para visualizar o projeto, acesse:
-[Link]([https://linkedin.com/in/vladmirprates](https://github.com/vladmirprates/portfolio/))
-
-
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Se você tiver sugestões de melhoria, encontrar algum bug ou quiser adicionar novas funcionalidades, sinta-se à vontade para abrir uma issue ou um pull request.
 
 ## 📞 Contato
 
