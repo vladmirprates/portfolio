@@ -103,4 +103,5 @@ Este portfólio é um **site web com uma página principal e páginas de entrada
 
 Para entrar em contato, por favor, visite a seção "Contato" no meu portfólio ou use os links abaixo:
 
-* **LinkedIn:** [Vladmir Prates](https://linkedin.com/in/vladmirprates) * **GitHub:** [Vladmir Prates](https://github.com/vladmirprates) ---
+* **LinkedIn:** [Vladmir Prates](https://linkedin.com/in/vladmirprates)
+* **GitHub:** [Vladmir Prates](https://github.com/vladmirprates)
