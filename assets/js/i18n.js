@@ -182,7 +182,7 @@ class I18nManager {
           padding: 5px 10px;
           border-radius: 4px;
           cursor: pointer;
-          font-family: var(--fonte-tech);
+          font-family: var(--fonte-principal);
           transition: all 0.3s ease;
         }
         .language-switch:hover {

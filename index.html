@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carregando - Vladmir Prates</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
       :root {
         --cor-primaria: #7e57c2;
         --cor-secundaria: #1a1e2e;
@@ -26,8 +28,6 @@
         --transicao-padrao: all 0.3s ease;
       }
 
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
-
       * {
         margin: 0;
         padding: 0;
@@ -48,22 +48,22 @@
       }
 
       .loading-container {
-        width: 100%;
+        width: 90%; /* Mobile first: take up more width on smaller screens */
         max-width: 800px;
         text-align: center;
         z-index: 10;
-        padding: 2rem;
+        padding: 1rem; /* Smaller padding for mobile */
         position: relative;
       }
 
       .terminal {
         background-color: rgba(18, 20, 32, 0.9);
         border-radius: 10px;
-        padding: 2rem;
+        padding: 1.5rem; /* Adjusted padding for mobile */
         box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
         border: 1px solid var(--cor-primaria);
         position: relative;
-        overflow: hidden;
+        overflow: hidden; /* Ensure content stays within bounds */
         margin-bottom: 2rem;
       }
 
@@ -91,8 +91,8 @@
       }
 
       .terminal-title {
-        font-family: var(--fonte-tech);
-        font-size: 1.2rem;
+        font-family: var(--fonte-tech); /* Applied tech font */
+        font-size: 1rem; /* Adjusted for mobile */
         color: var(--cor-texto-claro);
         margin-left: 1rem;
       }
@@ -104,8 +104,8 @@
       }
 
       .terminal-button {
-        width: 12px;
-        height: 12px;
+        width: 10px; /* Smaller buttons for mobile */
+        height: 10px; /* Smaller buttons for mobile */
         border-radius: 50%;
       }
 
@@ -124,8 +124,9 @@
       .terminal-content {
         font-family: "Courier New", monospace;
         text-align: left;
-        height: 200px;
-        overflow: hidden;
+        height: 180px; /* Fixed height for the terminal content */
+        overflow: hidden; /* Prevent scrollbars */
+        font-size: 0.85rem; /* Adjusted for mobile */
       }
 
       .terminal-line {
@@ -144,16 +145,20 @@
       .terminal-prompt {
         color: var(--cor-destaque);
         margin-right: 0.5rem;
+        flex-shrink: 0; /* Prevent prompt from shrinking */
       }
 
       .terminal-text {
         color: var(--cor-texto-claro);
-        white-space: nowrap;
-        overflow: hidden;
+        white-space: nowrap; /* Removed word wrap */
+        overflow: hidden; /* Hide overflow */
+        text-overflow: ellipsis; /* Add ellipsis for clipped text */
         border-right: 0.15em solid var(--cor-destaque);
-        width: 0;
+        width: 100%; /* Take full width */
+        animation: none; /* Remove typing animation initially */
       }
 
+      /* Re-introduce typing animation with modified keyframes for wrapping text */
       .terminal-text.typing {
         animation: typing 3s steps(40, end) forwards,
           blink-caret 0.75s step-end infinite;
@@ -202,7 +207,7 @@
       .language-selector {
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 1rem; /* Adjusted gap for mobile */
         margin-top: 2rem;
       }
 
@@ -222,8 +227,8 @@
       }
 
       .language-flag {
-        width: 50px;
-        height: 35px;
+        width: 40px; /* Adjusted flag size for mobile */
+        height: 28px; /* Adjusted flag size for mobile */
         border-radius: 5px;
         margin-bottom: 0.5rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -236,8 +241,8 @@
       }
 
       .language-name {
-        font-family: var(--fonte-tech);
-        font-size: 0.9rem;
+        font-family: var(--fonte-principal);
+        font-size: 0.8rem; /* Adjusted for mobile */
         color: var(--cor-texto-claro);
       }
 
@@ -245,10 +250,10 @@
         background: linear-gradient(135deg, var(--cor-primaria), #5e35b1);
         color: #fff;
         border: none;
-        padding: 12px 30px;
+        padding: 10px 20px; /* Adjusted padding for mobile */
         border-radius: 30px;
-        font-family: var(--fonte-tech);
-        font-size: 1rem;
+        font-family: var(--fonte-principal);
+        font-size: 0.9rem; /* Adjusted for mobile */
         cursor: pointer;
         margin-top: 2rem;
         transition: all 0.3s ease;
@@ -354,38 +359,51 @@
         pointer-events: all;
       }
 
-      /* Responsividade */
-      @media (max-width: 768px) {
-        .terminal {
-          padding: 1.5rem;
-        }
-
-        .terminal-content {
-          height: 150px;
-        }
-
-        .language-flag {
-          width: 40px;
-          height: 28px;
-        }
-      }
-
-      @media (max-width: 480px) {
+      /* Desktop adjustments (larger screens) */
+      @media (min-width: 768px) {
         .loading-container {
-          padding: 1rem;
+          width: 80%;
+          padding: 2rem;
         }
 
         .terminal {
-          padding: 1rem;
+          padding: 2rem;
+        }
+
+        .terminal-title {
+          font-size: 1.2rem;
+        }
+
+        .terminal-buttons {
+          gap: 8px;
+        }
+
+        .terminal-button {
+          width: 12px;
+          height: 12px;
         }
 
         .terminal-content {
-          height: 120px;
+          height: 200px; /* Original height for desktop */
+          font-size: 1rem; /* Original font size for desktop */
+        }
+
+        .language-selector {
+          gap: 1.5rem;
         }
 
         .language-flag {
-          width: 30px;
-          height: 21px;
+          width: 50px;
+          height: 35px;
+        }
+
+        .language-name {
+          font-size: 0.9rem;
+        }
+
+        .enter-site-btn {
+          padding: 12px 30px;
+          font-size: 1rem;
         }
       }
     </style>
@@ -461,7 +479,9 @@
         </div>
       </div>
 
-      <button class="enter-site-btn" id="enter-site-btn">ENTRAR NO SITE</button>
+      <button class="enter-site-btn" id="enter-site-btn">
+        ENTRAR NO SITE
+      </button>
     </div>
 
     <div class="transition-overlay" id="transition-overlay"></div>
@@ -490,7 +510,6 @@
         },
       };
       document.addEventListener("DOMContentLoaded", function () {
-
         function updateLanguageTexts(lang) {
           // Atualiza as linhas do terminal
           const terminalLines = translations[lang].terminalLines;
@@ -519,7 +538,8 @@
 
           // Posição aleatória
           const posX = Math.random() * window.innerWidth;
-          const posY = Math.random() * window.innerHeight + window.innerHeight; // Começa abaixo da tela
+          const posY =
+            Math.random() * window.innerHeight + window.innerHeight; // Começa abaixo da tela
 
           // Tamanho aleatório
           const size = Math.random() * 4 + 1;
@@ -561,13 +581,13 @@
             const text = terminalTexts[currentLine];
 
             line.classList.add("visible");
-            text.classList.add("typing");
+            text.classList.add("typing"); // Apply typing animation
 
-            // Atualizar barra de progresso
+            // Update progress bar
             progress += 100 / terminalLines.length;
             progressBar.style.width = `${progress}%`;
 
-            // Tempo baseado no comprimento do texto
+            // Time based on text length
             const typingDuration = text.textContent.length * 20;
 
             setTimeout(() => {
@@ -575,58 +595,58 @@
               if (currentLine < terminalLines.length) {
                 animateTerminal();
               } else {
-                // Todas as linhas foram animadas
+                // All lines animated
                 setTimeout(() => {
                   enterSiteBtn.classList.add("visible");
                 }, 200);
               }
-            }, typingDuration + 300); // Adiciona 500ms de pausa entre as linhas
+            }, typingDuration + 300); // Add 300ms pause between lines
           }
         }
 
-        // Iniciar animação após um pequeno atraso
+        // Start animation after a small delay
         setTimeout(animateTerminal, 500);
 
-        // Seleção de idioma
+        // Language selection
         const languageOptions = document.querySelectorAll(".language-option");
-        let selectedLanguage = "pt-br"; // Idioma padrão
+        let selectedLanguage = "pt-br"; // Default language
 
         languageOptions.forEach((option) => {
           option.addEventListener("click", function () {
-            // Remover classe ativa de todas as opções
+            // Remove active class from all options
             languageOptions.forEach((opt) => opt.classList.remove("active"));
 
-            // Adicionar classe ativa à opção selecionada
+            // Add active class to selected option
             this.classList.add("active");
 
-            // Atualizar idioma selecionado
+            // Update selected language
             selectedLanguage = this.getAttribute("data-lang");
 
-            // Atualizar textos na página
+            // Update texts on the page
             updateLanguageTexts(selectedLanguage);
 
-            // Atualizar texto do botão
+            // Update button text
             if (selectedLanguage === "pt-br") {
               enterSiteBtn.textContent = "ENTRAR NO SITE";
             } else {
               enterSiteBtn.textContent = "ENTER SITE";
             }
 
-            // Salvar preferência de idioma
+            // Save language preference
             localStorage.setItem("preferredLanguage", selectedLanguage);
           });
         });
 
-        // Botão para entrar no site
+        // Button to enter site
         const transitionOverlay = document.getElementById("transition-overlay");
 
         enterSiteBtn.addEventListener("click", function () {
-          // Ativar overlay de transição
+          // Activate transition overlay
           transitionOverlay.classList.add("active");
 
-          // Redirecionar após a transição
+          // Redirect after transition
           setTimeout(() => {
-            // Redirecionar para a página principal com o parâmetro de idioma
+            // Redirect to the main page with language parameter
             window.location.href = `main.html?lang=${selectedLanguage}`;
           }, 1000);
         });
