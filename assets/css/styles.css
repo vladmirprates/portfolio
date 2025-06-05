@@ -316,7 +316,7 @@ nav ul li a {
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  font-family: var(--fonte-tech);
+  font-family: var(--fonte-principal);
 }
 .botao-primario {
   background: linear-gradient(135deg, var(--cor-primaria), #5e35b1);
@@ -366,7 +366,7 @@ nav ul li a:hover::before {
 }
 .header-content h1,
 .logo {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-family: var(--fonte-tech);
 }
 .back-to-top.show {
@@ -857,7 +857,7 @@ nav ul li a:hover i {
 .periodo .ano {
   font-weight: 700;
   color: var(--cor-destaque);
-  font-family: var(--fonte-tech);
+  font-family: var(--fonte-principal);
   letter-spacing: 1px;
 }
 .periodo-icon {
@@ -951,7 +951,7 @@ nav ul li a:hover i {
   display: inline-block;
   padding-bottom: 10px;
   font-size: 1.4rem;
-  font-family: var(--fonte-tech);
+  font-family: var(--fonte-principal);
   letter-spacing: 1px;
 }
 .categoria-habilidade h3 i,
@@ -1167,7 +1167,7 @@ footer {
 .jogos-texto h3,
 .ux-ui-texto h3 {
   margin: 25px 0 15px;
-  font-family: var(--fonte-tech);
+  font-family: var(--fonte-principal);
   letter-spacing: 1px;
 }
 .feature-list li {
