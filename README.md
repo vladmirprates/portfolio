@@ -43,25 +43,6 @@ Este portfólio é um **site web com uma página principal e páginas de entrada
 * **AOS (Animate On Scroll):** Uma biblioteca JavaScript leve para criar animações de rolagem, tornando a navegação mais envolvente.
 * **Swiper.js:** (`main.html`) Biblioteca moderna para criar carrosséis e sliders responsivos, ideal para seções como "Projetos" ou "Recomendações" (se implementado).
 
-## 📂 Estrutura do Projeto
-
-.
-├── assets/
-│   ├── css/
-│   │   ├── styles.css        # Estilos globais e layout principal do portfólio
-│   │   └── theme-styles.css  # Estilos específicos para cada tema visual
-│   ├── js/
-│   │   ├── hero-effects.js   # Scripts dedicados aos efeitos visuais da seção Hero
-│   │   ├── i18n.js           # Gerenciador de internacionalização (i18n)
-│   │   ├── main.js           # Scripts principais da página (navegação, AOS, etc.)
-│   │   └── themes.js         # Gerenciador do sistema de temas
-│   └── images/               # Pasta para imagens (capas, ícones, etc.)
-├── index.html                # Página de carregamento inicial e seleção de idioma
-├── main.html                 # Página principal do portfólio com todas as seções
-├── en.json                   # Arquivo de traduções para o idioma Inglês
-└── pt-br.json                # Arquivo de traduções para o idioma Português do Brasil
-├── README.md                 # Este arquivo de documentação do projeto
-
 ## 📝 Detalhes dos Arquivos
 
 ### HTML
