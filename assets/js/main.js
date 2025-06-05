@@ -1,21 +1,16 @@
-// Inicialização do AOS (Animate On Scroll)
 document.addEventListener("DOMContentLoaded", function () {
-  // Inicializa a biblioteca AOS para animações de scroll
+  // AOS
   AOS.init({
     duration: 800,
     easing: "ease-in-out",
-    once: true,
+    once: false,
     mirror: false,
   });
 
   // Header scroll effect
   const header = document.querySelector("header");
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
+    header.classList.toggle("scrolled", window.scrollY > 100);
   });
 
   // Menu mobile toggle
@@ -46,25 +41,76 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Smooth scroll para links de navegação
+  // Scroll suave
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
-      // Ignora se for apenas "#"
-      if (!targetId || targetId === "#" || targetId.length === 1) return;
+      if (!targetId || targetId.length === 1) return;
       e.preventDefault();
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         const headerHeight = document.querySelector("header").offsetHeight;
-        const targetPosition =
+        const offset =
           targetElement.getBoundingClientRect().top +
           window.pageYOffset -
           headerHeight;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
+        window.scrollTo({ top: offset, behavior: "smooth" });
       }
     });
+  });
+
+  // Indicador de seção ativa
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").substring(1) === current) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Swiper INIT
+  if (document.querySelector(".projetos-swiper")) {
+    new Swiper(".projetos-swiper", {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  }
+  // Menu Responsivo Dinâmico
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 576 && !nav.querySelector(".menu-toggle")) {
+      nav.appendChild(menuToggle);
+    } else if (window.innerWidth > 576 && nav.querySelector(".menu-toggle")) {
+      menuToggle.remove();
+    }
   });
 });
