@@ -26,7 +26,7 @@ Este portfólio é um **site web com uma página principal e páginas de entrada
 * **Efeitos Visuais Dinâmicos na Seção Hero:**
     * **Efeito de Digitação:** Um efeito de "máquina de escrever" no subtítulo da seção Hero, cativando o visitante com a revelação progressiva do texto.
     * **Parallax Suave:** Um sutil efeito de parallax na imagem de fundo da seção Hero, adicionando profundidade e movimento ao cabeçalho.
-    * **Partículas Animadas:** Um efeito de "partículas" que reagem ao movimento do mouse na seção Hero, criando uma sensação interativa e moderna.
+    * **Partículas Animadas:** Um efeito de "partículas" que se movimentam pela tela.
 * **Navegação Fluida e Intuitiva:**
     * **Scroll Suave:** Transição suave e animada ao clicar nos links de navegação internos, levando o usuário diretamente à seção desejada.
     * **Menu Responsivo:** Um menu hamburger para dispositivos móveis, adaptando a navegação a diferentes tamanhos de tela e garantindo a usabilidade em smartphones e tablets.
