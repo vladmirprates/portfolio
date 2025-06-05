@@ -19,20 +19,36 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Efeito de digitação no subtítulo
+  let typingTimeoutId = null; // Variável para armazenar o ID do timeout
+
+  window.clearTypingEffect = function () {
+    if (typingTimeoutId) {
+      clearTimeout(typingTimeoutId);
+      typingTimeoutId = null;
+    }
+  };
+
   window.startTypingEffect = function () {
+    window.clearTypingEffect(); // Limpa qualquer timeout anterior antes de iniciar
+
     const subtitle = document.querySelector(".hero-text p");
     if (subtitle) {
-      const originalText = subtitle.textContent;
+      // Obtenha o texto original do elemento, não do conteúdo HTML, para evitar tags
+      const originalText =
+        subtitle.getAttribute("data-original-text") || subtitle.textContent;
+      subtitle.setAttribute("data-original-text", originalText); // Armazena o texto original
       subtitle.textContent = "";
       let charIndex = 0;
       const typeWriter = () => {
         if (charIndex < originalText.length) {
           subtitle.textContent += originalText.charAt(charIndex);
           charIndex++;
-          setTimeout(typeWriter, 50);
+          typingTimeoutId = setTimeout(typeWriter, 50);
+        } else {
+          typingTimeoutId = null; // Limpa o ID do timeout quando a digitação termina
         }
       };
-      setTimeout(() => {
+      typingTimeoutId = setTimeout(() => {
         typeWriter();
       }, 1000);
     }
