@@ -19,6 +19,11 @@
     />
     <!-- AOS - Animate On Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- Cabeçalho -->
@@ -83,7 +88,7 @@
     <!-- Seção Sobre Mim -->
     <section id="sobre" class="secao">
       <div class="container">
-        <h1 data-aos="fade-up">Sobre Mim</h1>
+        <h2 data-aos="fade-up">Sobre Mim</h2>
         <div class="sobre-conteudo" data-aos="fade-up" data-aos-delay="100">
           <div class="foto-perfil">
             <img src="assets/images/profile.jpeg" alt="Sua Foto" />
@@ -269,62 +274,109 @@
     <section id="projetos" class="secao secao-alternada">
       <div class="container">
         <h2 data-aos="fade-up">Projetos em Destaque</h2>
-        <div class="projetos-grid" data-aos="fade-up" data-aos-delay="100">
-          <div class="projeto-card">
-            <div class="projeto-imagem">
-              <img src="assets/images/projeto1.jpg" alt="Projeto 1" />
+        <div
+          class="swiper projetos-swiper"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="swiper-wrapper">
+            <!-- Projeto 1 -->
+            <div class="swiper-slide projeto-card">
+              <div class="projeto-imagem">
+                <img
+                  src="assets/images/projeto1.jpg"
+                  alt="Projeto de Automação de Testes Web"
+                />
+              </div>
+              <div class="projeto-info">
+                <h3>Automação de Testes Web</h3>
+                <p>
+                  Implementação de framework de automação de testes para
+                  aplicação web de e-commerce, utilizando Selenium e Java.
+                </p>
+                <div class="projeto-tags">
+                  <span>Selenium</span>
+                  <span>Java</span>
+                  <span>TestNG</span>
+                </div>
+              </div>
             </div>
-            <div class="projeto-info">
-              <h3>Automação de Testes Web</h3>
-              <p>
-                Implementação de framework de automação de testes para aplicação
-                web de e-commerce, utilizando Selenium e Java.
-              </p>
-              <div class="projeto-tags">
-                <span>Selenium</span>
-                <span>Java</span>
-                <span>TestNG</span>
+
+            <!-- Projeto 2 -->
+            <div class="swiper-slide projeto-card">
+              <div class="projeto-imagem">
+                <img
+                  src="assets/images/projeto2.jpg"
+                  alt="Projeto de Design e Prototipagem no Figma"
+                />
+              </div>
+              <div class="projeto-info">
+                <h3>Design e Prototipagem</h3>
+                <p>
+                  Pesquisa UX, criação de UI e prototipagem de site no Figma com
+                  foco na experiência do usuário e usabilidade.
+                </p>
+                <div class="projeto-tags">
+                  <span>UX/UI</span>
+                  <span>Figma</span>
+                  <span>Prototyping</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="swiper-slide projeto-card">
+              <div class="projeto-imagem">
+                <img
+                  src="assets/images/projeto3.jpg"
+                  alt="Projeto Hell Clock Builder"
+                />
+              </div>
+              <div class="projeto-info">
+                <h3>Hell Clock Builder</h3>
+                <p>
+                  Condução de testes identificando pontos de melhoria na
+                  experiência do usuário, estudo de personas, product ownership,
+                  planejamento e MVP.
+                </p>
+                <div class="projeto-tags">
+                  <span>QA</span>
+                  <span>UX Research</span>
+                  <span>Product Ownership</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projeto 4 -->
+            <div class="swiper-slide projeto-card">
+              <div class="projeto-imagem">
+                <img
+                  src="assets/images/projeto3.jpg"
+                  alt="Projeto Hell Clock Builder"
+                />
+              </div>
+              <div class="projeto-info">
+                <h3>PLACEHOLDER</h3>
+                <p>
+                  PLACEHOLDER
+                </p>
+                <div class="projeto-tags">
+                  <span>QA</span>
+                  <span>UX Research</span>
+                  <span>Product Ownership</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="projeto-card">
-            <div class="projeto-imagem">
-              <img src="assets/images/projeto2.jpg" alt="Design e Prototipo que fiz no Figma" />
-            </div>
-            <div class="projeto-info">
-              <h3>Design e Prototipagem</h3>
-              <p>
-                UX Research / UI e Prototipagem de site no Figma para com foco
-                na experiência do usuário e usabilidade.
-              </p>
-              <div class="projeto-tags">
-                <span>UX/UI</span>
-                <span>Figma</span>
-                <span>Prototyping</span>
-              </div>
-            </div>
-          </div>
-          <div class="projeto-card">
-            <div class="projeto-imagem">
-              <img src="assets/images/projeto3.jpg" alt="Hell Clock Builder" />
-            </div>
-            <div class="projeto-info">
-              <h3>Hell Clock Builder</h3>
-              <p>
-                Condução de testes identificando pontos de melhoria na
-                experiência do usuário, estudo de personas, product ownership,
-                planejamento e MVP.
-              </p>
-              <div class="projeto-tags">
-                <span>QA</span>
-                <span>UX Research</span>
-                <span>Product Ownership</span>
-              </div>
-            </div>
-          </div>
+
+          <!-- Navegação Swiper -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
+
     <!-- Seção UX/UI -->
     <section id="ux-ui" class="secao">
       <div class="container">
@@ -348,7 +400,10 @@
             </ul>
           </div>
           <div class="ux-ui-imagem">
-            <img src="assets/images/ux-ui.jpg" alt="A design I made on Figma for a Site." />
+            <img
+              src="assets/images/ux-ui.jpg"
+              alt="A design I made on Figma for a Site."
+            />
           </div>
         </div>
       </div>
@@ -359,7 +414,10 @@
         <h2 data-aos="fade-up">Paixão por Jogos</h2>
         <div class="jogos-content" data-aos="fade-up" data-aos-delay="100">
           <div class="jogos-imagem">
-            <img src="assets/images/gaming.jpg" alt="A photo of me at Gamescom with a statue of Sonic" />
+            <img
+              src="assets/images/gaming.jpg"
+              alt="Foto de Vladmir Prates na Gamescom, posando ao lado de uma estátua do Sonic, destacando sua paixão por jogos."
+            />
           </div>
           <div class="jogos-texto">
             <p>
@@ -523,6 +581,7 @@
     </footer>
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/hero-effects.js"></script>
     <!-- Botão Voltar ao Topo -->
