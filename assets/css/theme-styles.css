@@ -1,4 +1,6 @@
-/* theme-styles.css - Estilos para os temas personalizados */
+/* ==================================================================
+                            Cores dos Temas
+   ================================================================== */
 
 /* Tema Padrão (Default) */
 :root,
@@ -47,9 +49,9 @@
   --gradiente-destaque: linear-gradient(90deg, #9c27b0, #ffc107);
   --gradiente-header: linear-gradient(90deg, #1a1423, #0f0a14);
   --gradiente-hero: linear-gradient(135deg, rgba(26, 20, 35, 0.95), rgba(15, 10, 20, 0.95));
-  --cor-nome-primeiro: #ffc107; /* Dourado */
-  --cor-nome-destaque: #e040fb; /* Roxo claro */
-  --cor-hover-menu: #9c7bff; /* Dourado */
+  --cor-primeiro-nome: #ffc107; /* Dourado */
+  --cor-segundo-nome: #d045e9; /* Rosa */
+  --cor-hover-menu: #9c7bff; /* Roxo */
   --cor-hover-contato: #ffc107; /* Dourado */
 }
 
@@ -73,8 +75,8 @@
   --gradiente-destaque: linear-gradient(90deg, #ff5722, #ff9800);
   --gradiente-header: linear-gradient(90deg, #1a0e0b, #0a0402);
   --gradiente-hero: linear-gradient(135deg, rgba(26, 14, 11, 0.95), rgba(10, 4, 2, 0.95));
-  --cor-nome-primeiro: #ff9800; /* Laranja mais claro */
-  --cor-nome-destaque: #ff5722; /* Laranja intenso */
+  --cor-primeiro-nome: #ff9800; /* Laranja mais claro */
+  --cor-segundo-nome: #ff5722; /* Laranja intenso */
   --cor-hover-menu: #ff9800; /* Laranja mais claro */
   --cor-hover-contato: #ff5722; /* Laranja intenso */
 }
@@ -99,13 +101,16 @@
   --gradiente-destaque: linear-gradient(90deg, #00bcd4, #00e5ff);
   --gradiente-header: linear-gradient(90deg, #102027, #020c1b);
   --gradiente-hero: linear-gradient(135deg, rgba(16, 32, 39, 0.95), rgba(2, 12, 27, 0.95));
-  --cor-nome-primeiro: #00e5ff; /* Ciano brilhante */
-  --cor-nome-destaque: #18ffff; /* Ciano mais claro */
+  --cor-primeiro-nome: #31aef7; /* Ciano brilhante */
+  --cor-segundo-nome: #00e5ff; /* Ciano mais claro */
   --cor-hover-menu: #00a2ff; /* Ciano brilhante */
   --cor-hover-contato: #00bcd4; /* Ciano */
 }
 
-/* Estilos gerais para todos os temas */
+/* ==================================================================
+                  Estilos gerais para todos os temas
+   ================================================================== */
+
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
@@ -115,17 +120,6 @@ h1, h2, h3, h4, h5, h6,
 .categoria-habilidade, .projeto-card,
 .depoimento, .info-icon, .social-icon {
   transition: all 0.5s ease;
-}
-
-/* Ajustes para o nome no header em todos os temas */
-.logo .first-name {
-  color: var(--cor-nome-primeiro);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.logo .highlight {
-  color: var(--cor-nome-destaque);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Ajustes para o hover do menu em todos os temas */
@@ -165,7 +159,26 @@ nav ul li a i {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* ==================================================================
+                    Ajustes Específicos para Temas
+   ================================================================== */
+
 /* Ajustes específicos para o tema Fantasy */
+
+.theme-fantasy {
+  color: var(--cor-texto-escuro);
+}
+
+.theme-fantasy .secao-alternada {
+  color: var(--cor-texto-claro);
+}
+
+.theme-fantasy .hero-particles::after {
+  background-image: radial-gradient(circle at 25% 25%, var(--cor-primaria) 0, transparent 60%),
+    radial-gradient(circle at 75% 75%, var(--cor-destaque) 0, transparent 60%),
+    radial-gradient(circle at 75% 25%, var(--cor-destaque-alt) 0, transparent 60%),
+    radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
+}
 
 /* Ajustes específicos para o tema Dark Fire */
 .theme-dark-fire .categoria-testes .skill-tag:hover {
@@ -174,32 +187,6 @@ nav ul li a i {
 
 .theme-dark-fire .categoria-testes .skill-tag {
   box-shadow: 0 3px 10px rgba(255, 87, 34, 0.3);
-}
-
-/* Ajustes específicos para o tema Cyber */
-.theme-cyber h1, 
-.theme-cyber h2, 
-.theme-cyber h3, 
-.theme-cyber h4, 
-.theme-cyber h5, 
-.theme-cyber h6 {
-  color: var(--cor-texto-claro);
-}
-
-.theme-cyber .secao:not(.secao-alternada) h2 {
-  color: var(--cor-destaque);
-}
-
-.theme-cyber .autor-info h4 {
-  color: var(--cor-destaque);
-}
-
-.theme-cyber .autor-info p {
-  color: var(--cor-texto-claro);
-}
-
-.theme-cyber .ux-ui-texto h3 {
-  color: var(--cor-destaque);
 }
 
 /* Efeitos de fogo para o tema Dark Fire */
@@ -231,12 +218,6 @@ nav ul li a i {
     transform: translateY(-10px);
   }
 }
-
-/* Transição suave entre temas */
-body, body * {
-  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
-}
-
 
 /* Ajustes específicos para o tema Dark Fire */
 .theme-dark-fire {
@@ -309,10 +290,6 @@ body, body * {
 .theme-dark-fire h2::after,
 .theme-dark-fire nav ul li a::before {
   background: var(--gradiente-destaque);
-}
-
-.theme-dark-fire .categoria-testes h3 {
-  color: var(--cor-destaque-alt);
 }
 
 .theme-dark-fire .categoria-testes h3::after {
@@ -392,6 +369,31 @@ body, body * {
 }
 
 /* Ajustes específicos para o tema Cyber */
+.theme-cyber h1, 
+.theme-cyber h2, 
+.theme-cyber h3, 
+.theme-cyber h4, 
+.theme-cyber h5, 
+.theme-cyber h6 {
+  color: var(--cor-texto-claro);
+}
+
+.theme-cyber .secao:not(.secao-alternada) h2 {
+  color: var(--cor-destaque);
+}
+
+.theme-cyber .autor-info h4 {
+  color: var(--cor-destaque);
+}
+
+.theme-cyber .autor-info p {
+  color: var(--cor-texto-claro);
+}
+
+.theme-cyber .ux-ui-texto h3 {
+  color: var(--cor-destaque);
+}
+
 .theme-cyber {
   color: var(--cor-texto);
 }
@@ -407,23 +409,14 @@ body, body * {
     radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
 }
 
-/* Ajustes específicos para o tema Fantasy */
-.theme-fantasy {
-  color: var(--cor-texto-escuro);
+/* ==================================================================
+                    Transições Suaves entre Temas
+   ================================================================== */
+
+body, body * {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-.theme-fantasy .secao-alternada {
-  color: var(--cor-texto-claro);
-}
-
-.theme-fantasy .hero-particles::after {
-  background-image: radial-gradient(circle at 25% 25%, var(--cor-primaria) 0, transparent 60%),
-    radial-gradient(circle at 75% 75%, var(--cor-destaque) 0, transparent 60%),
-    radial-gradient(circle at 75% 25%, var(--cor-destaque-alt) 0, transparent 60%),
-    radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
-}
-
-/* Transição suave entre temas */
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
