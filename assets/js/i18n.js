@@ -53,7 +53,7 @@ class I18nManager {
   // Carrega o arquivo de traduções
   async loadTranslations(lang) {
     try {
-      const response = await fetch(`translations/${lang}.json`);
+      const response = await fetch(`assets/translations/${lang}.json`);
       if (!response.ok) {
         throw new Error(`Failed to load translations for ${lang}`);
       }
