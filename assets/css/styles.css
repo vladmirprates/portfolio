@@ -57,6 +57,8 @@ nav ul {
   --cor-ferramentas: #2ecc71;
   --cor-metodologias: #9b59b6;
   --cor-soft-skills: #e74c3c;
+  --cor-primeiro-nome:#9c7bff;
+  --cor-segundo-nome:#4ade80;
 }
 * {
   margin: 0;
@@ -1522,11 +1524,11 @@ footer::before {
   animation: 4s ease-in-out 0.5s infinite float;
 }
 header .container h1 .first-name {
-  color: #9c7bff;
+  color: var(--cor-primeiro-nome);
   text-shadow: 0 0 5px rgba(120, 97, 190, 0.3);
 }
 header .container h1 .highlight {
-  color: #4ade80;
+  color: var(--cor-segundo-nome);
   text-shadow: 0 0 5px rgba(79, 148, 104, 0.2);
 }
 .hero-content.animate-in {
