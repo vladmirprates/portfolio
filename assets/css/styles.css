@@ -939,6 +939,7 @@ nav ul li a:hover i {
   backdrop-filter: blur(10px);
 }
 .categoria-habilidade:hover {
+  border: 1px solid rgba(102, 102, 102, 0.15);
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
@@ -1062,6 +1063,7 @@ nav ul li a:hover i {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .projeto-card:hover {
+  border: 1.5px solid var(--cor-primaria);
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
@@ -1790,4 +1792,3 @@ nav ul li a.active {
 nav ul li a.active::before {
   width: 100%;
 }
-
