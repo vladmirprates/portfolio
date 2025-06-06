@@ -164,32 +164,38 @@ class I18nManager {
       this.changeLanguage(newLang);
     });
 
-    // Adiciona o seletor ao cabeçalho
+    // Adiciona o seletor ao container de seletores ou ao header
     const header = document.querySelector("header .header-content");
     if (header) {
-      header.appendChild(selector);
+      let selectorsContainer = document.querySelector(".header-selectors");
+      if (!selectorsContainer) {
+        selectorsContainer = document.createElement("div");
+        selectorsContainer.className = "header-selectors";
+        header.appendChild(selectorsContainer);
+      }
+      selectorsContainer.appendChild(selector);
 
-      // Adiciona estilos CSS inline (você pode mover isso para seu arquivo CSS)
+      // Adiciona estilos CSS inline
       const style = document.createElement("style");
       style.textContent = `
-        .language-selector {
-          margin-left: 20px;
-        }
-        .language-switch {
-          background: transparent;
-          border: 1px solid var(--cor-destaque);
-          color: var(--cor-destaque);
-          padding: 5px 10px;
-          border-radius: 4px;
-          cursor: pointer;
-          font-family: var(--fonte-principal);
-          transition: all 0.3s ease;
-        }
-        .language-switch:hover {
-          background-color: var(--cor-destaque);
-          color: var(--cor-secundaria);
-        }
-      `;
+    .language-selector {
+      margin-left: 0; /* Removido margin-left pois agora está no container */
+    }
+    .language-switch {
+      background: transparent;
+      border: 1px solid var(--cor-destaque);
+      color: var(--cor-destaque);
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--fonte-principal);
+      transition: all 0.3s ease;
+    }
+    .language-switch:hover {
+      background-color: var(--cor-destaque);
+      color: var(--cor-secundaria);
+    }
+  `;
       document.head.appendChild(style);
     }
   }
