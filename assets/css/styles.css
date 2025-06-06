@@ -57,8 +57,8 @@ nav ul {
   --cor-ferramentas: #2ecc71;
   --cor-metodologias: #9b59b6;
   --cor-soft-skills: #e74c3c;
-  --cor-primeiro-nome:#9c7bff;
-  --cor-segundo-nome:#4ade80;
+  --cor-primeiro-nome: #9c7bff;
+  --cor-segundo-nome: #4ade80;
 }
 * {
   margin: 0;
@@ -1668,6 +1668,7 @@ header .container h1 .highlight {
       margin-bottom: 0;
       width: 100%;
       text-align: center;
+      right: 10px;
     }
     .titulo-profissional {
       font-size: 0.85rem;
@@ -1750,8 +1751,8 @@ header .container h1 .highlight {
   .menu-toggle {
     display: block;
     position: absolute;
-    right: 15px;
-    top: 10px;
+    right: 5px;
+    top: 5px;
     cursor: pointer;
     z-index: 4000;
     background: 0 0;
@@ -1793,4 +1794,56 @@ nav ul li a.active {
 
 nav ul li a.active::before {
   width: 100%;
+}
+
+/* Estilo para o container de seletores */
+.header-selectors {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre os seletores */
+  margin-left: auto; /* Empurra para a direita do header */
+}
+
+/* Ajustes para os seletores individuais */
+.theme-selector,
+.language-selector {
+  margin-left: 0; /* Remove margens individuais */
+  z-index: 1000; /* Garante que os seletores fiquem acima de outros elementos */
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .header-content {
+    position: relative;
+  }
+
+  .header-selectors {
+    position: absolute;
+    top: 10px;
+    right: 60px; /* Espaço para o menu toggle */
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+  .header-selectors {
+    top: 50px;
+    right: 10px;
+  }
+
+  /* Reduz o tamanho dos seletores */
+  .theme-toggle,
+  .language-switch {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}
+.theme-selector {
+  /* Seus ajustes específicos */
+  order: 1; /* Ordem de exibição no flexbox */
+}
+.language-selector {
+  /* Seus ajustes específicos */
+  order: 2; /* Ordem de exibição no flexbox */
 }

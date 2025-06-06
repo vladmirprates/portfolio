@@ -1,60 +1,59 @@
 // themes.js - Sistema de temas personalizados
 
-  class ThemeManager {
+class ThemeManager {
   constructor() {
-    this.currentTheme = 'default'; // Tema padrão
+    this.currentTheme = "default"; // Tema padrão
     this.themes = {
-      'default': {
-        name: 'Padrão',
-        icon: 'fas fa-palette'
+      default: {
+        name: "Padrão",
+        icon: "fas fa-palette",
       },
-      'fantasy': {
-        name: 'Fantasy',
-        icon: 'fas fa-dragon'
+      fantasy: {
+        name: "Fantasy",
+        icon: "fas fa-dragon",
       },
-      'dark-fire': {
-        name: 'Dark Fire',
-        icon: 'fas fa-fire'
+      "dark-fire": {
+        name: "Dark Fire",
+        icon: "fas fa-fire",
       },
-      'leaf': {
-        name: 'Leaf',
-        icon: 'fa-solid fa-leaf'
-      }
+      leaf: {
+        name: "Leaf",
+        icon: "fa-solid fa-leaf",
+      },
     };
     this.initialized = false;
   }
 
-
   // Inicializa o gerenciador de temas
   init() {
     // Verifica se há um tema salvo no localStorage
-    const savedTheme = localStorage.getItem('preferredTheme');
-    
+    const savedTheme = localStorage.getItem("preferredTheme");
+
     // Define o tema atual baseado na preferência salva ou usa o padrão
     if (savedTheme && this.themes[savedTheme]) {
       this.currentTheme = savedTheme;
     }
-    
+
     // Aplica o tema atual
     this.applyTheme(this.currentTheme);
-    
+
     // Adiciona o seletor de temas se não existir
     this.addThemeSelector();
-    
+
     this.initialized = true;
   }
 
   // Muda o tema atual
   changeTheme(theme) {
     if (this.currentTheme === theme || !this.themes[theme]) return;
-    
+
     // Salva a preferência
     this.currentTheme = theme;
-    localStorage.setItem('preferredTheme', theme);
-    
+    localStorage.setItem("preferredTheme", theme);
+
     // Aplica o novo tema
     this.applyTheme(theme);
-    
+
     // Atualiza o seletor de temas
     this.updateThemeSelector();
   }
@@ -62,36 +61,41 @@
   // Aplica o tema selecionado
   applyTheme(theme) {
     // Remove classes de temas anteriores
-    document.body.classList.remove('theme-default', 'theme-dark-fire', 'theme-leaf', 'theme-fantasy');
-    
+    document.body.classList.remove(
+      "theme-default",
+      "theme-dark-fire",
+      "theme-leaf",
+      "theme-fantasy"
+    );
+
     // Adiciona a classe do tema atual
     document.body.classList.add(`theme-${theme}`);
-    
+
     // Atualiza o atributo data-theme para uso em CSS
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute("data-theme", theme);
   }
 
   // Adiciona o seletor de temas ao cabeçalho
   addThemeSelector() {
     // Verifica se o seletor já existe
-    if (document.getElementById('theme-selector')) return;
-    
+    if (document.getElementById("theme-selector")) return;
+
     // Cria o elemento do seletor
-    const selector = document.createElement('div');
-    selector.id = 'theme-selector';
-    selector.className = 'theme-selector';
-    
+    const selector = document.createElement("div");
+    selector.id = "theme-selector";
+    selector.className = "theme-selector";
+
     // Cria o HTML do seletor
-    let themeOptions = '';
+    let themeOptions = "";
     for (const [key, value] of Object.entries(this.themes)) {
-      const isActive = key === this.currentTheme ? 'active' : '';
+      const isActive = key === this.currentTheme ? "active" : "";
       themeOptions += `
         <div class="theme-option ${isActive}" data-theme="${key}" title="${value.name}">
           <i class="${value.icon}"></i>
         </div>
       `;
     }
-    
+
     selector.innerHTML = `
       <div class="theme-toggle">
         <i class="fas fa-adjust"></i>
@@ -100,34 +104,40 @@
         ${themeOptions}
       </div>
     `;
-    
+
     // Adiciona eventos de clique
-    selector.querySelector('.theme-toggle').addEventListener('click', () => {
-      selector.classList.toggle('open');
+    selector.querySelector(".theme-toggle").addEventListener("click", () => {
+      selector.classList.toggle("open");
     });
-    
-    selector.querySelectorAll('.theme-option').forEach(option => {
-      option.addEventListener('click', () => {
-        const theme = option.getAttribute('data-theme');
+
+    selector.querySelectorAll(".theme-option").forEach((option) => {
+      option.addEventListener("click", () => {
+        const theme = option.getAttribute("data-theme");
         this.changeTheme(theme);
-        selector.classList.remove('open');
+        selector.classList.remove("open");
       });
     });
-    
+
     // Fecha o dropdown ao clicar fora
-    document.addEventListener('click', (event) => {
+    document.addEventListener("click", (event) => {
       if (!selector.contains(event.target)) {
-        selector.classList.remove('open');
+        selector.classList.remove("open");
       }
     });
-    
-    // Adiciona o seletor ao cabeçalho
-    const header = document.querySelector('header .header-content');
+
+    // Adiciona o seletor ao container de seletores ou ao header
+    const header = document.querySelector("header .header-content");
     if (header) {
-      header.appendChild(selector);
-      
-      // Adiciona estilos CSS inline (você pode mover isso para seu arquivo CSS)
-      const style = document.createElement('style');
+      let selectorsContainer = document.querySelector(".header-selectors");
+      if (!selectorsContainer) {
+        selectorsContainer = document.createElement("div");
+        selectorsContainer.className = "header-selectors";
+        header.appendChild(selectorsContainer);
+      }
+      selectorsContainer.appendChild(selector);
+
+      // Adiciona estilos CSS inline
+      const style = document.createElement("style");
       style.textContent = this.getThemeSelectorCSS();
       document.head.appendChild(style);
     }
@@ -135,13 +145,13 @@
 
   // Atualiza o seletor de temas
   updateThemeSelector() {
-    const options = document.querySelectorAll('.theme-option');
-    options.forEach(option => {
-      const theme = option.getAttribute('data-theme');
+    const options = document.querySelectorAll(".theme-option");
+    options.forEach((option) => {
+      const theme = option.getAttribute("data-theme");
       if (theme === this.currentTheme) {
-        option.classList.add('active');
+        option.classList.add("active");
       } else {
-        option.classList.remove('active');
+        option.classList.remove("active");
       }
     });
   }
@@ -179,7 +189,7 @@
       .theme-dropdown {
         position: absolute;
         top: 100%;
-        right: 0;
+        right: -12px;
         background: var(--cor-fundo-escuro);
         border-radius: 8px;
         padding: 10px;
@@ -235,7 +245,7 @@
 }
 
 // Cria e inicializa o gerenciador de temas quando o DOM estiver pronto
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   window.themeManager = new ThemeManager();
   window.themeManager.init();
 });
