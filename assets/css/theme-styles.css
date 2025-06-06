@@ -81,30 +81,30 @@
   --cor-hover-contato: #ff5722; /* Laranja intenso */
 }
 
-/* Tema Cyber - Escuro com tons de azul e ciano */
-:root[data-theme="cyber"] {
-  --cor-primaria: #00bcd4; /* Ciano */
-  --cor-secundaria: #102027; /* Azul muito escuro */
-  --cor-destaque: #00e5ff; /* Ciano brilhante */
-  --cor-destaque-alt: #18ffff; /* Ciano mais claro */
-  --cor-texto: #e0e0e0;
-  --cor-texto-escuro: #bbb;
-  --cor-texto-claro: #f9f9f9;
-  --cor-fundo: #0a192f; /* Azul escuro */
-  --cor-fundo-alternada: #172a45; /* Azul médio escuro */
-  --cor-fundo-escuro: #020c1b; /* Azul quase preto */
-  --cor-borda: #1e3a5f;
-  --sombra-suave: 0 5px 15px rgba(0, 0, 0, 0.4);
-  --sombra-neon: 0 0 15px rgba(0, 188, 212, 0.6);
-  --sombra-neon-verde: 0 0 15px rgba(0, 229, 255, 0.6);
-  --gradiente-primario: linear-gradient(135deg, #00bcd4, #0097a7);
-  --gradiente-destaque: linear-gradient(90deg, #00bcd4, #00e5ff);
-  --gradiente-header: linear-gradient(90deg, #102027, #020c1b);
-  --gradiente-hero: linear-gradient(135deg, rgba(16, 32, 39, 0.95), rgba(2, 12, 27, 0.95));
-  --cor-primeiro-nome: #31aef7; /* Ciano brilhante */
-  --cor-segundo-nome: #00e5ff; /* Ciano mais claro */
-  --cor-hover-menu: #00a2ff; /* Ciano brilhante */
-  --cor-hover-contato: #00bcd4; /* Ciano */
+/* Tema Leaf */
+:root[data-theme="leaf"] {
+  --cor-primaria: #2E7D32;
+  --cor-secundaria: #2e1f1d;
+  --cor-destaque: #ecbb17;
+  --cor-destaque-alt: #9EFFA1;
+  --cor-texto: #F5F0E6;
+  --cor-texto-escuro: #CBBFA5;
+  --cor-texto-claro: #FFFCEE;
+  --cor-fundo: #1B1F1B;
+  --cor-fundo-alternada: #2C2F28;
+  --cor-fundo-escuro: #121512;
+  --cor-borda: #63533d;
+  --sombra-suave: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --sombra-glow-mistico: 0 0 12px rgba(158, 255, 161, 0.4);
+  --sombra-glow-ouro: 0 0 14px rgba(212, 175, 55, 0.3);
+  --gradiente-primario: linear-gradient(135deg, #2E7D32, #9EFFA1);
+  --gradiente-destaque: linear-gradient(90deg, #D4AF37, #9EFFA1);
+  --gradiente-header: linear-gradient(90deg, #1B1F1B, #2C2F28);
+  --gradiente-hero: linear-gradient(135deg, rgba(27, 31, 27, 0.95), rgba(18, 21, 18, 0.95));
+  --cor-primeiro-nome: #9EFFA1;
+  --cor-segundo-nome: #e2b319;
+  --cor-hover-menu: #4CAF50;
+  --cor-hover-contato: #b9a150;
 }
 
 /* ==================================================================
@@ -368,41 +368,41 @@ nav ul li a i {
   }
 }
 
-/* Ajustes específicos para o tema Cyber */
-.theme-cyber h1, 
-.theme-cyber h2, 
-.theme-cyber h3, 
-.theme-cyber h4, 
-.theme-cyber h5, 
-.theme-cyber h6 {
+/* Ajustes específicos para o tema leaf */
+.theme-leaf h1, 
+.theme-leaf h2, 
+.theme-leaf h3, 
+.theme-leaf h4, 
+.theme-leaf h5, 
+.theme-leaf h6 {
   color: var(--cor-texto-claro);
 }
 
-.theme-cyber .secao:not(.secao-alternada) h2 {
+.theme-leaf .secao:not(.secao-alternada) h2 {
   color: var(--cor-destaque);
 }
 
-.theme-cyber .autor-info h4 {
+.theme-leaf .autor-info h4 {
   color: var(--cor-destaque);
 }
 
-.theme-cyber .autor-info p {
+.theme-leaf .autor-info p {
   color: var(--cor-texto-claro);
 }
 
-.theme-cyber .ux-ui-texto h3 {
+.theme-leaf .ux-ui-texto h3 {
   color: var(--cor-destaque);
 }
 
-.theme-cyber {
+.theme-leaf {
   color: var(--cor-texto);
 }
 
-.theme-cyber body {
+.theme-leaf body {
   background-color: var(--cor-fundo);
 }
 
-.theme-cyber .hero-particles::after {
+.theme-leaf .hero-particles::after {
   background-image: radial-gradient(circle at 25% 25%, var(--cor-primaria) 0, transparent 60%),
     radial-gradient(circle at 75% 75%, var(--cor-destaque) 0, transparent 60%),
     radial-gradient(circle at 75% 25%, var(--cor-destaque-alt) 0, transparent 60%),
