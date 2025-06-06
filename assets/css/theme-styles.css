@@ -23,8 +23,8 @@
   --gradiente-destaque: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque));
   --gradiente-header: linear-gradient(90deg, var(--cor-secundaria), #121420);
   --gradiente-hero: linear-gradient(135deg, rgba(18, 20, 32, 0.9), rgba(26, 30, 46, 0.9));
-  --cor-nome-primeiro: #9c7bff;
-  --cor-nome-destaque: #4ade80;
+  --cor-primeiro-nome: #9c7bff;
+  --cor-segundo-nome: #4ade80;
   --cor-hover-menu: #9c7bff;
   --cor-hover-contato: var(--cor-primaria);
 }
