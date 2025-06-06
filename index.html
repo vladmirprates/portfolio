@@ -600,12 +600,12 @@
                   enterSiteBtn.classList.add("visible");
                 }, 200);
               }
-            }, typingDuration + 300); // Add 300ms pause between lines
+            }, typingDuration + 100); // Add 300ms pause between lines
           }
         }
 
         // Start animation after a small delay
-        setTimeout(animateTerminal, 500);
+        setTimeout(animateTerminal, 200);
 
         // Language selection
         const languageOptions = document.querySelectorAll(".language-option");

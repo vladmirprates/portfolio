@@ -987,7 +987,7 @@ nav ul li a:hover i {
   opacity: 1;
   background-color: var(--cor-secundaria);
 }
-.depoimento,
+.recomendacao,
 .image-frame,
 .projeto-card {
   box-shadow: var(--sombra-suave);
@@ -1095,7 +1095,7 @@ nav ul li a:hover i {
   align-items: center;
   justify-content: center;
 }
-.depoimento-texto,
+.recomendacao-texto,
 .gaming-frame,
 .hero-content,
 .image-frame,
@@ -1190,7 +1190,7 @@ footer {
   display: block;
   transition: transform 0.5s;
 }
-.depoimento,
+.recomendacao,
 .info-content a {
   transition: var(--transicao-padrao);
 }
@@ -1220,26 +1220,26 @@ footer {
   z-index: 1;
   pointer-events: none;
 }
-.depoimentos-slider {
+.recomendacoes-slider {
   max-width: 800px;
   margin: 0 auto;
 }
-.depoimento {
+.recomendacao {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 30px;
   margin-bottom: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.depoimento:hover {
+.recomendacao:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
-.depoimento-texto {
+.recomendacao-texto {
   font-style: italic;
   padding: 0 20px;
 }
-.depoimento-texto::before {
+.recomendacao-texto::before {
   content: "\201C";
   font-size: 4rem;
   position: absolute;
@@ -1248,7 +1248,7 @@ footer {
   color: var(--cor-primaria);
   opacity: 0.3;
 }
-.depoimento-autor {
+.recomendacao-autor {
   display: flex;
   align-items: center;
   margin-top: 20px;
