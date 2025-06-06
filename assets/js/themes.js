@@ -16,9 +16,9 @@
         name: 'Dark Fire',
         icon: 'fas fa-fire'
       },
-      'cyber': {
-        name: 'Cyber',
-        icon: 'fas fa-microchip'
+      'leaf': {
+        name: 'Leaf',
+        icon: 'fa-solid fa-leaf'
       }
     };
     this.initialized = false;
@@ -62,7 +62,7 @@
   // Aplica o tema selecionado
   applyTheme(theme) {
     // Remove classes de temas anteriores
-    document.body.classList.remove('theme-default', 'theme-dark-fire', 'theme-cyber', 'theme-fantasy');
+    document.body.classList.remove('theme-default', 'theme-dark-fire', 'theme-leaf', 'theme-fantasy');
     
     // Adiciona a classe do tema atual
     document.body.classList.add(`theme-${theme}`);
