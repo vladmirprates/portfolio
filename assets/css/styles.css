@@ -1847,3 +1847,18 @@ nav ul li a.active::before {
   /* Seus ajustes específicos */
   order: 2; /* Ordem de exibição no flexbox */
 }
+
+/* Correção para o botão desaparecer ao clicar */
+.botao-primario:active,
+.botao-primario:focus {
+  transform: none !important;
+  box-shadow: 0 4px 15px rgba(126, 87, 194, 0.4);
+  opacity: 1 !important;
+  background: linear-gradient(135deg, var(--cor-primaria), #5e35b1) !important;
+}
+
+/* Manter aparência consistente no hover após clique */
+.botao-primario:hover:active {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(126, 87, 194, 0.6) !important;
+}
