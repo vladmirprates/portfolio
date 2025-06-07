@@ -20,9 +20,17 @@
   --sombra-neon: 0 0 10px rgba(126, 87, 194, 0.8);
   --sombra-neon-verde: 0 0 15px rgba(0, 230, 118, 0.8);
   --gradiente-primario: linear-gradient(135deg, var(--cor-primaria), #5e35b1);
-  --gradiente-destaque: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque));
+  --gradiente-destaque: linear-gradient(
+    90deg,
+    var(--cor-primaria),
+    var(--cor-destaque)
+  );
   --gradiente-header: linear-gradient(90deg, var(--cor-secundaria), #121420);
-  --gradiente-hero: linear-gradient(135deg, rgba(18, 20, 32, 0.9), rgba(26, 30, 46, 0.9));
+  --gradiente-hero: linear-gradient(
+    135deg,
+    rgba(18, 20, 32, 0.9),
+    rgba(26, 30, 46, 0.9)
+  );
   --cor-primeiro-nome: #9c7bff;
   --cor-segundo-nome: #4ade80;
   --cor-hover-menu: #9c7bff;
@@ -48,7 +56,11 @@
   --gradiente-primario: linear-gradient(135deg, #9c27b0, #6a0080);
   --gradiente-destaque: linear-gradient(90deg, #9c27b0, #ffc107);
   --gradiente-header: linear-gradient(90deg, #1a1423, #0f0a14);
-  --gradiente-hero: linear-gradient(135deg, rgba(26, 20, 35, 0.95), rgba(15, 10, 20, 0.95));
+  --gradiente-hero: linear-gradient(
+    135deg,
+    rgba(26, 20, 35, 0.95),
+    rgba(15, 10, 20, 0.95)
+  );
   --cor-primeiro-nome: #ffc107; /* Dourado */
   --cor-segundo-nome: #d045e9; /* Rosa */
   --cor-hover-menu: #9c7bff; /* Roxo */
@@ -74,7 +86,11 @@
   --gradiente-primario: linear-gradient(135deg, #ff5722, #bf360c);
   --gradiente-destaque: linear-gradient(90deg, #ff5722, #ff9800);
   --gradiente-header: linear-gradient(90deg, #1a0e0b, #0a0402);
-  --gradiente-hero: linear-gradient(135deg, rgba(26, 14, 11, 0.95), rgba(10, 4, 2, 0.95));
+  --gradiente-hero: linear-gradient(
+    135deg,
+    rgba(26, 14, 11, 0.95),
+    rgba(10, 4, 2, 0.95)
+  );
   --cor-primeiro-nome: #ff9800; /* Laranja mais claro */
   --cor-segundo-nome: #ff5722; /* Laranja intenso */
   --cor-hover-menu: #ff9800; /* Laranja mais claro */
@@ -83,27 +99,31 @@
 
 /* Tema Leaf */
 :root[data-theme="leaf"] {
-  --cor-primaria: #2E7D32;
+  --cor-primaria: #2e7d32;
   --cor-secundaria: #2e1f1d;
   --cor-destaque: #ecbb17;
-  --cor-destaque-alt: #9EFFA1;
-  --cor-texto: #F5F0E6;
-  --cor-texto-escuro: #CBBFA5;
-  --cor-texto-claro: #FFFCEE;
-  --cor-fundo: #1B1F1B;
-  --cor-fundo-alternada: #2C2F28;
+  --cor-destaque-alt: #9effa1;
+  --cor-texto: #f5f0e6;
+  --cor-texto-escuro: #cbbfa5;
+  --cor-texto-claro: #fffcee;
+  --cor-fundo: #1b1f1b;
+  --cor-fundo-alternada: #2c2f28;
   --cor-fundo-escuro: #121512;
   --cor-borda: #63533d;
   --sombra-suave: 0 6px 20px rgba(0, 0, 0, 0.5);
   --sombra-glow-mistico: 0 0 12px rgba(158, 255, 161, 0.4);
   --sombra-glow-ouro: 0 0 14px rgba(212, 175, 55, 0.3);
-  --gradiente-primario: linear-gradient(135deg, #2E7D32, #9EFFA1);
-  --gradiente-destaque: linear-gradient(90deg, #D4AF37, #9EFFA1);
-  --gradiente-header: linear-gradient(90deg, #1B1F1B, #2C2F28);
-  --gradiente-hero: linear-gradient(135deg, rgba(27, 31, 27, 0.95), rgba(18, 21, 18, 0.95));
-  --cor-primeiro-nome: #9EFFA1;
+  --gradiente-primario: linear-gradient(135deg, #2e7d32, #9effa1);
+  --gradiente-destaque: linear-gradient(90deg, #d4af37, #9effa1);
+  --gradiente-header: linear-gradient(90deg, #1b1f1b, #2c2f28);
+  --gradiente-hero: linear-gradient(
+    135deg,
+    rgba(27, 31, 27, 0.95),
+    rgba(18, 21, 18, 0.95)
+  );
+  --cor-primeiro-nome: #9effa1;
   --cor-segundo-nome: #e2b319;
-  --cor-hover-menu: #4CAF50;
+  --cor-hover-menu: #4caf50;
   --cor-hover-contato: #b9a150;
 }
 
@@ -115,10 +135,19 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-h1, h2, h3, h4, h5, h6,
-.botao-primario, .botao-secundario,
-.categoria-habilidade, .projeto-card,
-.depoimento, .info-icon, .social-icon {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.botao-primario,
+.botao-secundario,
+.categoria-habilidade,
+.projeto-card,
+.depoimento,
+.info-icon,
+.social-icon {
   transition: all 0.5s ease;
 }
 
@@ -142,6 +171,7 @@ nav ul li a i {
   background: var(--cor-destaque);
   transform: translateY(-5px);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: var(--cor-secundaria);
 }
 
 /* Ajustes para ícones de contato em todos os temas */
@@ -174,9 +204,17 @@ nav ul li a i {
 }
 
 .theme-fantasy .hero-particles::after {
-  background-image: radial-gradient(circle at 25% 25%, var(--cor-primaria) 0, transparent 60%),
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      var(--cor-primaria) 0,
+      transparent 60%
+    ),
     radial-gradient(circle at 75% 75%, var(--cor-destaque) 0, transparent 60%),
-    radial-gradient(circle at 75% 25%, var(--cor-destaque-alt) 0, transparent 60%),
+    radial-gradient(
+      circle at 75% 25%,
+      var(--cor-destaque-alt) 0,
+      transparent 60%
+    ),
     radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
 }
 
@@ -230,11 +268,11 @@ nav ul li a i {
   color: var(--cor-texto);
 }
 
-.theme-dark-fire h1, 
-.theme-dark-fire h2, 
-.theme-dark-fire h3, 
-.theme-dark-fire h4, 
-.theme-dark-fire h5, 
+.theme-dark-fire h1,
+.theme-dark-fire h2,
+.theme-dark-fire h3,
+.theme-dark-fire h4,
+.theme-dark-fire h5,
 .theme-dark-fire h6 {
   color: var(--cor-texto-claro);
 }
@@ -252,13 +290,22 @@ nav ul li a i {
 }
 
 .theme-dark-fire .hero-section {
-  background: var(--gradiente-hero) center/cover, url("../images/hero-bg.jpg") center/cover;
+  background: var(--gradiente-hero) center/cover,
+    url("../images/hero-bg.jpg") center/cover;
 }
 
 .theme-dark-fire .hero-particles::after {
-  background-image: radial-gradient(circle at 25% 25%, var(--cor-primaria) 0, transparent 60%),
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      var(--cor-primaria) 0,
+      transparent 60%
+    ),
     radial-gradient(circle at 75% 75%, var(--cor-destaque) 0, transparent 60%),
-    radial-gradient(circle at 75% 25%, var(--cor-destaque-alt) 0, transparent 60%),
+    radial-gradient(
+      circle at 75% 25%,
+      var(--cor-destaque-alt) 0,
+      transparent 60%
+    ),
     radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
 }
 
@@ -369,11 +416,11 @@ nav ul li a i {
 }
 
 /* Ajustes específicos para o tema leaf */
-.theme-leaf h1, 
-.theme-leaf h2, 
-.theme-leaf h3, 
-.theme-leaf h4, 
-.theme-leaf h5, 
+.theme-leaf h1,
+.theme-leaf h2,
+.theme-leaf h3,
+.theme-leaf h4,
+.theme-leaf h5,
 .theme-leaf h6 {
   color: var(--cor-texto-claro);
 }
@@ -403,9 +450,17 @@ nav ul li a i {
 }
 
 .theme-leaf .hero-particles::after {
-  background-image: radial-gradient(circle at 25% 25%, var(--cor-primaria) 0, transparent 60%),
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      var(--cor-primaria) 0,
+      transparent 60%
+    ),
     radial-gradient(circle at 75% 75%, var(--cor-destaque) 0, transparent 60%),
-    radial-gradient(circle at 75% 25%, var(--cor-destaque-alt) 0, transparent 60%),
+    radial-gradient(
+      circle at 75% 25%,
+      var(--cor-destaque-alt) 0,
+      transparent 60%
+    ),
     radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
 }
 
@@ -413,17 +468,28 @@ nav ul li a i {
                     Transições Suaves entre Temas
    ================================================================== */
 
-body, body * {
-  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+body,
+body * {
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-h1, h2, h3, h4, h5, h6,
-.botao-primario, .botao-secundario,
-.categoria-habilidade, .projeto-card,
-.depoimento, .info-icon, .social-icon {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.botao-primario,
+.botao-secundario,
+.categoria-habilidade,
+.projeto-card,
+.depoimento,
+.info-icon,
+.social-icon {
   transition: all 0.5s ease;
 }
