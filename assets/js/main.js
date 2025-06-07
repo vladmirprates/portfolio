@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.appendChild(menuToggle);
   }
 
+  // Função para resetar o ícone do menu toggle
+  function resetMenuToggle() {
+    const icon = menuToggle.querySelector("i");
+    if (icon.classList.contains("fa-times")) {
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    }
+  }
+
   menuToggle.addEventListener("click", function () {
     navUl.classList.toggle("show");
     const icon = menuToggle.querySelector("i");
@@ -32,13 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
     icon.classList.toggle("fa-times");
   });
 
-  // Fecha menu ao clicar em link
+  // Fecha menu ao clicar em link e reseta o ícone do toggle
   document.querySelectorAll("nav ul li a").forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 576) {
         navUl.classList.remove("show");
+        resetMenuToggle(); // Reseta o ícone quando clica em um link do menu
       }
     });
+  });
+
+  // Adiciona evento para fechar o menu quando clicar fora dele
+  document.addEventListener("click", function(event) {
+    // Verifica se o clique foi fora do menu e do botão toggle
+    if (!navUl.contains(event.target) && !menuToggle.contains(event.target)) {
+      if (navUl.classList.contains("show")) {
+        navUl.classList.remove("show");
+        resetMenuToggle(); // Reseta o ícone quando clica fora do menu
+      }
+    }
   });
 
   // Scroll suave
