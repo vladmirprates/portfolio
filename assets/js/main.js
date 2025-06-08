@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // AOS
   AOS.init({
     duration: 800,
     easing: "ease-in-out",

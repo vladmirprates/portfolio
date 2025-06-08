@@ -72,23 +72,26 @@ class I18nManager {
   async changeLanguage(lang) {
     if (this.currentLanguage === lang) return;
 
-    // 1. Pare o efeito atual
+    // Pare o efeito atual
     window.clearTypingEffect();
 
-    // 2. Atualize o idioma e conteúdo
+    // Atualize o idioma e conteúdo
     this.currentLanguage = lang;
     localStorage.setItem("preferredLanguage", lang);
     await this.loadTranslations(lang);
 
-    // 3. Atualize a página
+    // Atualize a página
     this.updatePageContent();
 
-    // 4. Reinicie o efeito após a atualização
+    // ATUALIZE O SELETOR DE IDIOMA
+    this.updateLanguageSelector();
+
+    // Reinicie o efeito após a atualização
     setTimeout(() => {
       if (typeof window.startTypingEffect === "function") {
         window.startTypingEffect(); // Agora usará o novo texto
       }
-    }, 300);
+    }, 0);
   }
 
   // Aplica as traduções aos elementos da página
@@ -166,7 +169,7 @@ class I18nManager {
       const style = document.createElement("style");
       style.textContent = `
     .language-selector {
-      margin-left: 0; /* Removido margin-left pois agora está no container */
+      margin-left: 0;
     }
     .language-switch {
       background: transparent;

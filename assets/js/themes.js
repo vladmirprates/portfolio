@@ -1,8 +1,6 @@
-// themes.js - Sistema de temas personalizados
-
 class ThemeManager {
   constructor() {
-    this.currentTheme = "default"; // Tema padrão
+    this.currentTheme = "default";
     this.themes = {
       default: {
         name: "Padrão",

@@ -45,7 +45,12 @@
 
     "cargo3": "Junior Software Quality Analyst",
     "empresa3": "Novigi Solution",
-    "periodo3": "2021 - 2022"
+    "periodo3": "2021 - 2022",
+    "descricao3_1": "Worked on the Riachuelo Marketplace and Crefisa Tech projects with both agile and non-agile squads",
+    "descricao3_2": "Planning, execution, and reporting of Web, Mobile (Android/iOS), and API tests with a user-centered focus",
+    "descricao3_3": "Creation and maintenance of automated tests using Robot Framework and Python",
+    "descricao3_4": "Design of test scenarios and cases in Gherkin with a focus on usability, accessibility, and reliability",
+    "descricao3_5": "Strategic involvement with stakeholders, refining acceptance criteria and mitigating risks"
   },
   "habilidades": {
     "titulo": "Technical Skills",
@@ -128,12 +133,13 @@
   },
   "contato": {
     "titulo": "Get in Touch",
+    "info": "Contact information",
     "email_titulo": "Email",
     "linkedin_titulo": "LinkedIn",
     "github_titulo": "GitHub",
     "localizacao_titulo": "Location",
-    "localizacao_valor": "São Paulo, SP - Brazil",
-    "redes_sociais": "Social Media"
+    "disponibilidade": "Availability",
+    "disponibilidade_info": "Monday to Friday • 9:00 AM - 6:00 PM (GMT-3)"
   },
   "footer": {
     "subtitulo": "Quality Assurance & Games Enthusiast",
