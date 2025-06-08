@@ -1,107 +1,210 @@
-# Portfólio Pessoal - Vladmir Prates
+# Portfólio - Vladmir Prates
 
- Bem-vindo ao repositório do meu portfólio pessoal! Este projeto é um showcase das minhas habilidades e experiências como profissional de Quality Assurance e entusiasta de games, com um foco especial em UX/UI. O site foi desenvolvido para ser responsivo, interativo e visualmente atraente, utilizando tecnologias web modernas e uma arquitetura multi-página.
+Documentação centralizada do projeto de portfólio, incluindo detalhes sobre a estrutura, sistemas implementados e instruções de manutenção.
 
-## ⚙️ Como Acessar o Projeto
+## Estrutura do Projeto
 
-Para visualizar o projeto, acesse:
-[Portfolio](https://vladmirprates.github.io/portfolio/)
+```
+/
+├── index.html           # Loading page com seleção de idioma
+├── main.html            # Página principal do site
+├── assets/
+│   ├── css/
+│   │   ├── styles.css           # Estilos principais
+│   │   └── theme-styles.css     # Estilos específicos para temas
+│   ├── js/
+│   │   ├── main.js              # Funcionalidades gerais do site
+│   │   ├── hero-effects.js      # Efeitos específicos da seção hero
+│   │   ├── themes.js            # Sistema de gerenciamento de temas
+│   │   └── i18n.js              # Sistema de internacionalização
+│   ├── images/                  # Imagens do site
+│   └── translations/            # Arquivos de tradução
+│       ├── pt-br.json           # Traduções em português
+│       └── en.json              # Traduções em inglês
+```
 
-## 🚀 Visão Geral do Projeto
+## Sistemas Implementados
 
-Este portfólio é um **site web com uma página principal e páginas de entrada/saída**, projetado para apresentar meu perfil profissional de forma abrangente. Ele é estruturado para guiar o visitante através de diferentes aspectos da minha carreira:
+### 1. Loading Page
 
-* **Página de Carregamento (`index.html`):** O ponto de entrada inicial do site. Permite ao usuário selecionar o idioma preferido (Português do Brasil ou Inglês) antes de acessar o conteúdo principal, garantindo uma experiência personalizada desde o início.
-* **Página Principal (`main.html`):** Contém todo o conteúdo central do portfólio, organizado em seções distintas como:
-    * **Sobre Mim:** Uma introdução sobre minha trajetória, paixões e experiência profissional.
-    * **Experiência:** Detalhes sobre minhas passagens por empresas e minhas responsabilidades.
-    * **Habilidades:** Um panorama das minhas competências técnicas e soft skills.
-    * **Projetos:** Destaque para projetos relevantes que participei ou desenvolvi. (Futuramente, esta seção poderá redirecionar para páginas de projeto dedicadas).
-    * **UX/UI:** Seção dedicada ao meu interesse e contribuições na área de Experiência do Usuário e Interface do Usuário.
-    * **Games:** Minha paixão por jogos e como ela se conecta com a qualidade e a experiência.
-    * **Recomendações:** Testemunhos de colegas e gestores sobre meu trabalho.
-    * **Contato:** Formas de entrar em contato comigo para oportunidades e colaborações.
-* **Futuras Páginas de Projeto:** O projeto foi planejado com a flexibilidade para a adição de páginas separadas e detalhadas para cada projeto, permitindo um aprofundamento maior sem sobrecarregar a página principal.
+A página de carregamento inicial apresenta um design de terminal com animações e permite ao usuário selecionar o idioma antes de entrar no site principal.
 
-## ✨ Funcionalidades Principais
+**Arquivos relacionados:**
+- `index.html` - Estrutura HTML da loading page
+- Estilos CSS inline no próprio arquivo
 
-* **Internacionalização (i18n):** Suporte completo para dois idiomas (Português do Brasil e Inglês), com detecção e persistência da preferência do usuário via `localStorage`. A troca de idioma é fluida e mantém o contexto da página.
-* **Sistema de Temas:** Múltiplos temas visuais (Padrão, Fantasy, Dark Fire, Leaf) que podem ser alternados pelo usuário a qualquer momento. A escolha do tema é persistida via `localStorage` para uma experiência consistente em futuras visitas.
-* **Animações On Scroll (AOS):** Elementos visuais em diversas seções surgem com animações elegantes e fluidas à medida que o usuário rola a página, criando uma experiência de navegação dinâmica.
-* **Efeitos Visuais Dinâmicos na Seção Hero:**
-    * **Efeito de Digitação:** Um efeito de "máquina de escrever" no subtítulo da seção Hero, cativando o visitante com a revelação progressiva do texto.
-    * **Parallax Suave:** Um sutil efeito de parallax na imagem de fundo da seção Hero, adicionando profundidade e movimento ao cabeçalho.
-    * **Partículas Animadas:** Um efeito de "partículas" que se movimentam pela tela.
-* **Navegação Fluida e Intuitiva:**
-    * **Scroll Suave:** Transição suave e animada ao clicar nos links de navegação internos, levando o usuário diretamente à seção desejada.
-    * **Menu Responsivo:** Um menu hamburger para dispositivos móveis, adaptando a navegação a diferentes tamanhos de tela e garantindo a usabilidade em smartphones e tablets.
-    * **Indicador de Seção Ativa:** Destaca visualmente o link de navegação correspondente à seção atualmente visível na tela, orientando o usuário sobre sua posição no site.
-* **Botão "Voltar ao Topo":** Um botão conveniente que aparece discretamente ao rolar a página para cima e permite retornar rapidamente ao início da página com um scroll suave.
-* **Design Responsivo:** O layout se adapta perfeitamente a desktops, tablets e smartphones, garantindo uma ótima experiência de usuário e legibilidade em qualquer dispositivo.
+**Funcionalidades:**
+- Efeito de digitação para textos do terminal
+- Barra de progresso animada
+- Seleção de idioma (português/inglês)
+- Transição suave para o site principal
+- Partículas animadas no fundo
 
-## 🛠️ Tecnologias Utilizadas
+**Como usar:**
+- A preferência de idioma é salva no localStorage
+- O idioma selecionado é passado para o site principal via parâmetro URL
 
-* **HTML5:** A espinha dorsal do conteúdo, garantindo uma estrutura semântica e acessível.
-* **CSS3:** Responsável por toda a estilização e design responsivo, com uso estratégico de variáveis CSS para facilitar a customização de temas e a manutenção.
-* **JavaScript (ES6+):** A linguagem que dá vida ao site, implementando todas as funcionalidades interativas e dinâmicas.
-* **Font Awesome:** Uma biblioteca amplamente utilizada para ícones escaláveis e vetoriais, aprimorando a identidade visual.
-* **AOS (Animate On Scroll):** Uma biblioteca JavaScript leve para criar animações de rolagem, tornando a navegação mais envolvente.
-* **Swiper.js:** (`main.html`) Biblioteca moderna para criar carrosséis e sliders responsivos, ideal para seções como "Projetos" ou "Recomendações" (se implementado).
+### 2. Sistema de Temas
 
-## 📝 Detalhes dos Arquivos
+O site possui múltiplos temas visuais que podem ser alternados pelo seletor no cabeçalho.
 
-### HTML
+**Arquivos relacionados:**
+- `themes.js` - Lógica de gerenciamento de temas
+- `theme-styles.css` - Estilos específicos para cada tema
 
-* **`index.html`**
-    * **Função:** Serve como a porta de entrada para o site. Antes de exibir o conteúdo principal, permite que o usuário escolha seu idioma preferencial.
-    * **Características:** Possui estilos CSS embutidos para uma rápida renderização da tela de carregamento e um script JavaScript simples para lidar com a lógica de seleção de idioma, persistência via `localStorage` e o redirecionamento suave para `main.html` com o idioma selecionado como parâmetro de URL.
+**Temas disponíveis:**
+1. **Default** - Tema padrão com tons de roxo e verde
+2. **Fantasy** - Tema com tons de roxo e dourado
+3. **Dark Fire** - Tema escuro com tons de vermelho e laranja
+4. **Leaf** - Tema com tons de verde e dourado
 
-* **`main.html`**
-    * **Função:** É a página central do portfólio, onde todas as seções de conteúdo (Sobre Mim, Experiência, Projetos, etc.) estão organizadas.
-    * **Características:** Inclui links para todos os arquivos CSS essenciais (`styles.css`, `theme-styles.css`) e os scripts JavaScript (`main.js`, `hero-effects.js`, `i18n.js`, `themes.js`). Também integra bibliotecas externas como Font Awesome, AOS e Swiper.js, e contém a estrutura para o botão "Voltar ao Topo".
+**Como funciona:**
+- Cada tema define suas próprias variáveis CSS (cores, gradientes, sombras)
+- O sistema adiciona uma classe ao `body` correspondente ao tema atual
+- A preferência de tema é salva no localStorage
+- Transições suaves são aplicadas na troca de temas
 
-### CSS
+**Como adicionar um novo tema:**
+1. Adicione o tema ao objeto `themes` no arquivo `themes.js`:
+```javascript
+this.themes = {
+  'default': { name: 'Padrão', icon: 'fas fa-palette' },
+  'seu-tema': { name: 'Nome do Tema', icon: 'fas fa-icon-apropriado' }
+};
+```
 
-* **`styles.css`**
-    * **Função:** Contém os estilos CSS globais que definem a aparência base do portfólio.
-    * **Características:** Estabelece a paleta de cores padrão (usando variáveis CSS), tipografia, layout geral, estilos de navegação, cabeçalho, rodapé e componentes genéricos. É responsável pela maior parte da responsividade através de `media queries`.
+2. Adicione as variáveis CSS no arquivo `theme-styles.css`:
+```css
+:root[data-theme="seu-tema"] {
+  --cor-primaria: #valor;
+  --cor-secundaria: #valor;
+  /* Demais variáveis... */
+}
 
-* **`theme-styles.css`**
-    * **Função:** Dedicado exclusivamente aos estilos específicos de cada tema visual disponível.
-    * **Características:** Sobrescreve as variáveis CSS globais definidas em `styles.css` para ajustar cores de fundo, texto, destaque, etc., conforme o tema ativo (ex: `theme-fantasy`, `theme-dark-fire`). Este arquivo é o coração da funcionalidade de temas, permitindo uma customização visual rápida.
+/* Ajustes específicos para o tema */
+.theme-seu-tema {
+  /* Estilos específicos... */
+}
+```
 
-### JavaScript
+### 3. Sistema de Internacionalização (i18n)
 
-* **`main.js`**
-    * **Função:** Gerencia a maior parte da interatividade geral do site.
-    * **Características:** Inicializa as animações AOS, controla o efeito de mudança de estilo do cabeçalho ao rolar, implementa o menu mobile (toggle, fechamento ao clicar), proporciona o scroll suave para links de âncora, e gerencia o indicador visual da seção ativa na navegação, além de garantir a responsividade do menu em redimensionamentos de tela.
+O site suporta múltiplos idiomas com troca dinâmica sem recarregar a página.
 
-* **`hero-effects.js`**
-    * **Função:** Adiciona efeitos visuais dinâmicos exclusivamente à seção Hero (primeira tela do portfólio).
-    * **Características:** Implementa um efeito de "partículas" que reage ao movimento do mouse, um suave efeito de parallax na imagem de fundo ao rolar a página, e o cativante efeito de digitação para o subtítulo do hero. Possui funções públicas (`clearTypingEffect`, `startTypingEffect`) para serem controladas por outros scripts, como o `i18n.js` após a troca de idioma.
+**Arquivos relacionados:**
+- `i18n.js` - Lógica de gerenciamento de idiomas
+- `assets/translations/pt-br.json` - Traduções em português
+- `assets/translations/en.json` - Traduções em inglês
 
-* **`i18n.js` (Internacionalização)**
-    * **Função:** Gerencia a funcionalidade de múltiplos idiomas do site.
-    * **Características:** É uma classe (`I18nManager`) que detecta o idioma preferencial (via URL, `localStorage` ou padrão), carrega o arquivo JSON de tradução correspondente (`en.json` ou `pt-br.json`), e atualiza todo o conteúdo textual da página usando atributos `data-i18n`. Ele também adiciona dinamicamente um seletor de idioma no cabeçalho e persiste a escolha do usuário. Garante a reinicialização correta de efeitos como o de digitação após a troca de idioma.
+**Idiomas suportados:**
+- Português (pt-br) - Idioma padrão
+- Inglês (en)
 
-* **`themes.js` (Sistema de Temas)**
-    * **Função:** Responsável por toda a lógica de alternância e gerenciamento dos temas visuais do site.
-    * **Características:** É uma classe (`ThemeManager`) que define os temas disponíveis (nome, ícone), carrega a preferência de tema do `localStorage` (ou usa o padrão), e aplica a classe CSS apropriada (ex: `theme-fantasy`) ao elemento `<html>` do documento. Isso aciona os estilos definidos em `theme-styles.css`. Adiciona dinamicamente um seletor de temas ao cabeçalho, permitindo ao usuário escolher o visual preferido.
+**Como funciona:**
+- Os textos traduzíveis são marcados com o atributo `data-i18n`
+- O sistema carrega dinamicamente o arquivo JSON do idioma selecionado
+- A preferência de idioma é salva no localStorage
+- Integração com a loading page para seleção inicial
 
-### JSON
+**Como adicionar um novo idioma:**
+1. Crie um novo arquivo JSON na pasta `assets/translations/` (ex: `fr.json`)
+2. Copie a estrutura de um arquivo existente e traduza os valores
+3. Adicione o novo idioma à lista de idiomas suportados no arquivo `i18n.js`
 
-* **`en.json`**
-    * **Função:** Armazena todas as strings de texto utilizadas na página principal (`main.html`), traduzidas para o idioma **inglês**.
-    * **Estrutura:** Organizado hierarquicamente por seções (ex: `nav`, `hero`, `sobre`, `experiencia`, `contato`), o que facilita a localização, adição e manutenção das traduções.
+**Como adicionar novos textos traduzíveis:**
+1. Adicione o atributo `data-i18n` ao elemento HTML:
+```html
+<h2 data-i18n="secao.titulo">Título padrão</h2>
+```
 
-* **`pt-br.json`**
-    * **Função:** Armazena todas as strings de texto utilizadas na página principal (`main.html`), traduzidas para o idioma **português do Brasil**.
-    * **Estrutura:** Segue a mesma estrutura de chaves do `en.json`, garantindo a compatibilidade com o sistema de internacionalização.
+2. Adicione a chave correspondente nos arquivos de tradução:
+```json
+{
+  "secao": {
+    "titulo": "Título traduzido"
+  }
+}
+```
 
+### 4. Efeitos Visuais
 
-## 📞 Contato
+O site possui diversos efeitos visuais para melhorar a experiência do usuário.
 
-Para entrar em contato, por favor, visite a seção "Contato" no meu portfólio ou use os links abaixo:
+**Arquivos relacionados:**
+- `hero-effects.js` - Efeitos específicos da seção hero
+- `main.js` - Outros efeitos e animações
 
+**Efeitos implementados:**
+- Efeito de partículas interativas no hero
+- Efeito parallax no scroll
+- Efeito de digitação no subtítulo
+- Animações AOS (Animate On Scroll)
+- Efeitos específicos para cada tema
+
+**Como usar o AOS:**
+Adicione os atributos `data-aos` aos elementos:
+```html
+<div data-aos="fade-up" data-aos-delay="100">
+  Conteúdo com animação
+</div>
+```
+
+## Responsividade
+
+O site é totalmente responsivo e se adapta a diferentes tamanhos de tela.
+
+**Principais ajustes responsivos:**
+- Menu mobile com toggle para telas pequenas
+- Layout flexível que se adapta a diferentes larguras
+- Imagens e conteúdo redimensionáveis
+- Media queries para ajustes específicos
+
+**Breakpoints principais:**
+- Mobile: até 576px
+- Tablet: 577px a 768px
+- Desktop: acima de 768px
+
+## Manutenção e Boas Práticas
+
+### Adicionando Novos Conteúdos
+
+1. **Novos Projetos:**
+   - Adicione um novo card na seção de projetos seguindo a estrutura existente
+   - Inclua imagens na pasta `assets/images/`
+   - Adicione as traduções nos arquivos de idioma
+
+2. **Novas Habilidades:**
+   - Adicione novas tags na categoria apropriada
+   - Mantenha a consistência visual com as tags existentes
+
+### Modificando Estilos
+
+1. **Ajustes Gerais:**
+   - Modifique o arquivo `styles.css` para alterações globais
+   - Respeite as variáveis CSS para manter a consistência
+
+2. **Ajustes de Tema:**
+   - Modifique apenas o arquivo `theme-styles.css`
+   - Mantenha a estrutura de variáveis para cada tema
+
+### Depuração
+
+- Verifique o console do navegador para possíveis erros
+- Teste em diferentes navegadores e dispositivos
+- Valide as alterações em todos os temas e idiomas
+
+## Créditos e Recursos
+
+- **Bibliotecas utilizadas:**
+  - Font Awesome (ícones)
+  - AOS - Animate On Scroll
+  - Google Fonts
+
+- **Recursos externos:**
+  - Imagens
+  - Ícones: Font Awesome
+  - Fontes: Google Fonts (Montserrat, Orbitron, Roboto)
+
+## Contato
 * **LinkedIn:** [Vladmir Prates](https://linkedin.com/in/vladmirprates)
 * **GitHub:** [Vladmir Prates](https://github.com/vladmirprates)
