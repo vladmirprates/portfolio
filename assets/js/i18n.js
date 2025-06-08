@@ -1,5 +1,3 @@
-// i18n.js - Script para gerenciar internacionalização
-
 class I18nManager {
   constructor() {
     this.currentLanguage = "pt-br"; // Idioma padrão
@@ -74,68 +72,57 @@ class I18nManager {
   async changeLanguage(lang) {
     if (this.currentLanguage === lang) return;
 
-    // Salva a preferência
+    // 1. Pare o efeito atual
+    window.clearTypingEffect();
+
+    // 2. Atualize o idioma e conteúdo
     this.currentLanguage = lang;
     localStorage.setItem("preferredLanguage", lang);
-
-    // Carrega as novas traduções
     await this.loadTranslations(lang);
 
-    // Atualiza o conteúdo da página
+    // 3. Atualize a página
     this.updatePageContent();
 
-    // Atualiza o seletor de idioma
-    this.updateLanguageSelector();
-
-    // Reinicia o efeito de digitação ao mudar de idioma
-    if (typeof startTypingEffect === "function") {
-      startTypingEffect();
-    }
+    // 4. Reinicie o efeito após a atualização
+    setTimeout(() => {
+      if (typeof window.startTypingEffect === "function") {
+        window.startTypingEffect(); // Agora usará o novo texto
+      }
+    }, 300);
   }
 
   // Aplica as traduções aos elementos da página
   updatePageContent() {
-    // Elementos com atributo data-i18n
     document.querySelectorAll("[data-i18n]").forEach((element) => {
       const key = element.getAttribute("data-i18n");
       const translation = this.getTranslation(key);
 
       if (translation) {
-        // Se o elemento for um input com placeholder
-        if (element.placeholder !== undefined) {
-          element.placeholder = translation;
-        }
-        // Se for um elemento com valor (como botões)
-        else if (
-          element.value !== undefined &&
-          element.tagName !== "DIV" &&
-          element.tagName !== "SPAN"
+        // Atualiza o atributo data-original-text para elementos com efeito de digitação
+        if (
+          element.classList.contains("hero-text") ||
+          element.id === "typing-element"
         ) {
-          element.value = translation;
+          element.setAttribute("data-original-text", translation);
         }
-        // Para outros elementos, atualiza o conteúdo HTML
-        else {
-          element.innerHTML = translation;
-        }
+
+        // Atualiza o conteúdo normalmente
+        element.textContent = translation;
       }
     });
   }
 
   // Obtém uma tradução a partir de uma chave aninhada (ex: "nav.sobre")
   getTranslation(key) {
-    const keys = key.split(".");
-    let value = this.translations;
-
-    for (const k of keys) {
-      if (value && value[k] !== undefined) {
-        value = value[k];
-      } else {
-        console.warn(`Translation key not found: ${key}`);
-        return key; // Retorna a chave como fallback
-      }
+    try {
+      return (
+        key.split(".").reduce((obj, k) => obj[k], this.translations) ||
+        `[MISSING: ${key}]`
+      );
+    } catch (e) {
+      console.error(`Translation error for key "${key}":`, e);
+      return `[ERROR: ${key}]`;
     }
-
-    return value;
   }
 
   // Adiciona o seletor de idioma ao cabeçalho

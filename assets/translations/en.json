@@ -113,16 +113,16 @@
     "paragrafo2": "This passion motivates me to constantly seek excellence in my QA projects, applying lessons learned from the gaming world to improve the quality of any digital product."
   },
   "recomendacoes": {
-    "titulo": "Testimonials",
-    "recomendacao1_texto": "\"Vladimir is an exceptional QA professional. His attention to detail and ability to identify issues before they affect end users is impressive. He not only finds bugs but also suggests improvements that elevate product quality.\"",
-    "recomendacao1_nome": "Ana Silva",
-    "recomendacao1_cargo": "Tech Lead at GFT Technologies",
+    "titulo": "Recommendations",
+    "recomendacao1_texto": "Vladmir has a clear vision and his insights are always very assertive. His participation in projects helps identify unforeseen and undiscussed situations in advance, avoiding financial and scheduling risks. He also strongly supports developers in pursuing high-quality code and best development practices. Without a doubt, he is an outstanding professional, well above the market average.",
+    "recomendacao1_nome": "Sergio Oliveira",
+    "recomendacao1_cargo": "IT Executive, Crefisa",
 
-    "recomendacao2_texto": "\"Working with Vladimir was an enriching experience. His methodical approach to testing and his deep understanding of user experience brought a new perspective to our team. He is a true advocate for quality in all aspects.\"",
-    "recomendacao2_nome": "Carlos Mendes",
-    "recomendacao2_cargo": "Product Owner at WarmUP Consulting",
+    "recomendacao2_texto": "\"Working with Vladmir was an enriching experience. His methodical approach to testing and deep understanding of user experience brought a new perspective to our team. He is a true advocate for quality in every aspect.\"",
+    "recomendacao2_nome": "Julio Cesar Nietto",
+    "recomendacao2_cargo": "QA Coordinator, Riachuelo",
 
-    "recomendacao3_texto": "\"Vladimir's technical knowledge combined with his passion for games brings a unique perspective to projects. He deeply understands how to create engaging user experiences and ensure that every interaction is perfect.\"",
+    "recomendacao3_texto": "\"Vladmir's technical knowledge combined with his passion for games brings a unique perspective to projects. He deeply understands how to create engaging user experiences and ensure that every interaction is perfect.\"",
     "recomendacao3_nome": "Mariana Costa",
     "recomendacao3_cargo": "UX Designer at Novigi Solution"
   },
@@ -138,7 +138,6 @@
   "footer": {
     "subtitulo": "Quality Assurance & Games Enthusiast",
     "links_rapidos": "Quick Links",
-    "plataformas_jogos": "Gaming Platforms",
     "copyright": "© 2024 Vladmir Prates. All rights reserved."
   },
   "idioma": {
