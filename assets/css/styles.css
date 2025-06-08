@@ -758,14 +758,20 @@ nav ul li a:hover i {
   flex: 1;
 }
 .foto-frame {
-  width: 250px;
-  height: 250px;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   margin: 0 auto;
   box-shadow: var(--sombra-suave);
-  border: 3px solid var(--cor-primaria);
+  transition: var(--transicao-padrao);
+  display: flex;
 }
+
+.foto-frame:hover {
+  transform: translateY(-10px);
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
 .foto-frame::before {
   content: "";
   position: absolute;
@@ -1507,6 +1513,7 @@ footer::before {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 @keyframes float {
   0%,
@@ -1874,4 +1881,14 @@ nav ul li a.active::before {
   transform: scale(1.1);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
-
+ .jogos-imagem1 {
+  box-shadow: var(--sombra-suave);
+  border-radius: 12px;
+  transition: var(--transicao-padrao);
+  display: flex;
+}
+.jogos-imagem1:hover {
+  transform: translateY(-10px);
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}

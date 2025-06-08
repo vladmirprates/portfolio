@@ -26,6 +26,7 @@
   },
   "experiencia": {
     "titulo": "Professional Experience",
+    "detalhes": "Learn more about my experience",
     "cargo1": "QA Engineer",
     "empresa1": "GFT Technologies",
     "periodo1": "2024 - Present",
