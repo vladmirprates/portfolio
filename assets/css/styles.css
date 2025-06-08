@@ -1862,3 +1862,16 @@ nav ul li a.active::before {
   transform: translateY(-3px) !important;
   box-shadow: 0 6px 20px rgba(126, 87, 194, 0.6) !important;
 }
+
+.ux-ui-imagem {
+  box-shadow: var(--sombra-suave);
+  border-radius: 12px;
+  transition: var(--transicao-padrao);
+  display: flex;
+}
+.ux-ui-imagem:hover {
+  transform: translateY(-10px);
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
