@@ -1,5 +1,5 @@
-// hero-effects.js
 document.addEventListener("DOMContentLoaded", function () {
+  
   // Efeito partículas
   const heroParticles = document.querySelector(".hero-particles");
   if (heroParticles) {

@@ -45,7 +45,12 @@
     
     "cargo3": "Analista de Qualidade de Software Jr",
     "empresa3": "Novigi Solution",
-    "periodo3": "2021 - 2022"
+    "periodo3": "2021 - 2022",
+    "descricao3_1": "Atuação nos projetos Riachuelo Marketplace e Crefisa Tech com squads ágeis e não ágeis",
+    "descricao3_2": "Planejamento, execução e reporte de testes Web, Mobile (Android/iOS) e API com foco no usuário",
+    "descricao3_3": "Criação e manutenção de testes automatizados com Robot Framework e Python",
+    "descricao3_4": "Elaboração de cenários e casos de teste em Gherkin com foco em usabilidade, acessibilidade e confiabilidade",
+    "descricao3_5": "Participação estratégica com stakeholders, refinando critérios de aceitação e mitigando riscos"
   },
   "habilidades": {
     "titulo": "Habilidades Técnicas",
@@ -128,12 +133,13 @@
   },
   "contato": {
     "titulo": "Entre em Contato",
+    "info": "Informações de Contato",
     "email_titulo": "Email",
     "linkedin_titulo": "LinkedIn",
     "github_titulo": "GitHub",
     "localizacao_titulo": "Localização",
-    "localizacao_valor": "São Paulo, SP - Brasil",
-    "redes_sociais": "Redes Sociais"
+    "disponibilidade": "Disponibilidade",
+    "disponibilidade_info": "Segunda a Sexta • 9:00 - 18:00"
   },
   "footer": {
     "subtitulo": "Quality Assurance & Games Enthusiast",
