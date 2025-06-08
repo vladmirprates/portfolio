@@ -26,6 +26,7 @@
   },
   "experiencia": {
     "titulo": "Experiência Profissional",
+    "detalhes": "Mais detalhes sobre as Experiências",
     "cargo1": "QA Pleno",
     "empresa1": "GFT Technologies",
     "periodo1": "2024 - Presente",
@@ -33,7 +34,7 @@
     "descricao1_2": "Desenvolvimento de estratégias e execuções de teste para Salesforce",
     "descricao1_3": "Colaboração com equipes de desenvolvimento e Negócios",
     "descricao1_4": "Identificação e documentação de bugs e melhorias",
-    
+
     "cargo2": "Automatizador de Testes",
     "empresa2": "WarmUP Consulting",
     "periodo2": "2023 - 2024",
@@ -42,7 +43,7 @@
     "descricao2_3": "Criação e manutenção de casos de teste",
     "descricao2_4": "Alinhamentos estratégicos junto ao time de Arquitetura de Software",
     "descricao2_5": "Resolução de problemas com suporte global",
-    
+
     "cargo3": "Analista de Qualidade de Software Jr",
     "empresa3": "Novigi Solution",
     "periodo3": "2021 - 2022",
@@ -59,20 +60,20 @@
     "testes_2": "Automação de Testes",
     "testes_3": "Testes de Regressão",
     "testes_4": "Testes de Usabilidade",
-    
+
     "categoria_ferramentas": "Ferramentas",
     "ferramentas_1": "Selenium",
     "ferramentas_2": "Azure Devops",
     "ferramentas_3": "Playwright",
     "ferramentas_4": "Postman",
     "ferramentas_5": "Figma",
-    
+
     "categoria_metodologias": "Metodologias",
     "metodologias_1": "Scrum",
     "metodologias_2": "Kanban",
     "metodologias_3": "BDD",
     "metodologias_4": "TDD",
-    
+
     "categoria_soft": "Soft Skills",
     "soft_1": "Comunicação",
     "soft_2": "Trabalho em Equipe",
@@ -86,13 +87,13 @@
     "projeto1_tag1": "Selenium",
     "projeto1_tag2": "Java",
     "projeto1_tag3": "TestNG",
-    
+
     "projeto2_titulo": "Design e Prototipagem",
     "projeto2_descricao": "UX Research / UI e Prototipagem de site no Figma para com foco na experiência do usuário e usabilidade.",
     "projeto2_tag1": "UX/UI",
     "projeto2_tag2": "Figma",
     "projeto2_tag3": "Prototyping",
-    
+
     "projeto3_titulo": "Hell Clock Builder",
     "projeto3_descricao": "Condução de testes identificando pontos de melhoria na experiência do usuário, estudo de personas, product ownership, planejamento e MVP."
   },
@@ -122,11 +123,11 @@
     "recomendacao1_texto": "Vladmir tem clareza de visão e suas opiniões são sempre muito assertivas. Sua participação nos projetos ajuda a descobrir antecipadamente situacoes não previstas e discutidas, evitando riscos financeiros e riscos de prazo. Apoia tambem fortemente junto aos desenvolvedores visando obter códigos de qualidade e melhores práticas de desenvolvimento. Sem nenhuma dúvida trata-se de um profissional diferenciado e acima da média do mercado.",
     "recomendacao1_nome": "Sergio Oliveira",
     "recomendacao1_cargo": "Executivo de TI, Crefisa",
-    
+
     "recomendacao2_texto": "\"Trabalhar com o Vladmir foi uma experiência enriquecedora. Sua abordagem metódica para testes e sua compreensão profunda da experiência do usuário trouxeram uma nova perspectiva para nossa equipe. Ele é um verdadeiro defensor da qualidade em todos os aspectos.\"",
     "recomendacao2_nome": "Julio Cesar Nietto",
     "recomendacao2_cargo": "Coordenador de QA, Riachuelo",
-    
+
     "recomendacao3_texto": "\"O conhecimento técnico do Vladmir combinado com sua paixão por jogos traz uma perspectiva única para os projetos. Ele entende profundamente como criar experiências de usuário envolventes e garantir que cada interação seja perfeita.\"",
     "recomendacao3_nome": "Mariana Costa",
     "recomendacao3_cargo": "UX Designer na Novigi Solution"
