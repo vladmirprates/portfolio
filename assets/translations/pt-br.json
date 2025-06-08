@@ -114,13 +114,13 @@
   },
   "recomendacoes": {
     "titulo": "Recomendações",
-    "recomendacao1_texto": "\"Vladmir é um profissional excepcional em QA. Sua atenção aos detalhes e capacidade de identificar problemas antes que afetem os usuários finais é impressionante. Ele não apenas encontra bugs, mas também sugere melhorias que elevam a qualidade do produto.\"",
-    "recomendacao1_nome": "Ana Silva",
-    "recomendacao1_cargo": "Tech Lead na GFT Technologies",
+    "recomendacao1_texto": "Vladmir tem clareza de visão e suas opiniões são sempre muito assertivas. Sua participação nos projetos ajuda a descobrir antecipadamente situacoes não previstas e discutidas, evitando riscos financeiros e riscos de prazo. Apoia tambem fortemente junto aos desenvolvedores visando obter códigos de qualidade e melhores práticas de desenvolvimento. Sem nenhuma dúvida trata-se de um profissional diferenciado e acima da média do mercado.",
+    "recomendacao1_nome": "Sergio Oliveira",
+    "recomendacao1_cargo": "Executivo de TI, Crefisa",
     
     "recomendacao2_texto": "\"Trabalhar com o Vladmir foi uma experiência enriquecedora. Sua abordagem metódica para testes e sua compreensão profunda da experiência do usuário trouxeram uma nova perspectiva para nossa equipe. Ele é um verdadeiro defensor da qualidade em todos os aspectos.\"",
-    "recomendacao2_nome": "Carlos Mendes",
-    "recomendacao2_cargo": "Product Owner na WarmUP Consulting",
+    "recomendacao2_nome": "Julio Cesar Nietto",
+    "recomendacao2_cargo": "Coordenador de QA, Riachuelo",
     
     "recomendacao3_texto": "\"O conhecimento técnico do Vladmir combinado com sua paixão por jogos traz uma perspectiva única para os projetos. Ele entende profundamente como criar experiências de usuário envolventes e garantir que cada interação seja perfeita.\"",
     "recomendacao3_nome": "Mariana Costa",
@@ -138,7 +138,6 @@
   "footer": {
     "subtitulo": "Quality Assurance & Games Enthusiast",
     "links_rapidos": "Links Rápidos",
-    "plataformas_jogos": "Plataformas de Jogos",
     "copyright": "© 2024 Vladmir Prates. Todos os direitos reservados."
   },
   "idioma": {

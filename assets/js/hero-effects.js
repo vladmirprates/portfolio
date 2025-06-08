@@ -29,28 +29,30 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.startTypingEffect = function () {
-    window.clearTypingEffect(); // Limpa qualquer timeout anterior antes de iniciar
+    window.clearTypingEffect();
 
     const subtitle = document.querySelector(".hero-text p");
     if (subtitle) {
-      // Obtenha o texto original do elemento, não do conteúdo HTML, para evitar tags
-      const originalText =
-        subtitle.getAttribute("data-original-text") || subtitle.textContent;
-      subtitle.setAttribute("data-original-text", originalText); // Armazena o texto original
+      // SEMPRE usa o textContent atualizado, não o atributo
+      const currentText = subtitle.textContent;
+
+      // Atualiza o data-original-text com o texto atual
+      subtitle.setAttribute("data-original-text", currentText);
+
       subtitle.textContent = "";
       let charIndex = 0;
+
       const typeWriter = () => {
-        if (charIndex < originalText.length) {
-          subtitle.textContent += originalText.charAt(charIndex);
+        if (charIndex < currentText.length) {
+          subtitle.textContent += currentText.charAt(charIndex);
           charIndex++;
           typingTimeoutId = setTimeout(typeWriter, 50);
         } else {
-          typingTimeoutId = null; // Limpa o ID do timeout quando a digitação termina
+          typingTimeoutId = null;
         }
       };
-      typingTimeoutId = setTimeout(() => {
-        typeWriter();
-      }, 1000);
+
+      typingTimeoutId = setTimeout(typeWriter, 1000);
     }
   };
 });
