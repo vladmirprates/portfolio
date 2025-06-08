@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
+
   // Efeito partículas
   const heroParticles = document.querySelector(".hero-particles");
   if (heroParticles) {
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       };
 
-      typingTimeoutId = setTimeout(typeWriter, 1000);
+      typingTimeoutId = setTimeout(typeWriter, 300);
     }
   };
 });
