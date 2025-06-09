@@ -926,6 +926,9 @@ nav ul li a:hover i {
   margin-bottom: 20px;
 }
 @media (max-width: 768px) {
+  .recomendacoes-titulo {
+    font-size: 1.7rem;
+  }
   .habilidades-container {
     grid-template-columns: 1fr;
     gap: 16px;
