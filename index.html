@@ -70,34 +70,71 @@
       </div>
     </header>
     <!-- Seção Hero -->
-    <section id="hero" class="hero-section">
-      <div class="hero-particles"></div>
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h2 data-i18n="hero.titulo">
-              Software Quality Assurance & Games Enthusiast
-            </h2>
-            <p data-i18n="hero.subtitulo">Transformando ideias em experiências de qualidade</p>
+<section id="hero" class="hero-section">
+  <!-- Fundo com partículas e grid -->
+  <div class="grid-background"></div>
+  <div class="particles" id="particles"></div>
+  
+  <div class="container">     
+      <!-- Terminal animado -->
+      <div class="terminal-container">
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <div class="terminal-button close"></div>
+              <div class="terminal-button minimize"></div>
+              <div class="terminal-button maximize"></div>
+            </div>
+            <div class="terminal-title">vladmir_prates.sh</div>
           </div>
-          <div class="hero-buttons">
-            <a href="#projetos" class="botao-primario">
-              <i class="fas fa-code"></i
-              ><span data-i18n="hero.botao_projetos"> Ver Projetos </span>
-            </a>
-            <a href="#contato" class="botao-secundario">
-              <i class="fas fa-envelope"></i
-              ><span data-i18n="hero.botao_contato"> Contato </span>
-            </a>
+          <div class="terminal-content" id="terminal-content">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-text" id="terminal-line-1">Inicializando sistema...</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-text" id="terminal-line-2">Carregando módulos de QA e Gaming...</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-text" id="terminal-line-3">Verificando experiência e habilidades...</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-text" id="terminal-line-4">Preparando projetos para visualização...</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-text" id="terminal-line-5">Sistema pronto! Bem-vindo ao meu portfólio.</span>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Scroll indicator -->
-      <div class="scroll-indicator">
-        <div class="mouse"><div class="wheel"></div></div>
-        <div class="arrow"></div>
+      <div class="hero-text">
+        <h2></h2>
+        <br>
+        <p data-i18n="hero.subtitulo">Transformando ideias em experiências de qualidade</p>
       </div>
-    </section>
+      <!-- Botões existentes -->
+      <div class="hero-buttons">
+        <a href="#projetos" class="botao-primario">
+          <i class="fas fa-code"></i>
+          <span data-i18n="hero.botao_projetos"> Ver Projetos </span>
+        </a>
+        <a href="#contato" class="botao-secundario">
+          <i class="fas fa-envelope"></i>
+          <span data-i18n="hero.botao_contato"> Contato </span>
+        </a>
+      </div>
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <div class="mouse"><div class="wheel"></div></div>
+    <div class="arrow"></div>
+  </div>
+</section>
     <!-- Seção Sobre Mim -->
     <section id="sobre" class="secao">
       <div class="container">
