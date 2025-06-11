@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  // Efeito partículas
+  // Particles effect on mouse move
   const heroParticles = document.querySelector(".hero-particles");
   if (heroParticles) {
     document.addEventListener("mousemove", (e) => {
@@ -10,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Efeito de parallax suave
+  // Smooth parallax effect on scroll
   const heroSection = document.querySelector(".hero-section");
   if (heroSection) {
     window.addEventListener("scroll", () => {
@@ -18,9 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Efeito de digitação no subtítulo
-  let typingTimeoutId = null; // Variável para armazenar o ID do timeout
+  // Typing effect for subtitle
+  let typingTimeoutId = null;
 
+  // Clears the typing effect timeout
   window.clearTypingEffect = function () {
     if (typingTimeoutId) {
       clearTimeout(typingTimeoutId);
@@ -28,15 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Starts the typing effect
   window.startTypingEffect = function () {
     window.clearTypingEffect();
 
     const subtitle = document.querySelector(".hero-text p");
     if (subtitle) {
-      // SEMPRE usa o textContent atualizado, não o atributo
+      // Always use the updated textContent, not the attribute
       const currentText = subtitle.textContent;
 
-      // Atualiza o data-original-text com o texto atual
+      // Update data-original-text with the current text
       subtitle.setAttribute("data-original-text", currentText);
 
       subtitle.textContent = "";
