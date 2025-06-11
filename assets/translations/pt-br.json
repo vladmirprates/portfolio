@@ -119,20 +119,45 @@
     "item5": "Apreciação por interfaces intuitivas e responsivas",
     "paragrafo2": "Esta paixão me motiva a buscar constantemente a excelência em meus projetos de QA, aplicando lições aprendidas do mundo dos jogos para melhorar a qualidade de qualquer produto digital."
   },
-  "recomendacoes": {
-    "titulo": "Recomendações",
-    "recomendacao1_texto": "Vladmir tem clareza de visão e suas opiniões são sempre muito assertivas. Sua participação nos projetos ajuda a descobrir antecipadamente situacoes não previstas e discutidas, evitando riscos financeiros e riscos de prazo. Apoia tambem fortemente junto aos desenvolvedores visando obter códigos de qualidade e melhores práticas de desenvolvimento. Sem nenhuma dúvida trata-se de um profissional diferenciado e acima da média do mercado.",
-    "recomendacao1_nome": "Sergio Oliveira",
-    "recomendacao1_cargo": "Executivo de TI",
+"recomendacoes": {
+  "titulo": "O que Dizem Sobre Mim",
 
-    "recomendacao2_texto": "\"Profissional que sabe se relacionar bem com a equipe, pontuando\nos problemas e desafios a serem vencidos. Um ótimo analista de\nQA com muito potencial de desenvolvimento. Sabe investigar,\ndocumentar e testar as tarefas do dia a dia, fazendo muito bem o\npapel de Testes Funcionais. Recomendo Vladmir Prates.\"",
-    "recomendacao2_nome": "Julio Cesar Nietto",
-    "recomendacao2_cargo": "Coordenador de QA",
+  "recomendacao1_texto": "Vladmir tem clareza de visão e suas opiniões são sempre muito assertivas. Sua participação nos projetos ajuda a descobrir antecipadamente situacoes não previstas e discutidas, evitando riscos financeiros e riscos de prazo. Apoia tambem fortemente junto aos desenvolvedores visando obter códigos de qualidade e melhores práticas de desenvolvimento. Sem nenhuma dúvida trata-se de um profissional diferenciado e acima da média do mercado.",
+  "recomendacao1_nome": "Sergio Oliveira",
+  "recomendacao1_cargo": "Executivo de TI",
 
-    "recomendacao3_texto": "\"O conhecimento técnico do Vladmir combinado com sua paixão por jogos traz uma perspectiva única para os projetos. Ele entende profundamente como criar experiências de usuário envolventes e garantir que cada interação seja perfeita.\"",
-    "recomendacao3_nome": "Mariana Costa",
-    "recomendacao3_cargo": "UX Designer"
-  },
+  "recomendacao2_texto": "Profissional que sabe se relacionar bem com a equipe, pontuando os problemas e desafios a serem vencidos. Um ótimo analista de QA com muito potencial de desenvolvimento. Sabe investigar, documentar e testar as tarefas do dia a dia, fazendo muito bem o papel de Testes Funcionais. Recomendo Vladmir Prates.",
+  "recomendacao2_nome": "Julio Cesar Nietto",
+  "recomendacao2_cargo": "Coordenador de QA",
+
+  "recomendacao3_texto": "Tive o prazer de trabalhar com Vladmir em um Projeto de Implantação do Salesforce, onde ele atuou na posição de QA. Desde o início, demonstrou ser um profissional extremamente proativo e comprometido com a qualidade das entregas, sempre atento aos detalhes e garantindo que os processos fossem seguidos da melhor forma possível. Além de sua excelência técnica, um dos seus grandes diferenciais foi o posicionamento claro e objetivo diante das decisões tomadas no projeto, sempre com o foco em preservar o alinhamento do time e evitar impactos negativos nas entregas. Essa postura foi essencial para manter a equipe bem informada e o projeto no caminho certo.",
+  "recomendacao3_nome": "Leonardo Cesar",
+  "recomendacao3_cargo": "Consultor Salesforce",
+
+  "recomendacao4_texto": "O Vladmir é um profissional muito competente, dedicado e sempre aberto a novos desafios. Sempre disposto a ajudar, compartilhar conhecimento e aprender com todos. Tem um aprendizado muito rápido e se preocupa com a experiência do usuário dedicando-se sempre ao melhor nível de entrega nos projetos em que atua.",
+  "recomendacao4_nome": "Willian Ramos",
+  "recomendacao4_cargo": "Analista de Testes",
+
+  "recomendacao5_texto": "Trabalhei com o Vladmir em um projeto para a Riachuelo, o considero um ótimo profissional, com excelente relação interpessoal, contínua preocupação com seu desenvolvimento e sempre com uma visão muito prática e descomplicada de processos. Recomendo fortemente seu trabalho!",
+  "recomendacao5_nome": "Lucas Gois",
+  "recomendacao5_cargo": "Analista de Testes Automatizados Sênior",
+
+  "recomendacao6_texto": "Tive a honra de atuar ao lado do Vladmir em um projeto de elevada complexidade, de inovação disruptiva e que irá contribuir para a mudança na matriz energética e forma de comercialização desse ativo fundamental à sociedade. Vladmir, sempre sereno e equilibrado, trouxe razão a questões acaloradas e quality by design ao produto. A quem vir esta recomendação, saiba que ter o Vladmir no time é integrar competências humanas e técnicas numa só pessoa, que recomendo de olhos fechados.",
+  "recomendacao6_nome": "Erika Ferrari",
+  "recomendacao6_cargo": "Lean-Agile Governance",
+
+  "recomendacao7_texto": "Um profissional muito bom, aprendeu rápido o negócio, que por si só não é tão simples. Propôs mudanças e soube lidar tanto com fatores positivos e negativos. Se posicionou e se adaptou junto do negócio e das mudanças dos times.",
+  "recomendacao7_nome": "Marcel Mendonça Grilo",
+  "recomendacao7_cargo": "System Manager",
+
+  "recomendacao8_texto": "Trabalhei com o Vladmir em iniciativas estratégicas para o Riachuelo Marketplace, e destaco as seguintes skills como pontos fortes do seu perfil profissional: facilidade na absorção de conhecimento (tanto técnico, quanto sobre o negócio); ownership (comprometido e dedicado com a qualidade da entrega); trabalho em equipe;",
+  "recomendacao8_nome": "Rodrigo Victor",
+  "recomendacao8_cargo": "Product Manager",
+
+  "recomendacao9_texto": "Tive a grande oportunidade de trabalhar com o Vlad como colega de equipe durante alguns meses. Desde o primeiro momento o Vlad se mostrou uma pessoa extremamente colaborativa, querendo conhecer e participar ativamente dos processos do time. É uma pessoa comprometida que se preocupa com a qualidade do trabalho da equipe e com a entrega de valor ao cliente final, é criativo diante imprevistos e tem facilidade no aprendizado de novas ferramentas e processos. É um grande profissional!!!",
+  "recomendacao9_nome": "Gabriel Brandão",
+  "recomendacao9_cargo": "Desenvolvedor de Sistemas Sênior"
+},
   "contato": {
     "titulo": "Entre em Contato",
     "info": "Informações de Contato",

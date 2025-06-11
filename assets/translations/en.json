@@ -119,19 +119,44 @@
     "item5": "Appreciation for intuitive and responsive interfaces",
     "paragrafo2": "This passion motivates me to constantly seek excellence in my QA projects, applying lessons learned from the gaming world to improve the quality of any digital product."
   },
-  "recomendacoes": {
+"recomendacoes": {
     "titulo": "Recommendations",
-    "recomendacao1_texto": "Vladmir has a clear vision and his insights are always very assertive. His participation in projects helps identify unforeseen and undiscussed situations in advance, avoiding financial and scheduling risks. He also strongly supports developers in pursuing high-quality code and best development practices. Without a doubt, he is an outstanding professional, well above the market average.",
+
+    "recomendacao1_texto": "Vladmir has a clear vision, and his opinions are always very assertive. His participation in projects helps to identify unforeseen situations in advance, avoiding financial and deadline risks. He also strongly supports developers in obtaining quality code and following best development practices. Without a doubt, he is a distinguished professional above the market average.",
     "recomendacao1_nome": "Sergio Oliveira",
     "recomendacao1_cargo": "IT Executive",
 
-    "recomendacao2_texto": "\"Working with Vladmir was an enriching experience. His methodical approach to testing and deep understanding of user experience brought a new perspective to our team. He is a true advocate for quality in every aspect.\"",
+    "recomendacao2_texto": "A professional who knows how to relate well with the team, highlighting problems and challenges to be overcome. A great QA analyst with a lot of development potential. He knows how to investigate, document, and test daily tasks, performing the Functional Testing role very well. I recommend Vladmir Prates.",
     "recomendacao2_nome": "Julio Cesar Nietto",
     "recomendacao2_cargo": "QA Coordinator",
 
-    "recomendacao3_texto": "\"Vladmir's technical knowledge combined with his passion for games brings a unique perspective to projects. He deeply understands how to create engaging user experiences and ensure that every interaction is perfect.\"",
-    "recomendacao3_nome": "Mariana Costa",
-    "recomendacao3_cargo": "UX Designer"
+    "recomendacao3_texto": "I had the pleasure of working with Vladmir on a Salesforce Implementation Project, where he served as QA. From the beginning, he proved to be an extremely proactive professional, committed to the quality of deliverables, always attentive to detail, and ensuring processes were properly followed. In addition to his technical excellence, one of his great strengths was his clear and objective positioning regarding project decisions, always focused on keeping the team aligned and avoiding negative impacts. This approach was essential to keep the team well-informed and the project on track.",
+    "recomendacao3_nome": "Leonardo Cesar",
+    "recomendacao3_cargo": "Salesforce Consultant",
+
+    "recomendacao4_texto": "Vladmir is a very competent, dedicated professional who is always open to new challenges. He is always willing to help, share knowledge, and learn from everyone. He learns quickly and cares about the user experience, always striving for the highest level of delivery in the projects he works on.",
+    "recomendacao4_nome": "Willian Ramos",
+    "recomendacao4_cargo": "Test Analyst",
+
+    "recomendacao5_texto": "I worked with Vladmir on a project for Riachuelo. I consider him an excellent professional, with great interpersonal skills, continuous concern for his development, and always with a very practical and straightforward view of processes. I highly recommend his work!",
+    "recomendacao5_nome": "Lucas Gois",
+    "recomendacao5_cargo": "Senior Automated Testing Analyst",
+
+    "recomendacao6_texto": "I had the honor of working alongside Vladmir on a highly complex project with disruptive innovation, which will contribute to changes in the energy matrix and how this fundamental asset is commercialized. Vladmir, always calm and balanced, brought reason to heated discussions and quality by design to the product. To anyone reading this recommendation: having Vladmir on your team means integrating human and technical skills in one person—I recommend him with my eyes closed.",
+    "recomendacao6_nome": "Erika Ferrari",
+    "recomendacao6_cargo": "Lean-Agile Governance",
+
+    "recomendacao7_texto": "A very good professional, he quickly learned the business, which in itself is not simple. He proposed changes and knew how to deal with both positive and negative factors. He positioned himself and adapted alongside the business and changing teams.",
+    "recomendacao7_nome": "Marcel Mendonça Grilo",
+    "recomendacao7_cargo": "System Manager",
+
+    "recomendacao8_texto": "I worked with Vladmir on strategic initiatives for Riachuelo Marketplace, and I highlight the following skills as his professional strengths:\n- quick knowledge absorption (both technical and business-related);\n- ownership (committed and dedicated to delivery quality);\n- teamwork.",
+    "recomendacao8_nome": "Rodrigo Victor",
+    "recomendacao8_cargo": "Product Manager",
+
+    "recomendacao9_texto": "I had the great opportunity to work with Vlad as a team colleague for a few months. From the very beginning, Vlad showed himself to be an extremely collaborative person, eager to understand and actively participate in the team’s processes. He is a committed individual who cares about the quality of the team’s work and the delivery of value to the end customer. He is creative in the face of unforeseen events and learns new tools and processes easily. A great professional!",
+    "recomendacao9_nome": "Gabriel Brandão",
+    "recomendacao9_cargo": "Senior Software Developer"
   },
   "contato": {
     "titulo": "Get in Touch",
