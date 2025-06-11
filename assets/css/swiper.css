@@ -1,3 +1,6 @@
+/* =========================
+    Swiper Wrapper
+    ========================= */
 .swiper-wrapper {
   max-width: auto;
   padding: 20px 10px;
@@ -5,6 +8,9 @@
   overflow: visible;
 }
 
+/* =========================
+    Container
+    ========================= */
 #recomendacoes > .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,7 +18,9 @@
   overflow: visible;
 }
 
-/* Configurações dos slides */
+/* =========================
+    Slides
+    ========================= */
 #recomendacoes .swiper-slide {
   display: flex;
   flex-direction: column;
@@ -24,7 +32,7 @@
   flex-shrink: 0;
   padding: 20px;
   min-height: 300px;
-  transition: transform 0.3s ease; /* Adicionando transição suave */
+  transition: transform 0.3s ease;
 }
 
 #recomendacoes .recomendacao {
@@ -38,7 +46,9 @@
   transform: translateY(-5px);
 }
 
-/* Configurações da paginação */
+/* =========================
+    Paginação
+    ========================= */
 .swiper-pagination-bullet {
   height: 15px !important;
   width: 15px !important;
@@ -50,7 +60,9 @@
   opacity: 1 !important;
 }
 
-/* Configurações dos botões de navegação */
+/* =========================
+    Botões de Navegação
+    ========================= */
 .swiper-button-prev,
 .swiper-button-next {
   color: var(--cor-primaria) !important;
@@ -63,7 +75,7 @@
   z-index: 10 !important;
 }
 
-/* Posicionamento específico dos botões */
+/* Posição dos botões */
 .swiper-button-prev {
   left: 10px !important;
 }
@@ -72,7 +84,7 @@
   right: 10px !important;
 }
 
-/* Efeitos hover */
+/* Efeito hover nos botões */
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   color: var(--cor-destaque) !important;
@@ -86,36 +98,37 @@
   font-weight: bold !important;
 }
 
-/* Responsividade */
+/* =========================
+    Responsividade
+    ========================= */
 @media (max-width: 768px) {
   .swiper-wrapper {
-    margin: 0 20px 35px;
+     margin: 0 20px 35px;
   }
-  
+
   #recomendacoes > .container {
-    padding: 0 10px;
+     padding: 0 10px;
   }
-  
+
   .swiper-button-prev,
   .swiper-button-next {
-    display: none !important;
+     display: none !important;
   }
-  
+
   #recomendacoes .swiper-slide {
-    padding: 15px;
-    min-height: 250px;
+     padding: 15px;
+     min-height: 250px;
   }
 }
 
 @media (max-width: 480px) {
   .swiper-wrapper {
-    margin: 0 10px 35px;
-    padding: 15px 5px;
+     margin: 0 10px 35px;
+     padding: 15px 5px;
   }
-  
+
   #recomendacoes .swiper-slide {
-    padding: 10px;
-    min-height: 200px;
+     padding: 10px;
+     min-height: 200px;
   }
 }
-

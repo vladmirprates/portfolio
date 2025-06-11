@@ -1,6 +1,6 @@
-/* ================================================================
-  Paleta de Cores dos Temas
-  ================================================================ */
+/* ==================================================================
+  VARIÁVEIS DE CORES DOS TEMAS
+  ================================================================== */
 
 /* Tema Padrão (Default) */
 :root,
@@ -55,7 +55,7 @@
   --cor-hover-contato: #ffc107;
 }
 
-/* Tema Dark Fire - Escuro com Vermelho e Laranja */
+/* Tema Dark Fire - Escuro, Vermelho e Laranja */
 :root[data-theme="dark-fire"] {
   --cor-primaria: #ff5722;
   --cor-secundaria: #1a0e0b;
@@ -107,9 +107,9 @@
   --cor-hover-contato: #b9a150;
 }
 
-/* ================================================================
-  Estilos Gerais para Todos os Temas
-  ================================================================ */
+/* ==================================================================
+  ESTILOS GERAIS PARA TODOS OS TEMAS
+  ================================================================== */
 
 body,
 body * {
@@ -120,12 +120,7 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1, h2, h3, h4, h5, h6,
 .botao-primario,
 .botao-secundario,
 .categoria-habilidade,
@@ -140,7 +135,6 @@ h6,
 nav ul li a:hover {
   color: var(--cor-hover-menu);
 }
-
 nav ul li a i {
   color: var(--cor-destaque);
 }
@@ -151,7 +145,6 @@ nav ul li a i {
   color: var(--cor-secundaria);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-
 .back-to-top:hover {
   background: var(--cor-destaque);
   transform: translateY(-5px);
@@ -166,7 +159,6 @@ nav ul li a i {
   border-color: var(--cor-destaque);
   background: rgba(255, 255, 255, 0.1);
 }
-
 .social-icon:hover {
   background: var(--cor-hover-contato);
   color: #fff;
@@ -174,11 +166,11 @@ nav ul li a i {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* ================================================================
-  Ajustes Específicos para Temas
-  ================================================================ */
+/* ==================================================================
+  AJUSTES ESPECÍFICOS PARA TEMAS
+  ================================================================== */
 
-/* -------- Tema Fantasy -------- */
+/* ---------- Tema Fantasy ---------- */
 .theme-fantasy {
   color: var(--cor-texto-escuro);
 }
@@ -196,7 +188,7 @@ nav ul li a i {
    radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
 }
 
-/* -------- Tema Dark Fire -------- */
+/* ---------- Tema Dark Fire ---------- */
 .theme-dark-fire {
   color: var(--cor-texto);
 }
@@ -210,12 +202,8 @@ nav ul li a i {
 .theme-dark-fire .swiper-slide {
   background-color: var(--cor-fundo-alternada) !important;
 }
-.theme-dark-fire h1,
-.theme-dark-fire h2,
-.theme-dark-fire h3,
-.theme-dark-fire h4,
-.theme-dark-fire h5,
-.theme-dark-fire h6 {
+.theme-dark-fire h1, .theme-dark-fire h2, .theme-dark-fire h3,
+.theme-dark-fire h4, .theme-dark-fire h5, .theme-dark-fire h6 {
   color: var(--cor-texto-claro);
 }
 .theme-dark-fire .secao:not(.secao-alternada) {
@@ -296,7 +284,7 @@ nav ul li a i {
 .theme-dark-fire footer::before {
   background: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque), var(--cor-destaque-alt), var(--cor-primaria));
 }
-/* Efeito de fogo na hero */
+/* Efeito de fogo */
 .theme-dark-fire .hero-content {
   position: relative;
   overflow: hidden;
@@ -314,14 +302,8 @@ nav ul li a i {
   z-index: -1;
 }
 @keyframes fire-pulse {
-  0% {
-   opacity: 0.5;
-   transform: translateY(0);
-  }
-  100% {
-   opacity: 0.8;
-   transform: translateY(-10px);
-  }
+  0% { opacity: 0.5; transform: translateY(0);}
+  100% { opacity: 0.8; transform: translateY(-10px);}
 }
 .theme-dark-fire .detalhes .skill-tag {
   background-color: var(--cor-primaria);
@@ -332,7 +314,7 @@ nav ul li a i {
   box-shadow: 0 6px 10px rgba(255, 87, 34, 0.3);
 }
 
-/* -------- Tema Leaf -------- */
+/* ---------- Tema Leaf ---------- */
 .theme-leaf {
   color: var(--cor-texto);
 }
@@ -345,12 +327,8 @@ nav ul li a i {
 .theme-leaf .swiper-slide {
   background-color: var(--cor-fundo-alternada) !important;
 }
-.theme-leaf h1,
-.theme-leaf h2,
-.theme-leaf h3,
-.theme-leaf h4,
-.theme-leaf h5,
-.theme-leaf h6 {
+.theme-leaf h1, .theme-leaf h2, .theme-leaf h3,
+.theme-leaf h4, .theme-leaf h5, .theme-leaf h6 {
   color: var(--cor-texto-claro);
 }
 .theme-leaf .secao:not(.secao-alternada) h2 {
