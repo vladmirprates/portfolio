@@ -2,640 +2,728 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Portfólio - Vladmir Prates</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
-
-      :root {
-        --cor-primaria: #7e57c2;
-        --cor-secundaria: #1a1e2e;
-        --cor-destaque: #00e676;
-        --cor-destaque-alt: #ff3d00;
-        --cor-texto: #e0e0e0;
-        --cor-texto-escuro: #333;
-        --cor-texto-claro: #f9f9f9;
-        --cor-fundo: #f9f9f9;
-        --cor-fundo-alternada: #1a1e2e;
-        --cor-fundo-escuro: #121420;
-        --cor-borda: #444;
-        --fonte-principal: "Roboto", sans-serif;
-        --fonte-titulos: "Montserrat", sans-serif;
-        --fonte-tech: "Orbitron", sans-serif;
-        --sombra-suave: 0 5px 15px rgba(0, 0, 0, 0.2);
-        --sombra-neon: 0 0 10px rgba(126, 87, 194, 0.8);
-        --sombra-neon-verde: 0 0 15px rgba(0, 230, 118, 0.8);
-        --transicao-padrao: all 0.3s ease;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: var(--fonte-principal);
-        background-color: var(--cor-fundo-escuro);
-        color: var(--cor-texto-claro);
-        overflow: hidden;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-      }
-
-      .loading-container {
-        width: 90%;
-        max-width: 800px;
-        text-align: center;
-        z-index: 10;
-        padding: 1rem;
-        position: relative;
-      }
-
-      .terminal {
-        background-color: rgba(18, 20, 32, 0.9);
-        border-radius: 10px;
-        padding: 1.5rem;
-        box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
-        border: 1px solid var(--cor-primaria);
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 2rem;
-      }
-
-      .terminal::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 30px;
-        background: linear-gradient(
-          90deg,
-          var(--cor-primaria),
-          var(--cor-destaque)
-        );
-        border-radius: 10px 10px 0 0;
-      }
-
-      .terminal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
-        padding-top: 0.5rem;
-      }
-
-      .terminal-title {
-        font-family: var(--fonte-tech);
-        font-size: 1rem;
-        color: var(--cor-texto-claro);
-        margin-left: 1rem;
-      }
-
-      .terminal-buttons {
-        display: flex;
-        gap: 8px;
-        margin-right: 1rem;
-      }
-
-      .terminal-button {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-      }
-
-      .terminal-button.close {
-        background-color: #ff5f56;
-      }
-
-      .terminal-button.minimize {
-        background-color: #ffbd2e;
-      }
-
-      .terminal-button.maximize {
-        background-color: #27c93f;
-      }
-
-      .terminal-content {
-        font-family: "Courier New", monospace;
-        text-align: left;
-        height: 180px;
-        overflow: hidden;
-        font-size: 0.85rem;
-      }
-
-      .terminal-line {
-        display: flex;
-        margin-bottom: 0.5rem;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-
-      .terminal-line.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .terminal-prompt {
-        color: var(--cor-destaque);
-        margin-right: 0.5rem;
-        flex-shrink: 0;
-      }
-
-      .terminal-text {
-        color: var(--cor-texto-claro);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        border-right: 0.15em solid var(--cor-destaque);
-        width: 100%;
-        animation: none;
-      }
-
-      /* Animação de digitação */
-      .terminal-text.typing {
-        animation: typing 3s steps(40, end) forwards,
-          blink-caret 0.75s step-end infinite;
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: var(--cor-destaque);
-        }
-      }
-
-      .progress-container {
-        width: 100%;
-        height: 10px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 5px;
-        margin: 2rem 0;
-        overflow: hidden;
-      }
-
-      .progress-bar {
-        height: 100%;
-        width: 0;
-        background: linear-gradient(
-          90deg,
-          var(--cor-primaria),
-          var(--cor-destaque)
-        );
-        border-radius: 5px;
-        transition: width 0.5s ease;
-      }
-
-      .language-selector {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .language-option {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        opacity: 0.6;
-        transition: all 0.3s ease;
-      }
-
-      .language-option:hover,
-      .language-option.active {
-        opacity: 1;
-        transform: translateY(-5px);
-      }
-
-      .language-flag {
-        width: 40px;
-        height: 28px;
-        border-radius: 5px;
-        margin-bottom: 0.5rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      .language-option:hover .language-flag,
-      .language-option.active .language-flag {
-        box-shadow: 0 0 15px var(--cor-destaque);
-      }
-
-      .language-name {
-        font-family: var(--fonte-principal);
-        font-size: 0.8rem;
-        color: var(--cor-texto-claro);
-      }
-
-      .enter-site-btn {
-        background: linear-gradient(135deg, var(--cor-primaria), #5e35b1);
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-family: var(--fonte-principal);
-        font-size: 0.9rem;
-        cursor: pointer;
-        margin-top: 2rem;
-        transition: all 0.3s ease;
-        opacity: 0;
-        transform: translateY(20px);
-        box-shadow: 0 0 20px rgba(126, 87, 194, 0.5);
-        display: none;
-      }
-
-      .enter-site-btn.visible {
-        opacity: 1;
-        transform: translateY(0);
-        display: inline-block;
-      }
-
-      .enter-site-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 0 30px rgba(126, 87, 194, 0.7);
-        background: linear-gradient(135deg, #5e35b1, var(--cor-primaria));
-      }
-
-      /* Partículas de fundo */
-      .particles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 1;
-      }
-
-      .particle {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background-color: var(--cor-primaria);
-        border-radius: 50%;
-        opacity: 0.5;
-        animation: float 15s infinite linear;
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0) translateX(0) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-1000px) translateX(100px) rotate(360deg);
-          opacity: 0;
-        }
-      }
-
-      /* Grid de fundo */
-      .grid-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(
-            rgba(126, 87, 194, 0.1) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, rgba(126, 87, 194, 0.1) 1px, transparent 1px);
-        background-size: 40px 40px;
-        z-index: 0;
-        opacity: 0.5;
-        animation: 20s linear infinite grid-shift;
-      }
-
-      @keyframes grid-shift {
-        0% {
-          background-position: 0 0;
-        }
-        100% {
-          background-position: 40px 40px;
-        }
-      }
-
-      /* Overlay de transição */
-      .transition-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--cor-fundo-escuro);
-        z-index: 100;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.5s ease;
-      }
-
-      .transition-overlay.active {
-        opacity: 1;
-        pointer-events: all;
-      }
-
-      /* Responsividade Desktop */
-      @media (min-width: 768px) {
-        .loading-container {
-          width: 80%;
-          padding: 2rem;
-        }
-
-        .terminal {
-          padding: 2rem;
-        }
-
-        .terminal-title {
-          font-size: 1.2rem;
-        }
-
-        .terminal-buttons {
-          gap: 8px;
-        }
-
-        .terminal-button {
-          width: 12px;
-          height: 12px;
-        }
-
-        .terminal-content {
-          height: 200px;
-          font-size: 1rem;
-        }
-
-        .language-selector {
-          gap: 1.5rem;
-        }
-
-        .language-flag {
-          width: 50px;
-          height: 35px;
-        }
-
-        .language-name {
-          font-size: 0.9rem;
-        }
-
-        .enter-site-btn {
-          padding: 12px 30px;
-          font-size: 1rem;
-        }
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link rel="stylesheet" href="assets/css/swiper.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <!-- AOS - Animate On Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/theme-styles.css" />
+    <script src="assets/js/themes.js"></script>
   </head>
   <body>
-    <div class="grid-background"></div>
-    <div class="particles" id="particles"></div>
-
-    <div class="loading-container">
-      <div class="terminal">
-        <div class="terminal-header">
-          <div class="terminal-buttons">
-            <div class="terminal-button close"></div>
-            <div class="terminal-button minimize"></div>
-            <div class="terminal-button maximize"></div>
+    <!-- Cabeçalho -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-area">
+            <!-- Nome com linha de progresso -->
+            <div class="logo-wrapper">
+              <h1 class="logo">
+                <span class="first-name">vladmir</span
+                ><span class="highlight">_</span
+                ><span class="first-name">prates</span
+                ><span class="highlight">.sh</span>
+              </h1>
+              <!-- Linha de progresso animada -->
+              <div class="progress-line"></div>
+            </div>
+            <!-- Título profissional -->
+            <!-- <div class="titulo-profissional">
+              <span>QA Analyst</span>
+            </div> -->
           </div>
-          <div class="terminal-title">vladmir_prates.sh</div>
+          <nav>
+            <ul>
+              <li><a href="#sobre" data-i18n="nav.sobre">Sobre</a></li>
+              <li>
+                <a href="#experiencia" data-i18n="nav.experiencia"
+                  >Experiência</a
+                >
+              </li>
+              <li>
+                <a href="#habilidades" data-i18n="nav.habilidades"
+                  >Habilidades</a
+                >
+              </li>
+              <li><a href="#projetos" data-i18n="nav.projetos">Projetos</a></li>
+              <li><a href="#ux-ui" data-i18n="nav.uxui">UX/UI</a></li>
+              <li><a href="#jogos" data-i18n="nav.jogos">Jogos</a></li>
+              <li>
+                <a href="#recomendacoes" data-i18n="nav.recomendacoes"
+                  >Recomendações</a
+                >
+              </li>
+              <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="header-selectors"></div>
         </div>
-        <div class="terminal-content" id="terminal-content">
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-text" id="terminal-line-1"
-              >Inicializando sistema...</span
-            >
+      </div>
+    </header>
+    <!-- Seção Hero -->
+    <section id="hero" class="hero-section">
+      <div class="hero-particles"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h2 data-i18n="hero.titulo">
+              Software Quality Assurance & Games Enthusiast
+            </h2>
+            <p data-i18n="hero.subtitulo">Transformando ideias em experiências de qualidade</p>
           </div>
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-text" id="terminal-line-2"
-              >Carregando módulos de QA e Gaming...</span
-            >
-          </div>
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-text" id="terminal-line-3"
-              >Verificando experiência e habilidades...</span
-            >
-          </div>
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-text" id="terminal-line-4"
-              >Preparando projetos para visualização...</span
-            >
-          </div>
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-text" id="terminal-line-5"
-              >Sistema pronto! Selecione um idioma para continuar.</span
-            >
+          <div class="hero-buttons">
+            <a href="#projetos" class="botao-primario">
+              <i class="fas fa-code"></i
+              ><span data-i18n="hero.botao_projetos"> Ver Projetos </span>
+            </a>
+            <a href="#contato" class="botao-secundario">
+              <i class="fas fa-envelope"></i
+              ><span data-i18n="hero.botao_contato"> Contato </span>
+            </a>
           </div>
         </div>
       </div>
-
-      <div class="progress-container">
-        <div class="progress-bar" id="progress-bar"></div>
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <div class="mouse"><div class="wheel"></div></div>
+        <div class="arrow"></div>
       </div>
-
-      <div class="language-selector">
-        <div class="language-option active" data-lang="pt-br">
-          <img
-            src="https://flagcdn.com/w80/br.png"
-            alt="Português"
-            class="language-flag"
-          />
-          <span class="language-name">Português</span>
-        </div>
-        <div class="language-option" data-lang="en">
-          <img
-            src="https://flagcdn.com/w80/gb.png"
-            alt="English"
-            class="language-flag"
-          />
-          <span class="language-name">English</span>
+    </section>
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="secao">
+      <div class="container">
+        <h2 data-aos="fade-up" data-i18n="sobre.titulo">Sobre Mim</h2>
+        <div class="sobre-conteudo" data-aos="fade-up" data-aos-delay="100">
+          <div class="foto-perfil">
+            <img src="assets/images/profile.jpeg" class="foto-frame" alt="Foto Vladmir sentado com o notebook a frente, no fundo tem um vidro com vista para os prédios"/>
+          </div>
+          <div class="bio">
+            <p data-i18n="sobre.paragrafo1">
+              Olá! Sou um profissional de Quality Assurance apaixonado por
+              garantir a melhor experiência possível aos usuários. Com
+              experiência em testes manuais e automatizados, trabalho para
+              assegurar que cada produto atenda aos mais altos padrões de
+              qualidade.
+            </p>
+            <p data-i18n="sobre.paragrafo2">
+              Tenho grande interesse em UX/UI, sempre buscando entender como os
+              usuários interagem com os produtos para aprimorar a qualidade dos
+              testes e contribuir para uma experiência mais intuitiva e
+              eficiente.
+            </p>
+            <p data-i18n="sobre.paragrafo3">
+              Sou também um amante de jogos, o que me ajuda a entender melhor a
+              importância da experiência do usuário e da qualidade em produtos
+              interativos.
+            </p>
+            <div class="sobre-detalhes">
+              <div class="detalhe-item">
+                <i class="fas fa-briefcase"></i>
+                <span data-i18n="sobre.experiencia">4 anos de experiência em QA</span>
+              </div>
+              <div class="detalhe-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span data-i18n="sobre.formacao">Análise e Desenvolvimento de Sistemas</span>
+              </div>
+              <div class="detalhe-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-i18n="sobre.localizacao">São Paulo</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+    <!-- Seção de Experiência -->
+    <section id="experiencia" class="secao secao-alternada">
+      <div class="container">
+        <h2 data-aos="fade-up" data-i18n="experiencia.titulo">Experiência Profissional</h2>
+        <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+          <div class="experiencia-item">
+            <div class="periodo" data-i18n="experiencia.periodo1">2024 - Presente</div>
+            <div class="detalhes">
+              <h3 data-i18n="experiencia.cargo1">QA Pleno</h3>
+              <p class="empresa" data-i18n="experiencia.empresa1">GFT Technologies</p>
+              <div class="skills-tags">
+                <span class="skill-tag">Salesforce</span>
+                <span class="skill-tag" data-i18n="habilidades.testes_2">Automação de Testes</span>
+                <span class="skill-tag" data-i18n="habilidades.ferramentas_3">Playwright</span>
+                <span class="skill-tag" data-i18n="habilidades.testes_1">Testes Funcionais</span>
+              </div>
+              <ul>
+                <li data-i18n="experiencia.descricao1_1">Implementação e execução de testes automatizados</li>
+                <li data-i18n="experiencia.descricao1_2">
+                  Desenvolvimento de estratégias e execuções de teste para
+                  Salesforce
+                </li>
+                <li data-i18n="experiencia.descricao1_3">Colaboração com equipes de desenvolvimento e Negócios</li>
+                <li data-i18n="experiencia.descricao1_4">Identificação e documentação de bugs e melhorias</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experiencia-item">
+            <div class="periodo" data-i18n="experiencia.periodo2">2023 - 2024</div>
+            <div class="detalhes">
+              <h3 data-i18n="experiencia.cargo2">Automatizador de Testes</h3>
+              <p class="empresa" data-i18n="experiencia.empresa2">WarmUP Consulting</p>
+              <div class="skills-tags">
+                <span class="skill-tag" data-i18n="habilidades.testes_2">Automação de Testes</span>
+                <span class="skill-tag" data-i18n="habilidades.ferramentas_1">Selenium</span>
+                <span class="skill-tag">Azure Devops</span>
+                <span class="skill-tag">Gherkin</span>
+              </div>
+              <ul>
+                <li data-i18n="experiencia.descricao2_1">
+                  Gerenciamento do ciclo de vida dos cenários e casos de teste
+                  automatizados
+                </li>
+                <li data-i18n="experiencia.descricao2_2">
+                  Criação e gerenciamento de Pipeline de Testes Automatizados
+                </li>
+                <li data-i18n="experiencia.descricao2_3">Criação e manutenção de casos de teste</li>
+                <li data-i18n="experiencia.descricao2_4">
+                  Alinhamentos estratégicos junto ao time de Arquitetura de
+                  Software
+                </li>
+                <li data-i18n="experiencia.descricao2_5">Resolução de problemas com suporte global</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experiencia-item">
+            <div class="periodo" data-i18n="experiencia.periodo3">2021 - 2022</div>
+            <div class="detalhes">
+              <h3 data-i18n="experiencia.cargo3">Analista de Qualidade de Software Jr</h3>
+              <p class="empresa" data-i18n="experiencia.empresa3">Novigi Solution</p>
+              <div class="skills-tags">
+                <span class="skill-tag" data-i18n="habilidades.testes_1">Testes Funcionais</span>
+                <span class="skill-tag">Robot Framework</span>
+                <span class="skill-tag" data-i18n="habilidades.testes_5">Testes Mobile</span>
+                <span class="skill-tag">Postman</span>
+              </div>
+              <ul>
+                <li data-i18n="experiencia.descricao3_1">
+                  Atuação nos projetos Riachuelo Marketplace e Crefisa Tech com
+                  squads ágeis e não ágeis
+                </li>
+                <li data-i18n="experiencia.descricao3_2">
+                  Planejamento, execução e reporte de testes Web, Mobile
+                  (Android/iOS) e API com foco no usuário
+                </li>
+                <li data-i18n="experiencia.descricao3_3">
+                  Criação e manutenção de testes automatizados com Robot
+                  Framework e Python
+                </li>
+                <li data-i18n="experiencia.descricao3_4">
+                  Elaboração de cenários e casos de teste em Gherkin com foco em
+                  usabilidade, acessibilidade e confiabilidade
+                </li>
+                <li data-i18n="experiencia.descricao3_5">
+                  Participação estratégica com stakeholders, refinando critérios
+                  de aceitação e mitigando riscos
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/vladmirprates/" target="_blank" rel="noopener noreferrer" class="botao-primario">
+              <i class="fab fa-linkedin"></i>
+              <span data-i18n="experiencia.detalhes">Mais detalhes sobre as Experiências</span>
+            </a>
+        </div>
+      </div>
+    </section>
+    <!-- Seção de Habilidades -->
+    <section id="habilidades" class="secao">
+      <div class="container">
+        <h2 data-aos="fade-up" data-i18n="habilidades.titulo">Habilidades Técnicas</h2>
+        <div class="habilidades-container">
+          <div class="categoria-coluna">
+            <div
+              class="categoria-habilidade categoria-testes"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3 data-i18n="habilidades.categoria_testes">Testes</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-i18n="habilidades.testes_1">Testes Funcionais</span>
+                <span class="skill-tag" data-i18n="habilidades.testes_2">Automação de Testes</span>
+                <span class="skill-tag" data-i18n="habilidades.testes_3">Testes de Regressão</span>
+                <span class="skill-tag" data-i18n="habilidades.testes_4">Testes de Usabilidade</span>
+              </div>
+            </div>
+            <div
+              class="categoria-habilidade categoria-ferramentas"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3 data-i18n="habilidades.categoria_ferramentas">Ferramentas</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-i18n="habilidades.ferramentas_1">Selenium</span>
+                <span class="skill-tag" data-i18n="habilidades.ferramentas_2">Azure Devops</span>
+                <span class="skill-tag" data-i18n="habilidades.ferramentas_3">Playwright</span>
+                <span class="skill-tag" data-i18n="habilidades.ferramentas_4">Postman</span>
+                <span class="skill-tag" data-i18n="habilidades.ferramentas_5">Figma</span>
+              </div>
+            </div>
+          </div>
+          <div class="categoria-coluna">
+            <div
+              class="categoria-habilidade categoria-metodologias"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h3 data-i18n="habilidades.categoria_metodologias">Metodologias</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-i18n="habilidades.metodologias_1">Scrum</span>
+                <span class="skill-tag" data-i18n="habilidades.metodologias_2">Kanban</span>
+                <span class="skill-tag" data-i18n="habilidades.metodologias_3">BDD</span>
+                <span class="skill-tag" data-i18n="habilidades.metodologias_4">TDD</span>
+              </div>
+            </div>
+            <div
+              class="categoria-habilidade categoria-soft"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <h3 data-i18n="habilidades.categoria_soft">Soft Skills</h3>
+              <div class="skills-tags">
+                <span class="skill-tag" data-i18n="habilidades.soft_1">Comunicação</span>
+                <span class="skill-tag" data-i18n="habilidades.soft_2">Trabalho em Equipe</span>
+                <span class="skill-tag" data-i18n="habilidades.soft_3">Resolução de Problemas</span>
+                <span class="skill-tag" data-i18n="habilidades.soft_4">Atenção aos Detalhes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="secao secao-alternada">
+      <div class="container">
+        <h2 data-aos="fade-up" data-i18n="projetos.titulo">Projetos em Destaque</h2>
+        <div class="projetos-grid" data-aos="fade-up" data-aos-delay="100">
+          <!-- Projeto 1 -->
+           
+          <div class="projeto-card">
+          <a href="#" style="display: block; text-decoration: none; color: inherit;">
 
-      <button class="enter-site-btn" id="enter-site-btn">ENTRAR NO SITE</button>
-    </div>
+            <div class="projeto-imagem">
+              <img
+                src="assets/images/projeto1.jpg"
+                alt="Projeto de Automação de Testes Web"
+              />
+            </div>
+            <div class="projeto-info">
+              <h3 data-i18n="projetos.projeto1_titulo">Automação de Testes Web</h3>
+              <p data-i18n="projetos.projeto1_descricao">
+                Implementação de framework de automação de testes para aplicação
+                web de e-commerce, utilizando Selenium e Java.
+              </p>
+              <div class="projeto-tags">
+                <span>Selenium</span>
+                <span>Java</span>
+                <span>TestNG</span>
+              </div>
+            </div>
+          </a>
+          </div>
 
-    <div class="transition-overlay" id="transition-overlay"></div>
+          <!-- Projeto 2 -->
+          <div class="projeto-card">
+            <a href="#" style="display: block; text-decoration: none; color: inherit;">
+            <div class="projeto-imagem">
+              <img
+                src="assets/images/projeto2.jpg"
+                alt="Projeto de Design e Prototipagem no Figma"
+              />
+            </div>
+            <div class="projeto-info">
+              <h3 data-i18n="projetos.projeto2_titulo">Design e Prototipagem</h3>
+              <p data-i18n="projetos.projeto2_descricao">
+                UX Research / UI e Prototipagem de site no Figma para com foco
+                na experiência do usuário e usabilidade.
+              </p>
+              <div class="projeto-tags">
+                <span>UX/UI</span>
+                <span>Figma</span>
+                <span>Prototyping</span>
+              </div>
+            </div>
+            </a>
+          </div>
 
+          <!-- Projeto 3 -->
+          <div class="projeto-card">
+            <a href="#" style="display: block; text-decoration: none; color: inherit;">
+            <div class="projeto-imagem">
+              <img
+                src="assets/images/projeto3.jpg"
+                alt="Projeto Hell Clock Builder"
+              />
+            </div>
+            <div class="projeto-info">
+              <h3 data-i18n="projetos.projeto3_titulo">Hell Clock Builder</h3>
+              <p data-i18n="projetos.projeto3_descricao">
+                Condução de testes identificando pontos de melhoria na
+                experiência do usuário, estudo de personas, product ownership,
+                planejamento e MVP.
+              </p>
+              <div class="projeto-tags">
+                <span >QA</span>
+                <span>UX Research</span>
+                <span>Product Ownership</span>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção UX/UI -->
+    <section id="ux-ui" class="secao">
+      <div class="container">
+        <h2 data-aos="fade-up" data-i18n="uxui.titulo">Experiência com UX/UI</h2>
+        <div class="ux-ui-content" data-aos="fade-up" data-aos-delay="100">
+          <div class="ux-ui-texto">
+            <p data-i18n="uxui.paragrafo">
+              Minha experiência em Quality Assurance me proporcionou uma visão
+              única sobre a importância da experiência do usuário. Trabalhar
+              próximo a equipes de UX/UI me permitiu desenvolver habilidades
+              para identificar problemas de usabilidade e sugerir melhorias que
+              impactam positivamente a experiência final.
+            </p>
+            <h3 data-i18n="uxui.subtitulo">Contribuições para UX/UI:</h3>
+            <ul>
+              <li data-i18n="uxui.item1">Participação em sessões de teste de usabilidade</li>
+              <li data-i18n="uxui.item2">Identificação de padrões de interação problemáticos</li>
+              <li data-i18n="uxui.item3">Colaboração com designers para melhorar fluxos de usuário</li>
+              <li data-i18n="uxui.item4">Validação de protótipos e wireframes</li>
+              <li data-i18n="uxui.item5">Análise de feedback de usuários para melhorias contínuas</li>
+            </ul>
+          </div>
+          <div class="ux-ui-imagem">
+            <img
+              src="assets/images/ux-ui.jpg"
+              alt="A design I made on Figma for a Site."
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Seção Jogos -->
+    <section id="jogos" class="secao secao-alternada">
+      <div class="container">
+        <h2 data-aos="fade-up" data-i18n="jogos.titulo">Paixão por Jogos</h2>
+        <div class="jogos-content" data-aos="fade-up" data-aos-delay="100">
+          <div class="jogos-imagem">
+            <img class="jogos-imagem1" src="assets/images/gaming.jpg"
+              alt="Foto de Vladmir Prates na Gamescom, posando ao lado de uma estátua do Sonic, destacando sua paixão por jogos."
+            />
+          </div>
+          <div class="jogos-texto">
+            <p data-i18n="jogos.paragrafo1">
+              Minha paixão por jogos vai além do entretenimento - é uma fonte de
+              inspiração para meu trabalho em QA. Os jogos representam um dos
+              ambientes mais desafiadores para testes, combinando complexidade
+              técnica com altas expectativas de experiência do usuário.
+            </p>
+            <h3 data-i18n="jogos.subtitulo">Como minha paixão por jogos influencia meu trabalho:</h3>
+            <ul>
+              <li data-i18n="jogos.item1">
+                Compreensão profunda da importância da experiência do usuário
+              </li>
+              <li data-i18n="jogos.item2">Atenção aos detalhes que podem impactar a imersão</li>
+              <li data-i18n="jogos.item3">Valorização do equilíbrio entre funcionalidade e diversão</li>
+              <li data-i18n="jogos.item4">Reconhecimento da importância de testes rigorosos</li>
+              <li data-i18n="jogos.item5">Apreciação por interfaces intuitivas e responsivas</li>
+            </ul>
+            <br>
+            <p data-i18n="jogos.paragrafo2">
+              Esta paixão me motiva a buscar constantemente a excelência em meus
+              projetos de QA, aplicando lições aprendidas do mundo dos jogos
+              para melhorar a qualidade de qualquer produto digital.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Seção de recomendacoes -->
+    <section id="recomendacoes" class="secao">
+      <div class="container swiper">
+        <h2 data-aos="fade-up" data-i18n="recomendacoes.titulo" class="recomendacoes-titulo">O que Dizem Sobre Mim</h2>
+        <div class="swiper-wrapper" data-aos="fade-up" data-aos-delay="200">
+          <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao1_texto">
+                "Vladmir tem clareza de visão e suas opiniões são sempre muito
+                assertivas. Sua participação nos projetos ajuda a descobrir
+                antecipadamente situacoes não previstas e discutidas, evitando
+                riscos financeiros e riscos de prazo. Apoia tambem fortemente
+                junto aos desenvolvedores visando obter códigos de qualidade e
+                melhores práticas de desenvolvimento. Sem nenhuma dúvida
+                trata-se de um profissional diferenciado e acima da média do
+                mercado."
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3 data-i18n="recomendacoes.recomendacao1_nome">Sergio Oliveira</h3>
+                <h4 data-i18n="recomendacoes.recomendacao1_cargo">Executivo de TI</h4>
+              </div>
+            </div>
+          </div>
+          <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao2_texto">
+                "Profissional que sabe se relacionar bem com a equipe, pontuando
+                os problemas e desafios a serem vencidos. Um ótimo analista de
+                QA com muito potencial de desenvolvimento. <br>Sabe investigar,
+                documentar e testar as tarefas do dia a dia, fazendo muito bem o
+                papel de Testes Funcionais. Recomendo Vladmir Prates."
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3 data-i18n="recomendacoes.recomendacao2_nome">Julio Cesar Nietto</h3>
+                <h4 data-i18n="recomendacoes.recomendacao2_cargo">Coordenador de QA</h4>
+              </div>
+            </div>
+          </div>
+            <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao3_texto">
+                "Tive o prazer de trabalhar com Vladmir em um Projeto de Implantação do Salesforce, onde ele atuou na posição de QA. Desde o início, demonstrou ser um profissional extremamente proativo e comprometido com a qualidade das entregas, sempre atento aos detalhes e garantindo que os processos fossem seguidos da melhor forma possível.
+
+<br>Além de sua excelência técnica, um dos seus grandes diferenciais foi o posicionamento claro e objetivo diante das decisões tomadas no projeto, sempre com o foco em preservar o alinhamento do time e evitar impactos negativos nas entregas. Essa postura foi essencial para manter a equipe bem informada e o projeto no caminho certo."
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3>Leonardo Cesar</h3>
+                <h4 data-i18n="recomendacoes.recomendacao3_cargo">Consultor Salesforce</h4>
+              </div>
+            </div>
+          </div>
+            <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao4_texto">
+                "O Vladmir é um profissional muito competente, dedicado e sempre aberto a novos desafios. Sempre disposto a ajudar, compartilhar conhecimento e aprender com todos. Tem um aprendizado muito rápido e se preocupa com a experiência do usuário dedicando-se sempre ao melhor nível de entrega nos projetos em que atua."
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3>Willian Ramos</h3>
+                <h4 data-i18n="recomendacoes.recomendacao4_cargo">Analista de Testes</h4>
+              </div>
+            </div>
+          </div>
+            <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao5_texto">
+                "Trabalhei com o Vladmir em um projeto para a Riachuelo, o considero um ótimo profissional, com excelente relação interpessoal, contínua preocupação com seu desenvolvimento e sempre com uma visão muito prática e descomplicada de processos. Recomendo fortemente seu trabalho!"
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3>Lucas Gois</h3>
+                <h4 data-i18n="recomendacoes.recomendacao5_cargo">Analista de Testes Automatizados Sênior</h4>
+              </div>
+            </div>
+          </div>
+            <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao6_texto">
+                "Tive a honra de atuar ao lado do Vladmir em um projeto de elevada complexidade, de inovação disruptiva e que irá contribuir para a mudança na matriz energética e forma de comercialização desse ativo fundamental à sociedade. Vladmir, sempre sereno e equilibrado, trouxe razão a questões acaloradas e quality by design ao produto. A quem vir esta recomendação, saiba que ter o Vladmir no time é integrar competências humanas e técnicas numa só pessoa, que recomendo de olhos fechados."
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3>Erika Ferrari</h3>
+                <h4 data-i18n="recomendacoes.recomendacao6_cargo">Lean-Agile Governance</h4>
+              </div>
+            </div>
+          </div>
+           <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao7_texto">
+                "Um profissional muito bom, aprendeu rápido o negócio, que por si só não é tão simples. Propôs mudanças e soube lidar tanto com fatores positivos e negativos.
+Se posicionou e se adaptou junto do negócio e das mudanças dos times."
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3>Marcel Mendonça Grilo</h3>
+                <h4 data-i18n="recomendacoes.recomendacao7_cargo">System Manager</h4>
+              </div>
+            </div>
+          </div>
+           <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao8_texto">
+                "Trabalhei com o Vladmir em iniciativas estratégicas para o Riachuelo Marketplace, e destaco as seguintes skills como pontos fortes do seu perfil profissional: 
+<br>- facilidade na absorção de conhecimento (tanto técnico, quanto sobre o negócio);
+<br>- ownership (comprometido e dedicado com a qualidade da entrega);
+<br>- trabalho em equipe;"
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3>Rodrigo Victor</h3>
+                <h4 data-i18n="recomendacoes.recomendacao8_cargo">Product Manager</h4>
+              </div>
+            </div>
+          </div>
+           <div class="recomendacao swiper-slide" data-aos="fade-up" data-aos-delay="200">
+            <div class="recomendacao-texto">
+              <p data-i18n="recomendacoes.recomendacao9_texto">
+                "Tive a grande oportunidade de trabalhar com o Vlad como colega de equipe durante alguns meses. Desde o primeiro momento o Vlad se mostrou uma pessoa extremamente colaborativa, querendo conhecer e participar ativamente dos processos do time. É uma pessoa comprometida que se preocupa com a qualidade do trabalho da equipe e com a entrega de valor ao cliente final, é criativo diante imprevistos e tem facilidade no aprendizado de novas ferramentas e processos. É um grande profissional!!!"
+              </p>
+            </div>
+            <div class="recomendacao-autor">
+              <div class="autor-info">
+                <h3>Gabriel Brandão</h3>
+                <h4 data-i18n="recomendacoes.recomendacao9_cargo">Desenvolvedor de Sistemas Sênior</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- Seção de Contato -->
+    <section id="contato" class="secao secao-alternada">
+      <div class="container">
+        <h2 data-aos="fade-up" data-i18n="contato.titulo">Entre em Contato</h2>
+        <div class="contato-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="contato-info-expanded">
+            <h3 data-i18n="contato.info">Informações de Contato</h3>
+            <div class="info-grid">
+              <!-- LinkedIn -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="info-content">
+                  <h4>LinkedIn</h4>
+                  <p>
+                    <a
+                      href="https://linkedin.com/in/vladmirprates"
+                      target="_blank"
+                      >linkedin.com/in/vladmirprates</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <!-- GitHub -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="info-content">
+                  <h4>GitHub</h4>
+                  <p>
+                    <a href="https://github.com/vladmirprates" target="_blank"
+                      >github.com/vladmirprates</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <!-- Localização -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4 data-i18n="contato.localizacao_titulo">Localização</h4>
+                  <p>São Paulo, SP</p>
+                </div>
+              </div>
+              <!-- Disponibilidade -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h4 data-i18n="contato.disponibilidade">Disponibilidade</h4>
+                  <p data-i18n="contato.disponibilidade_info">Segunda a Sexta • 9:00 - 18:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Rodapé -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h3>vladmir_prates</h3>
+            <p>QA Engineer</p>
+          </div>
+          <div class="footer-links">
+            <h4 data-i18n="footer.links_rapidos">Links Rápidos</h4>
+            <ul>
+              <li><a href="#sobre" data-i18n="nav.sobre">Sobre</a></li>
+              <li><a href="#experiencia" data-i18n="nav.experiencia">Experiência</a></li>
+              <li><a href="#projetos" data-i18n="nav.projetos">Projetos</a></li>
+              <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
+          </div>
+        </div>
+        <ul></ul>
+        <div class="copyright">
+          <p data-i18n="footer.copyright">&copy; 2025 Vladmir Prates. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/hero-effects.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/swiper.js"></script>
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
     <script>
-      const translations = {
-        "pt-br": {
-          terminalLines: [
-            "Inicializando sistema...",
-            "Carregando módulos de QA e Gaming...",
-            "Verificando experiência e habilidades...",
-            "Preparando projetos para visualização...",
-            "Sistema pronto! Selecione um idioma para continuar.",
-          ],
-          enterSite: "ENTRAR NO SITE",
-        },
-        en: {
-          terminalLines: [
-            "Initializing system...",
-            "Loading QA and Gaming modules...",
-            "Checking experience and skills...",
-            "Preparing projects for display...",
-            "System ready! Select a language to continue.",
-          ],
-          enterSite: "ENTER SITE",
-        },
-      };
-      document.addEventListener("DOMContentLoaded", function () {
-        function updateLanguageTexts(lang) {
-          // Atualiza as linhas do terminal
-          const terminalLines = translations[lang].terminalLines;
-          for (let i = 0; i < terminalLines.length; i++) {
-            const element = document.getElementById(`terminal-line-${i + 1}`);
-            if (element) {
-              element.textContent = terminalLines[i];
-            }
-          }
-
-          // Atualiza o botão
-          const enterSiteBtn = document.getElementById("enter-site-btn");
-          if (enterSiteBtn) {
-            enterSiteBtn.textContent = translations[lang].enterSite;
-          }
+      // Botão Voltar ao Topo
+      const backToTopButton = document.querySelector(".back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
         }
-
-        // Criar partículas
-        const particlesContainer = document.getElementById("particles");
-        for (let i = 0; i < 50; i++) {
-          createParticle();
-        }
-
-        function createParticle() {
-          const particle = document.createElement("div");
-          particle.classList.add("particle");
-
-          // Posição aleatória
-          const posX = Math.random() * window.innerWidth;
-          const posY = Math.random() * window.innerHeight + window.innerHeight; // Começa abaixo da tela
-
-          // Tamanho aleatório
-          const size = Math.random() * 4 + 1;
-
-          // Cor aleatória entre as cores do tema
-          const colors = ["#7e57c2", "#00e676", "#ff3d00"];
-          const color = colors[Math.floor(Math.random() * colors.length)];
-
-          // Duração aleatória
-          const duration = Math.random() * 2 + 2;
-
-          // Atraso aleatório
-          const delay = Math.random() * 5;
-
-          particle.style.left = `${posX}px`;
-          particle.style.top = `${posY}px`;
-          particle.style.width = `${size}px`;
-          particle.style.height = `${size}px`;
-          particle.style.backgroundColor = color;
-          particle.style.boxShadow = `0 0 ${size * 2}px ${color}`;
-          particle.style.animation = `float ${duration}s infinite linear`;
-          particle.style.animationDelay = `${delay}s`;
-
-          particlesContainer.appendChild(particle);
-        }
-
-        // Animação do terminal
-        const terminalLines = document.querySelectorAll(".terminal-line");
-        const terminalTexts = document.querySelectorAll(".terminal-text");
-        const progressBar = document.getElementById("progress-bar");
-        const enterSiteBtn = document.getElementById("enter-site-btn");
-
-        let currentLine = 0;
-        let progress = 0;
-
-        function animateTerminal() {
-          if (currentLine < terminalLines.length) {
-            const line = terminalLines[currentLine];
-            const text = terminalTexts[currentLine];
-
-            line.classList.add("visible");
-            text.classList.add("typing");
-
-            // Atualiza a barra de progresso
-            progress += 100 / terminalLines.length;
-            progressBar.style.width = `${progress}%`;
-
-            // Tempo de digitação baseado no comprimento do texto
-            const typingDuration = text.textContent.length * 20;
-
-            setTimeout(() => {
-              currentLine++;
-              if (currentLine < terminalLines.length) {
-                animateTerminal();
-              } else {
-                // Todas as linhas animadas, mostrar o botão
-                setTimeout(() => {
-                  enterSiteBtn.classList.add("visible");
-                }, 0);
-              }
-            }, typingDuration + 0);
-          }
-        }
-
-        // Começar a animação do terminal após o carregamento
-        setTimeout(animateTerminal, 200);
-
-        // Seleção de idioma
-        const languageOptions = document.querySelectorAll(".language-option");
-        let selectedLanguage = "pt-br"; // Default language
-
-        languageOptions.forEach((option) => {
-          option.addEventListener("click", function () {
-            languageOptions.forEach((opt) => opt.classList.remove("active"));
-            this.classList.add("active");
-            selectedLanguage = this.getAttribute("data-lang");
-            updateLanguageTexts(selectedLanguage);
-            if (selectedLanguage === "pt-br") {
-              enterSiteBtn.textContent = "ENTRAR NO SITE";
-            } else {
-              enterSiteBtn.textContent = "ENTER SITE";
-            }
-
-            // Salvar a preferência de idioma no localStorage
-            localStorage.setItem("preferredLanguage", selectedLanguage);
-          });
-        });
-
-        // Botão de entrar no site
-        const transitionOverlay = document.getElementById("transition-overlay");
-
-        enterSiteBtn.addEventListener("click", function () {
-          transitionOverlay.classList.add("active");
-          setTimeout(() => {
-            window.location.href = `main.html?lang=${selectedLanguage}`;
-          }, 1000);
-        });
+      });
+      backToTopButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     </script>
+    <script>
+      // Adicionar animação de entrada ao conteúdo da seção Hero
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroContent = document.querySelector(".hero-content");
+        setTimeout(() => {
+          heroContent.classList.add("animate-in");
+        }, 300);
+      });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("DOM fully loaded. List items:", 
+      document.querySelectorAll('[data-i18n^="experiencia.descricao"]').length
+    );
+  });
+</script>
   </body>
 </html>

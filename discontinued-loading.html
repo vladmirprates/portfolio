@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio - Vladmir Prates</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+      :root {
+        --cor-primaria: #7e57c2;
+        --cor-secundaria: #1a1e2e;
+        --cor-destaque: #00e676;
+        --cor-destaque-alt: #ff3d00;
+        --cor-texto: #e0e0e0;
+        --cor-texto-escuro: #333;
+        --cor-texto-claro: #f9f9f9;
+        --cor-fundo: #f9f9f9;
+        --cor-fundo-alternada: #1a1e2e;
+        --cor-fundo-escuro: #121420;
+        --cor-borda: #444;
+        --fonte-principal: "Roboto", sans-serif;
+        --fonte-titulos: "Montserrat", sans-serif;
+        --fonte-tech: "Orbitron", sans-serif;
+        --sombra-suave: 0 5px 15px rgba(0, 0, 0, 0.2);
+        --sombra-neon: 0 0 10px rgba(126, 87, 194, 0.8);
+        --sombra-neon-verde: 0 0 15px rgba(0, 230, 118, 0.8);
+        --transicao-padrao: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--fonte-principal);
+        background-color: var(--cor-fundo-escuro);
+        color: var(--cor-texto-claro);
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .loading-container {
+        width: 90%;
+        max-width: 800px;
+        text-align: center;
+        z-index: 10;
+        padding: 1rem;
+        position: relative;
+      }
+
+      .terminal {
+        background-color: rgba(18, 20, 32, 0.9);
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
+        border: 1px solid var(--cor-primaria);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .terminal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: linear-gradient(
+          90deg,
+          var(--cor-primaria),
+          var(--cor-destaque)
+        );
+        border-radius: 10px 10px 0 0;
+      }
+
+      .terminal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-top: 0.5rem;
+      }
+
+      .terminal-title {
+        font-family: var(--fonte-tech);
+        font-size: 1rem;
+        color: var(--cor-texto-claro);
+        margin-left: 1rem;
+      }
+
+      .terminal-buttons {
+        display: flex;
+        gap: 8px;
+        margin-right: 1rem;
+      }
+
+      .terminal-button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .terminal-button.close {
+        background-color: #ff5f56;
+      }
+
+      .terminal-button.minimize {
+        background-color: #ffbd2e;
+      }
+
+      .terminal-button.maximize {
+        background-color: #27c93f;
+      }
+
+      .terminal-content {
+        font-family: "Courier New", monospace;
+        text-align: left;
+        height: 180px;
+        overflow: hidden;
+        font-size: 0.85rem;
+      }
+
+      .terminal-line {
+        display: flex;
+        margin-bottom: 0.5rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .terminal-line.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .terminal-prompt {
+        color: var(--cor-destaque);
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+      }
+
+      .terminal-text {
+        color: var(--cor-texto-claro);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-right: 0.15em solid var(--cor-destaque);
+        width: 100%;
+        animation: none;
+      }
+
+      /* Animação de digitação */
+      .terminal-text.typing {
+        animation: typing 3s steps(40, end) forwards,
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: var(--cor-destaque);
+        }
+      }
+
+      .progress-container {
+        width: 100%;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        margin: 2rem 0;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(
+          90deg,
+          var(--cor-primaria),
+          var(--cor-destaque)
+        );
+        border-radius: 5px;
+        transition: width 0.5s ease;
+      }
+
+      .language-selector {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .language-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+
+      .language-option:hover,
+      .language-option.active {
+        opacity: 1;
+        transform: translateY(-5px);
+      }
+
+      .language-flag {
+        width: 40px;
+        height: 28px;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .language-option:hover .language-flag,
+      .language-option.active .language-flag {
+        box-shadow: 0 0 15px var(--cor-destaque);
+      }
+
+      .language-name {
+        font-family: var(--fonte-principal);
+        font-size: 0.8rem;
+        color: var(--cor-texto-claro);
+      }
+
+      .enter-site-btn {
+        background: linear-gradient(135deg, var(--cor-primaria), #5e35b1);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-family: var(--fonte-principal);
+        font-size: 0.9rem;
+        cursor: pointer;
+        margin-top: 2rem;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        box-shadow: 0 0 20px rgba(126, 87, 194, 0.5);
+        display: none;
+      }
+
+      .enter-site-btn.visible {
+        opacity: 1;
+        transform: translateY(0);
+        display: inline-block;
+      }
+
+      .enter-site-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 30px rgba(126, 87, 194, 0.7);
+        background: linear-gradient(135deg, #5e35b1, var(--cor-primaria));
+      }
+
+      /* Partículas de fundo */
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: var(--cor-primaria);
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: float 15s infinite linear;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-1000px) translateX(100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* Grid de fundo */
+      .grid-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            rgba(126, 87, 194, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(126, 87, 194, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 0;
+        opacity: 0.5;
+        animation: 20s linear infinite grid-shift;
+      }
+
+      @keyframes grid-shift {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 40px 40px;
+        }
+      }
+
+      /* Overlay de transição */
+      .transition-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--cor-fundo-escuro);
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+      }
+
+      .transition-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      /* Responsividade Desktop */
+      @media (min-width: 768px) {
+        .loading-container {
+          width: 80%;
+          padding: 2rem;
+        }
+
+        .terminal {
+          padding: 2rem;
+        }
+
+        .terminal-title {
+          font-size: 1.2rem;
+        }
+
+        .terminal-buttons {
+          gap: 8px;
+        }
+
+        .terminal-button {
+          width: 12px;
+          height: 12px;
+        }
+
+        .terminal-content {
+          height: 200px;
+          font-size: 1rem;
+        }
+
+        .language-selector {
+          gap: 1.5rem;
+        }
+
+        .language-flag {
+          width: 50px;
+          height: 35px;
+        }
+
+        .language-name {
+          font-size: 0.9rem;
+        }
+
+        .enter-site-btn {
+          padding: 12px 30px;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-background"></div>
+    <div class="particles" id="particles"></div>
+
+    <div class="loading-container">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <div class="terminal-button close"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+          </div>
+          <div class="terminal-title">vladmir_prates.sh</div>
+        </div>
+        <div class="terminal-content" id="terminal-content">
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-text" id="terminal-line-1"
+              >Inicializando sistema...</span
+            >
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-text" id="terminal-line-2"
+              >Carregando módulos de QA e Gaming...</span
+            >
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-text" id="terminal-line-3"
+              >Verificando experiência e habilidades...</span
+            >
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-text" id="terminal-line-4"
+              >Preparando projetos para visualização...</span
+            >
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-text" id="terminal-line-5"
+              >Sistema pronto! Selecione um idioma para continuar.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <div class="language-selector">
+        <div class="language-option active" data-lang="pt-br">
+          <img
+            src="https://flagcdn.com/w80/br.png"
+            alt="Português"
+            class="language-flag"
+          />
+          <span class="language-name">Português</span>
+        </div>
+        <div class="language-option" data-lang="en">
+          <img
+            src="https://flagcdn.com/w80/gb.png"
+            alt="English"
+            class="language-flag"
+          />
+          <span class="language-name">English</span>
+        </div>
+      </div>
+
+      <button class="enter-site-btn" id="enter-site-btn">ENTRAR NO SITE</button>
+    </div>
+
+    <div class="transition-overlay" id="transition-overlay"></div>
+
+    <script>
+      const translations = {
+        "pt-br": {
+          terminalLines: [
+            "Inicializando sistema...",
+            "Carregando módulos de QA e Gaming...",
+            "Verificando experiência e habilidades...",
+            "Preparando projetos para visualização...",
+            "Sistema pronto! Selecione um idioma para continuar.",
+          ],
+          enterSite: "ENTRAR NO SITE",
+        },
+        en: {
+          terminalLines: [
+            "Initializing system...",
+            "Loading QA and Gaming modules...",
+            "Checking experience and skills...",
+            "Preparing projects for display...",
+            "System ready! Select a language to continue.",
+          ],
+          enterSite: "ENTER SITE",
+        },
+      };
+      document.addEventListener("DOMContentLoaded", function () {
+        function updateLanguageTexts(lang) {
+          // Atualiza as linhas do terminal
+          const terminalLines = translations[lang].terminalLines;
+          for (let i = 0; i < terminalLines.length; i++) {
+            const element = document.getElementById(`terminal-line-${i + 1}`);
+            if (element) {
+              element.textContent = terminalLines[i];
+            }
+          }
+
+          // Atualiza o botão
+          const enterSiteBtn = document.getElementById("enter-site-btn");
+          if (enterSiteBtn) {
+            enterSiteBtn.textContent = translations[lang].enterSite;
+          }
+        }
+
+        // Criar partículas
+        const particlesContainer = document.getElementById("particles");
+        for (let i = 0; i < 50; i++) {
+          createParticle();
+        }
+
+        function createParticle() {
+          const particle = document.createElement("div");
+          particle.classList.add("particle");
+
+          // Posição aleatória
+          const posX = Math.random() * window.innerWidth;
+          const posY = Math.random() * window.innerHeight + window.innerHeight; // Começa abaixo da tela
+
+          // Tamanho aleatório
+          const size = Math.random() * 4 + 1;
+
+          // Cor aleatória entre as cores do tema
+          const colors = ["#7e57c2", "#00e676", "#ff3d00"];
+          const color = colors[Math.floor(Math.random() * colors.length)];
+
+          // Duração aleatória
+          const duration = Math.random() * 2 + 2;
+
+          // Atraso aleatório
+          const delay = Math.random() * 5;
+
+          particle.style.left = `${posX}px`;
+          particle.style.top = `${posY}px`;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.backgroundColor = color;
+          particle.style.boxShadow = `0 0 ${size * 2}px ${color}`;
+          particle.style.animation = `float ${duration}s infinite linear`;
+          particle.style.animationDelay = `${delay}s`;
+
+          particlesContainer.appendChild(particle);
+        }
+
+        // Animação do terminal
+        const terminalLines = document.querySelectorAll(".terminal-line");
+        const terminalTexts = document.querySelectorAll(".terminal-text");
+        const progressBar = document.getElementById("progress-bar");
+        const enterSiteBtn = document.getElementById("enter-site-btn");
+
+        let currentLine = 0;
+        let progress = 0;
+
+        function animateTerminal() {
+          if (currentLine < terminalLines.length) {
+            const line = terminalLines[currentLine];
+            const text = terminalTexts[currentLine];
+
+            line.classList.add("visible");
+            text.classList.add("typing");
+
+            // Atualiza a barra de progresso
+            progress += 100 / terminalLines.length;
+            progressBar.style.width = `${progress}%`;
+
+            // Tempo de digitação baseado no comprimento do texto
+            const typingDuration = text.textContent.length * 20;
+
+            setTimeout(() => {
+              currentLine++;
+              if (currentLine < terminalLines.length) {
+                animateTerminal();
+              } else {
+                // Todas as linhas animadas, mostrar o botão
+                setTimeout(() => {
+                  enterSiteBtn.classList.add("visible");
+                }, 0);
+              }
+            }, typingDuration + 0);
+          }
+        }
+
+        // Começar a animação do terminal após o carregamento
+        setTimeout(animateTerminal, 200);
+
+        // Seleção de idioma
+        const languageOptions = document.querySelectorAll(".language-option");
+        let selectedLanguage = "pt-br"; // Default language
+
+        languageOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            languageOptions.forEach((opt) => opt.classList.remove("active"));
+            this.classList.add("active");
+            selectedLanguage = this.getAttribute("data-lang");
+            updateLanguageTexts(selectedLanguage);
+            if (selectedLanguage === "pt-br") {
+              enterSiteBtn.textContent = "ENTRAR NO SITE";
+            } else {
+              enterSiteBtn.textContent = "ENTER SITE";
+            }
+
+            // Salvar a preferência de idioma no localStorage
+            localStorage.setItem("preferredLanguage", selectedLanguage);
+          });
+        });
+
+        // Botão de entrar no site
+        const transitionOverlay = document.getElementById("transition-overlay");
+
+        enterSiteBtn.addEventListener("click", function () {
+          transitionOverlay.classList.add("active");
+          setTimeout(() => {
+            window.location.href = `main.html?lang=${selectedLanguage}`;
+          }, 1000);
+        });
+      });
+    </script>
+  </body>
+</html>
