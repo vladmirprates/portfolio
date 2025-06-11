@@ -83,7 +83,7 @@ class I18nManager {
     // Atualize a página
     this.updatePageContent();
 
-    // ATUALIZE O SELETOR DE IDIOMA
+    // Atualiza o seletor de idioma
     this.updateLanguageSelector();
 
     // Reinicie o efeito após a atualização
@@ -180,6 +180,9 @@ class I18nManager {
       cursor: pointer;
       font-family: var(--fonte-principal);
       transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .language-switch:hover {
       background-color: var(--cor-destaque);

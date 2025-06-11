@@ -123,15 +123,15 @@
     "titulo": "Recommendations",
     "recomendacao1_texto": "Vladmir has a clear vision and his insights are always very assertive. His participation in projects helps identify unforeseen and undiscussed situations in advance, avoiding financial and scheduling risks. He also strongly supports developers in pursuing high-quality code and best development practices. Without a doubt, he is an outstanding professional, well above the market average.",
     "recomendacao1_nome": "Sergio Oliveira",
-    "recomendacao1_cargo": "IT Executive, Crefisa",
+    "recomendacao1_cargo": "IT Executive",
 
     "recomendacao2_texto": "\"Working with Vladmir was an enriching experience. His methodical approach to testing and deep understanding of user experience brought a new perspective to our team. He is a true advocate for quality in every aspect.\"",
     "recomendacao2_nome": "Julio Cesar Nietto",
-    "recomendacao2_cargo": "QA Coordinator, Riachuelo",
+    "recomendacao2_cargo": "QA Coordinator",
 
     "recomendacao3_texto": "\"Vladmir's technical knowledge combined with his passion for games brings a unique perspective to projects. He deeply understands how to create engaging user experiences and ensure that every interaction is perfect.\"",
     "recomendacao3_nome": "Mariana Costa",
-    "recomendacao3_cargo": "UX Designer at Novigi Solution"
+    "recomendacao3_cargo": "UX Designer"
   },
   "contato": {
     "titulo": "Get in Touch",

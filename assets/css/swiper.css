@@ -1,0 +1,121 @@
+.swiper-wrapper {
+  max-width: auto;
+  padding: 20px 10px;
+  margin: 0 60px 35px;
+  overflow: visible;
+}
+
+#recomendacoes > .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: visible;
+}
+
+/* Configurações dos slides */
+#recomendacoes .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: visible;
+  flex-shrink: 0;
+  padding: 20px;
+  min-height: 300px;
+  transition: transform 0.3s ease; /* Adicionando transição suave */
+}
+
+#recomendacoes .recomendacao {
+  height: auto;
+  max-width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+#recomendacoes .recomendacao:hover {
+  transform: translateY(-5px);
+}
+
+/* Configurações da paginação */
+.swiper-pagination-bullet {
+  height: 15px !important;
+  width: 15px !important;
+  background: var(--cor-primaria) !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+
+/* Configurações dos botões de navegação */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--cor-primaria) !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin-top: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  transition: all 0.3s ease !important;
+  z-index: 10 !important;
+}
+
+/* Posicionamento específico dos botões */
+.swiper-button-prev {
+  left: 10px !important;
+}
+
+.swiper-button-next {
+  right: 10px !important;
+}
+
+/* Efeitos hover */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: var(--cor-destaque) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Ícones dos botões */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .swiper-wrapper {
+    margin: 0 20px 35px;
+  }
+  
+  #recomendacoes > .container {
+    padding: 0 10px;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+  
+  #recomendacoes .swiper-slide {
+    padding: 15px;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-wrapper {
+    margin: 0 10px 35px;
+    padding: 15px 5px;
+  }
+  
+  #recomendacoes .swiper-slide {
+    padding: 10px;
+    min-height: 200px;
+  }
+}
+
