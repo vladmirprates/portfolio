@@ -119,7 +119,7 @@
     "item5": "Appreciation for intuitive and responsive interfaces",
     "paragrafo2": "This passion motivates me to constantly seek excellence in my QA projects, applying lessons learned from the gaming world to improve the quality of any digital product."
   },
-"recomendacoes": {
+  "recomendacoes": {
     "titulo": "Recommendations",
 
     "recomendacao1_texto": "Vladmir has a clear vision, and his opinions are always very assertive. His participation in projects helps to identify unforeseen situations in advance, avoiding financial and deadline risks. He also strongly supports developers in obtaining quality code and following best development practices. Without a doubt, he is a distinguished professional above the market average.",
@@ -175,5 +175,12 @@
   },
   "idioma": {
     "mudar_para": "PT"
+  },
+  "terminal": {
+    "line1": "Initializing system...",
+    "line2": "Loading QA and Gaming modules...",
+    "line3": "Checking experience and skills...",
+    "line4": "Preparing projects for display...",
+    "line5": "System ready! Welcome to my portfolio."
   }
 }
