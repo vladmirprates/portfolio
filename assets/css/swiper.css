@@ -122,7 +122,7 @@
 
 @media (max-width: 480px) {
   .swiper-wrapper {
-     margin: 0 10px 35px;
+     margin: 0 -5px 35px;
      padding: 15px 5px;
   }
 

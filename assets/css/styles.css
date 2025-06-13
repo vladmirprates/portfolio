@@ -381,7 +381,7 @@ nav ul li a:hover::before {
 header {
   background: linear-gradient(90deg, var(--cor-secundaria), #121420);
   color: #fff;
-  padding: 30px 0;
+  padding: 15px 0;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -508,6 +508,7 @@ nav ul li a:hover i {
   color: #fff;
   display: flex;
   align-items: center;
+  padding-top: 140px;
 }
 .hero-overlay,
 .particles,
@@ -1746,7 +1747,7 @@ nav ul li a.active::before {
   width: 90%;
   max-width: 800px;
   z-index: 10;
-  margin: 2rem auto;
+  margin: -2rem auto;
 }
 
 .terminal::before {
