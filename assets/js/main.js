@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Fecha menu ao clicar fora dele
-  document.addEventListener("click", function(event) {
+  document.addEventListener("click", function (event) {
     if (!navUl.contains(event.target) && !menuToggle.contains(event.target)) {
       if (navUl.classList.contains("show")) {
         navUl.classList.remove("show");
@@ -107,6 +107,24 @@ document.addEventListener("DOMContentLoaded", function () {
       nav.appendChild(menuToggle);
     } else if (window.innerWidth > 576 && nav.querySelector(".menu-toggle")) {
       menuToggle.remove();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav ul");
+
+    if (window.innerWidth > 1200) {
+      const availableSpace =
+        header.offsetWidth -
+        document.querySelector(".logo-area").offsetWidth -
+        document.querySelector(".header-selectors").offsetWidth;
+
+      if (nav.scrollWidth > availableSpace) {
+        document.querySelectorAll("nav ul li").forEach((item) => {
+          item.style.margin = "0 10px";
+        });
+      }
     }
   });
 });

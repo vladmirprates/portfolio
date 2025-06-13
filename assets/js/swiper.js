@@ -11,7 +11,7 @@ const swiper = new Swiper(".swiper", {
 
   // Autoplay
   autoplay: {
-    delay: 5000,
+    delay: 4000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
@@ -39,13 +39,13 @@ const swiper = new Swiper(".swiper", {
     },
     // Mobile grande
     480: {
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       spaceBetween: 20,
       centeredSlides: false,
     },
     // Tablet
     768: {
-      slidesPerView: 1.5,
+      slidesPerView: 1,
       spaceBetween: 25,
       centeredSlides: false,
     },
