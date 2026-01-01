@@ -1,210 +1,210 @@
-# Portfólio - Vladmir Prates
+# Portfolio - Vladmir Prates
 
-Documentação centralizada do projeto de portfólio, incluindo detalhes sobre a estrutura, sistemas implementados e instruções de manutenção.
+Centralized documentation for the portfolio project, including details on structure, implemented systems, and maintenance instructions.
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 /
-├── index.html           # Loading page com seleção de idioma
-├── main.html            # Página principal do site
+├── index.html           # Loading page with language selection
+├── main.html            # Main site page
 ├── assets/
 │   ├── css/
-│   │   ├── styles.css           # Estilos principais
-│   │   └── theme-styles.css     # Estilos específicos para temas
+│   │   ├── styles.css           # Main styles
+│   │   └── theme-styles.css     # Theme-specific styles
 │   ├── js/
-│   │   ├── main.js              # Funcionalidades gerais do site
-│   │   ├── hero-effects.js      # Efeitos específicos da seção hero
-│   │   ├── themes.js            # Sistema de gerenciamento de temas
-│   │   └── i18n.js              # Sistema de internacionalização
-│   ├── images/                  # Imagens do site
-│   └── translations/            # Arquivos de tradução
-│       ├── pt-br.json           # Traduções em português
-│       └── en.json              # Traduções em inglês
+│   │   ├── main.js              # General site functionality
+│   │   ├── hero-effects.js      # Specific hero section effects
+│   │   ├── themes.js            # Theme management system
+│   │   └── i18n.js              # Internationalization system
+│   ├── images/                  # Site images
+│   └── translations/            # Translation files
+│       ├── pt-br.json           # Portuguese translations
+│       └── en.json              # English translations
 ```
 
-## Sistemas Implementados
+## Implemented Systems
 
 ### 1. Loading Page
 
-A página de carregamento inicial apresenta um design de terminal com animações e permite ao usuário selecionar o idioma antes de entrar no site principal.
+The initial loading page features a terminal design with animations and allows the user to select their language before entering the main site.
 
-**Arquivos relacionados:**
-- `index.html` - Estrutura HTML da loading page
-- Estilos CSS inline no próprio arquivo
+**Related files:**
+- `index.html` - HTML structure of the loading page
+- Inline CSS styles within the file itself
 
-**Funcionalidades:**
-- Efeito de digitação para textos do terminal
-- Barra de progresso animada
-- Seleção de idioma (português/inglês)
-- Transição suave para o site principal
-- Partículas animadas no fundo
+**Features:**
+- Typing effect for terminal text
+- Animated progress bar
+- Language selection (Portuguese/English)
+- Smooth transition to the main site
+- Animated particles in the background
 
-**Como usar:**
-- A preferência de idioma é salva no localStorage
-- O idioma selecionado é passado para o site principal via parâmetro URL
+**How to use:**
+- Language preference is saved in `localStorage`
+- The selected language is passed to the main site via URL parameter
 
-### 2. Sistema de Temas
+### 2. Theme System
 
-O site possui múltiplos temas visuais que podem ser alternados pelo seletor no cabeçalho.
+The site features multiple visual themes that can be toggled via the selector in the header.
 
-**Arquivos relacionados:**
-- `themes.js` - Lógica de gerenciamento de temas
-- `theme-styles.css` - Estilos específicos para cada tema
+**Related files:**
+- `themes.js` - Theme management logic
+- `theme-styles.css` - Specific styles for each theme
 
-**Temas disponíveis:**
-1. **Default** - Tema padrão com tons de roxo e verde
-2. **Fantasy** - Tema com tons de roxo e dourado
-3. **Dark Fire** - Tema escuro com tons de vermelho e laranja
-4. **Leaf** - Tema com tons de verde e dourado
+**Available themes:**
+1. **Default** - Standard theme with purple and green tones
+2. **Fantasy** - Theme with purple and gold tones
+3. **Dark Fire** - Dark theme with red and orange tones
+4. **Leaf** - Theme with green and gold tones
 
-**Como funciona:**
-- Cada tema define suas próprias variáveis CSS (cores, gradientes, sombras)
-- O sistema adiciona uma classe ao `body` correspondente ao tema atual
-- A preferência de tema é salva no localStorage
-- Transições suaves são aplicadas na troca de temas
+**How it works:**
+- Each theme defines its own CSS variables (colors, gradients, shadows)
+- The system adds a class to the `body` corresponding to the current theme
+- Theme preference is saved in `localStorage`
+- Smooth transitions are applied when switching themes
 
-**Como adicionar um novo tema:**
-1. Adicione o tema ao objeto `themes` no arquivo `themes.js`:
+**How to add a new theme:**
+1. Add the theme to the `themes` object in the `themes.js` file:
 ```javascript
 this.themes = {
-  'default': { name: 'Padrão', icon: 'fas fa-palette' },
-  'seu-tema': { name: 'Nome do Tema', icon: 'fas fa-icon-apropriado' }
+  'default': { name: 'Default', icon: 'fas fa-palette' },
+  'your-theme': { name: 'Theme Name', icon: 'fas fa-appropriate-icon' }
 };
 ```
 
-2. Adicione as variáveis CSS no arquivo `theme-styles.css`:
+2. Add the CSS variables in the `theme-styles.css` file:
 ```css
-:root[data-theme="seu-tema"] {
-  --cor-primaria: #valor;
-  --cor-secundaria: #valor;
-  /* Demais variáveis... */
+:root[data-theme="your-theme"] {
+  --cor-primaria: #value;
+  --cor-secundaria: #value;
+  /* Other variables... */
 }
 
-/* Ajustes específicos para o tema */
-.theme-seu-tema {
-  /* Estilos específicos... */
+/* Specific adjustments for the theme */
+.theme-your-theme {
+  /* Specific styles... */
 }
 ```
 
-### 3. Sistema de Internacionalização (i18n)
+### 3. Internationalization System (i18n)
 
-O site suporta múltiplos idiomas com troca dinâmica sem recarregar a página.
+The site supports multiple languages with dynamic switching without reloading the page.
 
-**Arquivos relacionados:**
-- `i18n.js` - Lógica de gerenciamento de idiomas
-- `assets/translations/pt-br.json` - Traduções em português
-- `assets/translations/en.json` - Traduções em inglês
+**Related files:**
+- `i18n.js` - Language management logic
+- `assets/translations/pt-br.json` - Portuguese translations
+- `assets/translations/en.json` - English translations
 
-**Idiomas suportados:**
-- Português (pt-br) - Idioma padrão
-- Inglês (en)
+**Supported languages:**
+- Portuguese (pt-br) - Default language
+- English (en)
 
-**Como funciona:**
-- Os textos traduzíveis são marcados com o atributo `data-i18n`
-- O sistema carrega dinamicamente o arquivo JSON do idioma selecionado
-- A preferência de idioma é salva no localStorage
-- Integração com a loading page para seleção inicial
+**How it works:**
+- Translatable texts are marked with the `data-i18n` attribute
+- The system dynamically loads the JSON file for the selected language
+- Language preference is saved in `localStorage`
+- Integrated with the loading page for initial selection
 
-**Como adicionar um novo idioma:**
-1. Crie um novo arquivo JSON na pasta `assets/translations/` (ex: `fr.json`)
-2. Copie a estrutura de um arquivo existente e traduza os valores
-3. Adicione o novo idioma à lista de idiomas suportados no arquivo `i18n.js`
+**How to add a new language:**
+1. Create a new JSON file in the `assets/translations/` folder (e.g., `fr.json`)
+2. Copy the structure of an existing file and translate the values
+3. Add the new language to the supported languages list in the `i18n.js` file
 
-**Como adicionar novos textos traduzíveis:**
-1. Adicione o atributo `data-i18n` ao elemento HTML:
+**How to add new translatable texts:**
+1. Add the `data-i18n` attribute to the HTML element:
 ```html
-<h2 data-i18n="secao.titulo">Título padrão</h2>
+<h2 data-i18n="section.title">Default Title</h2>
 ```
 
-2. Adicione a chave correspondente nos arquivos de tradução:
+2. Add the corresponding key in the translation files:
 ```json
 {
-  "secao": {
-    "titulo": "Título traduzido"
+  "section": {
+    "title": "Translated Title"
   }
 }
 ```
 
-### 4. Efeitos Visuais
+### 4. Visual Effects
 
-O site possui diversos efeitos visuais para melhorar a experiência do usuário.
+The site includes various visual effects to enhance the user experience.
 
-**Arquivos relacionados:**
-- `hero-effects.js` - Efeitos específicos da seção hero
-- `main.js` - Outros efeitos e animações
+**Related files:**
+- `hero-effects.js` - Specific effects for the hero section
+- `main.js` - Other effects and animations
 
-**Efeitos implementados:**
-- Efeito de partículas interativas no hero
-- Efeito parallax no scroll
-- Efeito de digitação no subtítulo
-- Animações AOS (Animate On Scroll)
-- Efeitos específicos para cada tema
+**Implemented effects:**
+- Interactive particle effect in the hero section
+- Parallax scrolling effect
+- Typing effect in the subtitle
+- AOS (Animate On Scroll) animations
+- Theme-specific effects
 
-**Como usar o AOS:**
-Adicione os atributos `data-aos` aos elementos:
+**How to use AOS:**
+Add `data-aos` attributes to elements:
 ```html
 <div data-aos="fade-up" data-aos-delay="100">
-  Conteúdo com animação
+  Content with animation
 </div>
 ```
 
-## Responsividade
+## Responsiveness
 
-O site é totalmente responsivo e se adapta a diferentes tamanhos de tela.
+The site is fully responsive and adapts to different screen sizes.
 
-**Principais ajustes responsivos:**
-- Menu mobile com toggle para telas pequenas
-- Layout flexível que se adapta a diferentes larguras
-- Imagens e conteúdo redimensionáveis
-- Media queries para ajustes específicos
+**Key responsive adjustments:**
+- Mobile menu with toggle for small screens
+- Flexible layout that adapts to different widths
+- Resizable images and content
+- Media queries for specific adjustments
 
-**Breakpoints principais:**
-- Mobile: até 576px
-- Tablet: 577px a 768px
-- Desktop: acima de 768px
+**Main Breakpoints:**
+- Mobile: up to 576px
+- Tablet: 577px to 768px
+- Desktop: above 768px
 
-## Manutenção e Boas Práticas
+## Maintenance and Best Practices
 
-### Adicionando Novos Conteúdos
+### Adding New Content
 
-1. **Novos Projetos:**
-   - Adicione um novo card na seção de projetos seguindo a estrutura existente
-   - Inclua imagens na pasta `assets/images/`
-   - Adicione as traduções nos arquivos de idioma
+1. **New Projects:**
+   - Add a new card in the projects section following the existing structure
+   - Include images in the `assets/images/` folder
+   - Add translations in the language files
 
-2. **Novas Habilidades:**
-   - Adicione novas tags na categoria apropriada
-   - Mantenha a consistência visual com as tags existentes
+2. **New Skills:**
+   - Add new tags in the appropriate category
+   - Maintain visual consistency with existing tags
 
-### Modificando Estilos
+### Modifying Styles
 
-1. **Ajustes Gerais:**
-   - Modifique o arquivo `styles.css` para alterações globais
-   - Respeite as variáveis CSS para manter a consistência
+1. **General Adjustments:**
+   - Modify the `styles.css` file for global changes
+   - Respect CSS variables to maintain consistency
 
-2. **Ajustes de Tema:**
-   - Modifique apenas o arquivo `theme-styles.css`
-   - Mantenha a estrutura de variáveis para cada tema
+2. **Theme Adjustments:**
+   - Modify only the `theme-styles.css` file
+   - Maintain the variable structure for each theme
 
-### Depuração
+### Debugging
 
-- Verifique o console do navegador para possíveis erros
-- Teste em diferentes navegadores e dispositivos
-- Valide as alterações em todos os temas e idiomas
+- Check the browser console for potential errors
+- Test on different browsers and devices
+- Validate changes across all themes and languages
 
-## Créditos e Recursos
+## Credits and Resources
 
-- **Bibliotecas utilizadas:**
-  - Font Awesome (ícones)
+- **Libraries used:**
+  - Font Awesome (icons)
   - AOS - Animate On Scroll
   - Google Fonts
 
-- **Recursos externos:**
-  - Imagens
-  - Ícones: Font Awesome
-  - Fontes: Google Fonts (Montserrat, Orbitron, Roboto)
+- **External Resources:**
+  - Images
+  - Icons: Font Awesome
+  - Fonts: Google Fonts (Montserrat, Orbitron, Roboto)
 
-## Contato
+## Contact
 * **LinkedIn:** [Vladmir Prates](https://linkedin.com/in/vladmirprates)
 * **GitHub:** [Vladmir Prates](https://github.com/vladmirprates)
