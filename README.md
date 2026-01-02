@@ -1,3 +1,4 @@
+> **Falante de Português?** Leia a [Versão em Português aqui](README-pt.md)
 # Portfolio - Vladmir Prates
 
 Centralized documentation for the portfolio project, including details on structure, implemented systems, and maintenance instructions.
