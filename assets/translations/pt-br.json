@@ -82,6 +82,7 @@
     "soft_4": "Atenção aos Detalhes"
   },
   "projetos": {
+    "detalhes": "Ver Todos os Projetos",
     "titulo": "Projetos em Destaque",
     "projeto1_titulo": "Automação de Testes Web",
     "projeto1_descricao": "Implementação de framework de automação de testes para aplicação web de e-commerce, utilizando Selenium e Java.",

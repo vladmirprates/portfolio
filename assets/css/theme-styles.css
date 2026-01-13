@@ -1,8 +1,8 @@
 /* ==================================================================
-  VARIÁVEIS DE CORES DOS TEMAS
+  THEME COLOR VARIABLES
   ================================================================== */
 
-/* Tema Padrão (Default) */
+/* Default Theme */
 :root,
 :root[data-theme="default"] {
   --cor-primaria: #7e57c2;
@@ -29,7 +29,7 @@
   --cor-hover-contato: var(--cor-primaria);
 }
 
-/* Tema Fantasy - Roxo e Dourado */
+/* Fantasy Theme - Purple and Gold */
 :root[data-theme="fantasy"] {
   --cor-primaria: #9c27b0;
   --cor-secundaria: #1a1423;
@@ -55,7 +55,7 @@
   --cor-hover-contato: #ffc107;
 }
 
-/* Tema Dark Fire - Escuro, Vermelho e Laranja */
+/* Dark Fire Theme - Dark, Red and Orange */
 :root[data-theme="dark-fire"] {
   --cor-primaria: #ff5722;
   --cor-secundaria: #1a0e0b;
@@ -81,7 +81,7 @@
   --cor-hover-contato: #ff5722;
 }
 
-/* Tema Leaf - Verde e Dourado */
+/* Leaf Theme - Green and Gold */
 :root[data-theme="leaf"] {
   --cor-primaria: #2e7d32;
   --cor-secundaria: #2e1f1d;
@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6,
   transition: all 0.5s ease;
 }
 
-/* Hover do menu */
+/* Menu hover */
 nav ul li a:hover {
   color: var(--cor-hover-menu);
 }
@@ -139,7 +139,7 @@ nav ul li a i {
   color: var(--cor-destaque);
 }
 
-/* Botões */
+/* Buttons */
 .botao-secundario:hover {
   background-color: var(--cor-destaque);
   color: var(--cor-secundaria);
@@ -152,7 +152,7 @@ nav ul li a i {
   color: var(--cor-secundaria);
 }
 
-/* Ícones de contato */
+/* Contact icons */
 .info-icon:hover {
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -170,7 +170,7 @@ nav ul li a i {
   AJUSTES ESPECÍFICOS PARA TEMAS
   ================================================================== */
 
-/* ---------- Tema Fantasy ---------- */
+/* ---------- Fantasy Theme ---------- */
 .theme-fantasy {
   color: var(--cor-texto-escuro);
 }
@@ -188,7 +188,7 @@ nav ul li a i {
    radial-gradient(circle at 50% 50%, var(--cor-primaria) 0, transparent 60%);
 }
 
-/* ---------- Tema Dark Fire ---------- */
+/* ---------- Dark Fire Theme ---------- */
 .theme-dark-fire {
   color: var(--cor-texto);
 }
@@ -284,7 +284,7 @@ nav ul li a i {
 .theme-dark-fire footer::before {
   background: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque), var(--cor-destaque-alt), var(--cor-primaria));
 }
-/* Efeito de fogo */
+/* Fire effect */
 .theme-dark-fire .hero-content {
   position: relative;
   overflow: hidden;
@@ -314,7 +314,7 @@ nav ul li a i {
   box-shadow: 0 6px 10px rgba(255, 87, 34, 0.3);
 }
 
-/* ---------- Tema Leaf ---------- */
+/* ---------- Leaf Theme ---------- */
 .theme-leaf {
   color: var(--cor-texto);
 }

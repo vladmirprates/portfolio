@@ -1,4 +1,4 @@
-/* Ajuste responsivo */
+/* Responsive adjustments */
 
 /* 1920px */
 @media (max-width: 1920px) {
@@ -21,13 +21,13 @@
   .terminal {
     background-color: rgba(18, 20, 32, 0.9);
     border-radius: 10px;
-    padding: 1rem; /* menor espaçamento interno */
+    padding: 1rem; /* smaller internal spacing */
     box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
     border: 1px solid var(--cor-primaria);
     position: relative;
     overflow: hidden;
-    width: 80%; /* reduzido de 90% */
-    max-width: 600px; /* reduzido de 800px */
+    width: 80%;
+    max-width: 600px; 
     z-index: 10;
     margin: -2rem auto;
   }
@@ -91,14 +91,14 @@
   .terminal-content {
     font-family: "Courier New", monospace;
     text-align: left;
-    height: 140px; /* reduzido de 180px */
+    height: 140px;
     overflow: hidden;
-    font-size: 0.8rem; /* reduzido de 0.85rem */
+    font-size: 0.8rem;
   }
 
   .terminal-line {
     display: flex;
-    margin-bottom: 0.3rem; /* reduzido de 0.5rem */
+    margin-bottom: 0.3rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -179,7 +179,7 @@
   .terminal {
     background-color: rgba(18, 20, 32, 0.9);
     border-radius: 10px;
-    padding: 1rem; /* menor espaçamento interno */
+    padding: 1rem;
     box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
     border: 1px solid var(--cor-primaria);
     position: relative;
@@ -251,14 +251,14 @@
   .terminal-content {
     font-family: "Courier New", monospace;
     text-align: left;
-    height: 140px; /* reduzido de 180px */
+    height: 140px;
     overflow: hidden;
-    font-size: 0.8rem; /* reduzido de 0.85rem */
+    font-size: 0.8rem;
   }
 
   .terminal-line {
     display: flex;
-    margin-bottom: 0.3rem; /* reduzido de 0.5rem */
+    margin-bottom: 0.3rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -434,7 +434,7 @@
   .terminal {
     background-color: rgba(18, 20, 32, 0.9);
     border-radius: 10px;
-    padding: 1rem; /* menor espaçamento interno */
+    padding: 1rem;
     box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
     border: 1px solid var(--cor-primaria);
     position: relative;
@@ -504,14 +504,14 @@
   .terminal-content {
     font-family: "Courier New", monospace;
     text-align: left;
-    height: 140px; /* reduzido de 180px */
+    height: 140px;
     overflow: hidden;
-    font-size: 0.8rem; /* reduzido de 0.85rem */
+    font-size: 0.8rem;
   }
 
   .terminal-line {
     display: flex;
-    margin-bottom: 0.3rem; /* reduzido de 0.5rem */
+    margin-bottom: 0.3rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -784,7 +784,7 @@
   }
 }
 
-/* Para telas muito pequenas */
+/* For very small screens */
 @media (max-width: 480px) {
   .hero-section {
     padding-top: 0px;
@@ -798,7 +798,7 @@
   .terminal {
     background-color: rgba(18, 20, 32, 0.9);
     border-radius: 10px;
-    padding: 1rem; /* menor espaçamento interno */
+    padding: 1rem;
     box-shadow: 0 0 30px rgba(126, 87, 194, 0.5);
     border: 1px solid var(--cor-primaria);
     position: relative;
@@ -868,14 +868,14 @@
   .terminal-content {
     font-family: "Courier New", monospace;
     text-align: left;
-    height: 140px; /* reduzido de 180px */
+    height: 140px;
     overflow: hidden;
-    font-size: 0.8rem; /* reduzido de 0.85rem */
+    font-size: 0.8rem; 
   }
 
   .terminal-line {
     display: flex;
-    margin-bottom: 0.3rem; /* reduzido de 0.5rem */
+    margin-bottom: 0.3rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -907,7 +907,7 @@
     right: 10px;
   }
 
-  /* Reduz o tamanho dos seletores */
+  /* Reduce selector size */
   .theme-toggle,
   .language-switch {
     width: 32px;

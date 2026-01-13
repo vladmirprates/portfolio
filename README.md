@@ -78,12 +78,12 @@ this.themes = {
 :root[data-theme="seu-tema"] {
   --cor-primaria: #valor;
   --cor-secundaria: #valor;
-  /* Demais variáveis... */
+  /* Other variables... */
 }
 
-/* Ajustes específicos para o tema */
+/* Specific adjustments for the theme */
 .theme-seu-tema {
-  /* Estilos específicos... */
+  /* Specific styles... */
 }
 ```
 

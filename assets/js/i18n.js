@@ -1,29 +1,29 @@
-// Gerenciador de Internacionalização (i18n)
+// Internationalization Manager (i18n)
 class I18nManager {
   constructor() {
-    // Idioma padrão
+    // Default language
     this.currentLanguage = "pt-br";
-    // Armazena as traduções carregadas
+    // Stores loaded translations
     this.translations = {};
-    // Indica se o gerenciador já foi inicializado
+    // Indicates if manager has been initialized
     this.initialized = false;
   }
 
   /**
-   * Inicializa o gerenciador de idiomas:
-   * - Detecta idioma via URL, localStorage ou usa padrão
-   * - Carrega traduções
-   * - Atualiza conteúdo da página
-   * - Adiciona seletor de idioma
-   * - Inicia efeito de digitação (se existir)
-   * - Limpa parâmetro de idioma da URL
+   * Initializes the language manager:
+   * - Detects language via URL, localStorage or uses default
+   * - Loads translations
+   * - Updates page content
+   * - Adds language selector
+   * - Starts typing effect (if exists)
+   * - Clears language parameter from URL
    */
   async init() {
     const urlParams = new URLSearchParams(window.location.search);
     const langParam = urlParams.get("lang");
     const savedLang = localStorage.getItem("preferredLanguage");
 
-    // Define o idioma atual: prioridade URL > localStorage > padrão
+    // Define current language: priority URL > localStorage > default
     if (langParam && ["pt-br", "en"].includes(langParam)) {
       this.currentLanguage = langParam;
       localStorage.setItem("preferredLanguage", langParam);
@@ -31,41 +31,42 @@ class I18nManager {
       this.currentLanguage = savedLang;
     }
 
-    // Carrega traduções e aplica na página
+    // Load translations and apply to page
     await this.loadTranslations(this.currentLanguage);
     this.updatePageContent();
     this.addLanguageSelector();
 
-    // Aguarda DOM e inicia efeito de digitação, se existir
+    // Wait for DOM and start typing effect, if exists
     setTimeout(() => {
       if (typeof window.startTypingEffect === "function") {
         window.startTypingEffect();
       } else {
-        console.error("startTypingEffect não está definido.");
+        console.error("startTypingEffect is not defined.");
       }
     }, 100);
 
     this.initialized = true;
 
-    // Remove parâmetro de idioma da URL
+    // Remove language parameter from URL
     if (langParam) {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   }
 
   /**
-   * Carrega o arquivo de traduções do idioma especificado.
-   * Em caso de erro, faz fallback para o idioma padrão.
+   * Loads the translation file for the specified language.
+   * In case of error, falls back to the default language.
    */
   async loadTranslations(lang) {
     try {
       const response = await fetch(`assets/translations/${lang}.json`);
-      if (!response.ok) throw new Error(`Failed to load translations for ${lang}`);
+      if (!response.ok)
+        throw new Error(`Failed to load translations for ${lang}`);
       this.translations = await response.json();
       return true;
     } catch (error) {
       console.error("Error loading translations:", error);
-      // Fallback para o idioma padrão
+      // Fallback to default language
       if (lang !== "pt-br") {
         this.currentLanguage = "pt-br";
         return this.loadTranslations("pt-br");
@@ -75,23 +76,23 @@ class I18nManager {
   }
 
   /**
-   * Altera o idioma atual e atualiza a página.
-   * Reinicia o efeito de digitação após a troca.
+   * Changes the current language and updates the page.
+   * Restarts the typing effect after the change.
    */
   async changeLanguage(lang) {
     if (this.currentLanguage === lang) return;
 
-    // Para o efeito de digitação atual
+    // Stop current typing effect
     window.clearTypingEffect();
 
-    // Atualiza idioma e conteúdo
+    // Update language and content
     this.currentLanguage = lang;
     localStorage.setItem("preferredLanguage", lang);
     await this.loadTranslations(lang);
     this.updatePageContent();
     this.updateLanguageSelector();
 
-    // Reinicia o efeito de digitação
+    // Restart typing effect
     setTimeout(() => {
       if (typeof window.startTypingEffect === "function") {
         window.startTypingEffect();
@@ -100,7 +101,7 @@ class I18nManager {
   }
 
   /**
-   * Aplica as traduções aos elementos da página com atributo [data-i18n]
+   * Applies translations to page elements with [data-i18n] attribute
    */
   updatePageContent() {
     document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -108,22 +109,22 @@ class I18nManager {
       const translation = this.getTranslation(key);
 
       if (translation) {
-        // Atualiza atributo para efeito de digitação, se necessário
+        // Update attribute for typing effect, if necessary
         if (
           element.classList.contains("hero-text") ||
           element.id === "typing-element"
         ) {
           element.setAttribute("data-original-text", translation);
         }
-        // Atualiza o texto do elemento
+        // Update element text
         element.textContent = translation;
       }
     });
   }
 
   /**
-   * Retorna a tradução para uma chave aninhada (ex: "nav.sobre").
-   * Exibe mensagem de erro se a chave não existir.
+   * Returns the translation for a nested key (e.g., "nav.sobre").
+   * Displays error message if key does not exist.
    */
   getTranslation(key) {
     try {
@@ -138,30 +139,34 @@ class I18nManager {
   }
 
   /**
-   * Adiciona o seletor de idioma ao cabeçalho, se ainda não existir.
-   * Inclui estilos CSS inline.
+   * Adds the language selector to the header, if it doesn't exist yet.
+   * Includes inline CSS styles.
    */
   addLanguageSelector() {
     if (document.getElementById("language-selector")) return;
 
-    // Cria o seletor de idioma
+    // Create language selector
     const selector = document.createElement("div");
     selector.id = "language-selector";
     selector.className = "language-selector";
     const switchText = this.currentLanguage === "pt-br" ? "EN" : "PT";
+    const ariaLabel =
+      this.currentLanguage === "pt-br"
+        ? "Switch language to English"
+        : "Alterar idioma para Português";
     selector.innerHTML = `
-      <button class="language-switch">
+      <button class="language-switch" aria-label="${ariaLabel}">
         ${switchText}
       </button>
     `;
 
-    // Evento de troca de idioma
+    // Language switch event
     selector.querySelector(".language-switch").addEventListener("click", () => {
       const newLang = this.currentLanguage === "pt-br" ? "en" : "pt-br";
       this.changeLanguage(newLang);
     });
 
-    // Adiciona ao header
+    // Add to header
     const header = document.querySelector("header .header-content");
     if (header) {
       let selectorsContainer = document.querySelector(".header-selectors");
@@ -172,7 +177,7 @@ class I18nManager {
       }
       selectorsContainer.appendChild(selector);
 
-      // Estilos CSS inline
+      // Inline CSS styles
       const style = document.createElement("style");
       style.textContent = `
         .language-selector {
@@ -201,17 +206,22 @@ class I18nManager {
   }
 
   /**
-   * Atualiza o texto do seletor de idioma após troca de idioma.
+   * Updates the language selector text after language change.
    */
   updateLanguageSelector() {
     const selector = document.querySelector(".language-switch");
     if (selector) {
       selector.textContent = this.currentLanguage === "pt-br" ? "EN" : "PT";
+      const ariaLabel =
+        this.currentLanguage === "pt-br"
+          ? "Switch language to English"
+          : "Switch language to Portuguese";
+      selector.setAttribute("aria-label", ariaLabel);
     }
   }
 }
 
-// Inicializa o gerenciador de idiomas quando o DOM estiver pronto
+// Initialize language manager when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   window.i18n = new I18nManager();
   window.i18n.init();

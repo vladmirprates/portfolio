@@ -1,12 +1,12 @@
-// Inicialização do Swiper
+// Swiper initialization
 const swiper = new Swiper(".swiper", {
-  // Loop infinito dos slides
+  // Infinite loop of slides
   loop: true,
 
-  // Espaçamento entre slides
+  // Spacing between slides
   spaceBetween: 30,
 
-  // Centralização dos slides (padrão)
+  // Slide centering (default)
   centeredSlides: false,
 
   // Autoplay
@@ -16,28 +16,28 @@ const swiper = new Swiper(".swiper", {
     pauseOnMouseEnter: true,
   },
 
-  // Paginação
+  // Pagination
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
     dynamicBullets: true,
   },
 
-  // Botões de navegação
+  // Navigation buttons
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 
-  // Breakpoints para responsividade
+  // Responsiveness breakpoints
   breakpoints: {
-    // Mobile pequeno
+    // Small mobile
     0: {
       slidesPerView: 1,
       spaceBetween: 20,
       centeredSlides: true,
     },
-    // Mobile grande
+    // Large mobile
     480: {
       slidesPerView: 1,
       spaceBetween: 20,
@@ -49,13 +49,13 @@ const swiper = new Swiper(".swiper", {
       spaceBetween: 25,
       centeredSlides: false,
     },
-    // Desktop pequeno
+    // Small desktop
     1024: {
       slidesPerView: 1,
       spaceBetween: 50,
       centeredSlides: false,
     },
-    // Desktop grande
+    // Large desktop
     1200: {
       slidesPerView: 1,
       spaceBetween: 50,
@@ -63,25 +63,25 @@ const swiper = new Swiper(".swiper", {
     },
   },
 
-  // Experiência do usuário
-  grabCursor: true, // Cursor de "pegar" ao passar o mouse
-  watchOverflow: true, // Desativa Swiper se slides não excedem o container
+  // User experience
+  grabCursor: true, // "Grab" cursor on hover
+  watchOverflow: true, // Disable Swiper if slides don't exceed container
 
-  // Efeitos de transição
-  speed: 600, // Duração da transição (ms)
-  effect: "slide", // Tipo de efeito
+  // Transition effects
+  speed: 600, // Transition duration (ms)
+  effect: "slide", // Effect type
 
-  // Configurações de touch/swipe
+  // Touch/swipe settings
   touchRatio: 1,
   touchAngle: 45,
   simulateTouch: true,
 
-  // Prevenção de cliques durante transição
+  // Prevent clicks during transition
   preventClicks: true,
   preventClicksPropagation: true,
 });
 
-// Pausa o autoplay inicialmente
+// Pause autoplay initially
 swiper.autoplay.stop();
 
 const observer = new IntersectionObserver(

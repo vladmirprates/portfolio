@@ -74,7 +74,7 @@
   z-index: 10 !important;
 }
 
-/* Posição dos botões */
+/* Button positions */
 .swiper-button-prev {
   left: 10px !important;
 }
@@ -83,14 +83,14 @@
   right: 10px !important;
 }
 
-/* Efeito hover nos botões */
+/* Hover effect on buttons */
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   color: var(--cor-destaque) !important;
   transform: translateY(-50%) scale(1.1) !important;
 }
 
-/* Ícones dos botões */
+/* Button icons */
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 20px !important;

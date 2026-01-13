@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Inicializa animações AOS
+  // Initialize AOS animations
   AOS.init({
     duration: 800,
     easing: "ease-in-out",
@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     mirror: false,
   });
 
-  // Efeito de scroll no header
+  // Header scroll effect
   const header = document.querySelector("header");
   window.addEventListener("scroll", function () {
     header.classList.toggle("scrolled", window.scrollY > 100);
   });
 
-  // Elementos do menu responsivo
+  // Responsive menu elements
   const menuToggle = document.createElement("div");
   menuToggle.className = "menu-toggle";
   menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav");
   const navUl = document.querySelector("nav ul");
 
-  // Adiciona o botão do menu mobile se necessário
+  // Add mobile menu button if necessary
   if (window.innerWidth <= 576) {
     nav.appendChild(menuToggle);
   }
 
-  // Função para resetar o ícone do menu toggle
+  // Function to reset menu toggle icon
   function resetMenuToggle() {
     const icon = menuToggle.querySelector("i");
     if (icon.classList.contains("fa-times")) {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Alterna exibição do menu mobile e ícone
+  // Toggle mobile menu display and icon
   menuToggle.addEventListener("click", function () {
     navUl.classList.toggle("show");
     const icon = menuToggle.querySelector("i");
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     icon.classList.toggle("fa-times");
   });
 
-  // Fecha menu ao clicar em link e reseta o ícone
+  // Close menu when clicking on link and reset icon
   document.querySelectorAll("nav ul li a").forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 576) {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Fecha menu ao clicar fora dele
+  // Close menu when clicking outside
   document.addEventListener("click", function (event) {
     if (!navUl.contains(event.target) && !menuToggle.contains(event.target)) {
       if (navUl.classList.contains("show")) {
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Scroll suave para âncoras
+  // Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Indicador de seção ativa no menu
+  // Active section indicator in menu
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll("nav ul li a");
   window.addEventListener("scroll", () => {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Adiciona ou remove o botão do menu responsivo ao redimensionar
+  // Add or remove responsive menu button on resize
   window.addEventListener("resize", () => {
     if (window.innerWidth <= 576 && !nav.querySelector(".menu-toggle")) {
       nav.appendChild(menuToggle);

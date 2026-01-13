@@ -1,11 +1,11 @@
-// ThemeManager: Gerencia temas do site e o seletor de temas no header
+// ThemeManager: Manages site themes and theme selector in header
 class ThemeManager {
   constructor() {
-    // Tema atual
+    // Current theme
     this.currentTheme = "default";
-    // Temas disponíveis
+    // Available themes
     this.themes = {
-      default: { name: "Padrão", icon: "fas fa-palette" },
+      default: { name: "Default", icon: "fas fa-palette" },
       fantasy: { name: "Fantasy", icon: "fas fa-dragon" },
       "dark-fire": { name: "Dark Fire", icon: "fas fa-fire" },
       leaf: { name: "Leaf", icon: "fa-solid fa-leaf" },
@@ -13,9 +13,9 @@ class ThemeManager {
     this.initialized = false;
   }
 
-  // Inicializa o gerenciador de temas
+  // Initialize theme manager
   init() {
-    // Busca tema salvo no localStorage
+    // Fetch saved theme from localStorage
     const savedTheme = localStorage.getItem("preferredTheme");
     if (savedTheme && this.themes[savedTheme]) {
       this.currentTheme = savedTheme;
@@ -25,7 +25,7 @@ class ThemeManager {
     this.initialized = true;
   }
 
-  // Troca o tema atual
+  // Change current theme
   changeTheme(theme) {
     if (this.currentTheme === theme || !this.themes[theme]) return;
     this.currentTheme = theme;
@@ -34,7 +34,7 @@ class ThemeManager {
     this.updateThemeSelector();
   }
 
-  // Aplica o tema selecionado ao body e html
+  // Apply selected theme to body and html
   applyTheme(theme) {
     document.body.classList.remove(
       "theme-default",
@@ -46,7 +46,7 @@ class ThemeManager {
     document.documentElement.setAttribute("data-theme", theme);
   }
 
-  // Cria e adiciona o seletor de temas ao header
+  // Create and add theme selector to header
   addThemeSelector() {
     if (document.getElementById("theme-selector")) return;
 
@@ -54,33 +54,37 @@ class ThemeManager {
     selector.id = "theme-selector";
     selector.className = "theme-selector";
 
-    // Monta as opções de tema
+    // Build theme options
     let themeOptions = "";
     for (const [key, value] of Object.entries(this.themes)) {
       const isActive = key === this.currentTheme ? "active" : "";
       themeOptions += `
-        <div class="theme-option ${isActive}" data-theme="${key}" title="${value.name}">
-          <i class="${value.icon}"></i>
-        </div>
-      `;
+  <button class="theme-option ${isActive}" 
+          data-theme="${key}" 
+          title="${value.name}"
+          role="option"
+          aria-label="Theme ${value.name}">
+    <i class="${value.icon}" aria-hidden="true"></i>
+  </button>
+`;
     }
 
-    // Estrutura do seletor
+    // Selector structure
     selector.innerHTML = `
-      <div class="theme-toggle">
-        <i class="fas fa-adjust"></i>
-      </div>
-      <div class="theme-dropdown">
-        ${themeOptions}
-      </div>
-    `;
+  <button class="theme-toggle" aria-label="Change Theme" aria-expanded="false">
+    <i class="fas fa-adjust" aria-hidden="true"></i>
+  </button>
+  <div class="theme-dropdown" role="listbox">
+    ${themeOptions}
+  </div>
+`;
 
-    // Evento: abre/fecha dropdown
+    // Event: open/close dropdown
     selector.querySelector(".theme-toggle").addEventListener("click", () => {
       selector.classList.toggle("open");
     });
 
-    // Evento: troca de tema
+    // Event: change theme
     selector.querySelectorAll(".theme-option").forEach((option) => {
       option.addEventListener("click", () => {
         const theme = option.getAttribute("data-theme");
@@ -89,14 +93,14 @@ class ThemeManager {
       });
     });
 
-    // Evento: fecha dropdown ao clicar fora
+    // Event: close dropdown when clicking outside
     document.addEventListener("click", (event) => {
       if (!selector.contains(event.target)) {
         selector.classList.remove("open");
       }
     });
 
-    // Adiciona ao header
+    // Add to header
     const header = document.querySelector("header .header-content");
     if (header) {
       let selectorsContainer = document.querySelector(".header-selectors");
@@ -107,14 +111,14 @@ class ThemeManager {
       }
       selectorsContainer.appendChild(selector);
 
-      // Adiciona CSS inline do seletor
+      // Add inline CSS for selector
       const style = document.createElement("style");
       style.textContent = this.getThemeSelectorCSS();
       document.head.appendChild(style);
     }
   }
 
-  // Atualiza o estado visual do seletor de temas
+  // Update visual state of theme selector
   updateThemeSelector() {
     const options = document.querySelectorAll(".theme-option");
     options.forEach((option) => {
@@ -123,7 +127,7 @@ class ThemeManager {
     });
   }
 
-  // CSS do seletor de temas
+  // CSS for theme selector
   getThemeSelectorCSS() {
     return `
       .theme-selector {
@@ -201,7 +205,7 @@ class ThemeManager {
   }
 }
 
-// Inicializa o ThemeManager quando o DOM estiver pronto
+// Initialize ThemeManager when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   window.themeManager = new ThemeManager();
   window.themeManager.init();

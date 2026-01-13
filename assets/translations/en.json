@@ -82,6 +82,7 @@
     "soft_4": "Attention to Detail"
   },
   "projetos": {
+    "detalhes": "Check all Projects",
     "titulo": "Featured Projects",
     "projeto1_titulo": "Web Test Automation",
     "projeto1_descricao": "Implementation of test automation framework for e-commerce web application using Selenium and Java.",
