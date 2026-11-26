@@ -1,0 +1,456 @@
+{
+    "meta": {
+        "title": "Vladmir Prates — QA Engineer",
+        "description": "Portfolio of Vladmir Prates, QA engineer in São Paulo: software quality from refinement to test automation, across web, mobile, API and games."
+    },
+    "nav": {
+        "sobre": "About",
+        "experiencia": "Experience",
+        "habilidades": "Skills",
+        "projetos": "Projects",
+        "side": "Side quests",
+        "recomendacoes": "Recommendations",
+        "contato": "Contact"
+    },
+    "hero": {
+        "subtitle": "I test software the way people actually use it,",
+        "subtitle_highlight": "and automate what has to keep working, release after release",
+        "btn_projects": "See projects",
+        "btn_contact": "Get in touch",
+        "role": "QA Engineer · Test Automation",
+        "open": "Open to QA roles",
+        "case": {
+            "tags": "@web @mobile @api @games",
+            "feature_kw": "Feature",
+            "feature": "Releases the team can trust",
+            "scenario_kw": "Scenario",
+            "scenario": "Release with QA from refinement onwards",
+            "stamp": "Passed",
+            "result": "1 scenario · {{count}} steps passed"
+        },
+        "steps": [
+            {
+                "keyword": "Given",
+                "text": "a team shipping a product on",
+                "value": "web, mobile, API or games"
+            },
+            {
+                "keyword": "When",
+                "text": "Vladmir joins the team"
+            },
+            {
+                "keyword": "And",
+                "text": "takes part from story refinement onwards"
+            },
+            {
+                "keyword": "Then",
+                "text": "risks and bugs surface early, before they turn into rework"
+            },
+            {
+                "keyword": "And",
+                "text": "critical flows are covered by automated tests"
+            },
+            {
+                "keyword": "And",
+                "text": "each release ships with the team knowing what was tested"
+            }
+        ],
+        "worked_on": "Where I have worked",
+        "worked_on_items": [
+            "Rogue Snail",
+            "GFT Technologies",
+            "WarmUP Consulting",
+            "Novigi Solution"
+        ]
+    },
+    "about": {
+        "title": "About",
+        "paragraphs": [
+            "I'm a Quality Assurance professional with a keen eye for detail and a soft spot for how multidisciplinary the field is. Over five years I've done manual and automated testing across web, mobile and API, for banking, retail and enterprise platforms, and most recently on games, as QA for Hell Clock at Rogue Snail.",
+            "That work sits alongside my interests in UX/UI, information security and games. The mix helps me spot usability friction and technical details that others might overlook, and keep deliveries focused on the people who will actually use them."
+        ],
+        "facts": [
+            {
+                "label": "Experience",
+                "value": "5 years in QA"
+            },
+            {
+                "label": "Location",
+                "value": "São Paulo, BR"
+            }
+        ]
+    },
+    "experience": {
+        "title": "Experience",
+        "items": [
+            {
+                "role": "Game Quality Assurance Engineer (Freelance)",
+                "company": "Rogue Snail · Hell Clock",
+                "period": "Feb 2026 – Nov 2026",
+                "mode": "Remote",
+                "highlights": [
+                    "Mapped, triaged and documented 200+ bugs and crash reports in Jira, managing their lifecycle and owning the PC build's quality",
+                    "Took over PC validation so the team could split its effort across consoles and mobile, widening multiplatform coverage",
+                    "Analyzed complex mechanics, skill synergies, itemization and theorycrafting, drawing on 4,000+ hours of Action RPGs",
+                    "Proposed design and balance changes to skills and items that the team adopted, improving the player experience",
+                    "Supported players directly: technical help, answering questions and investigating community-reported bugs",
+                    "Ran tests with the community's beta testers through public betas and PTRs"
+                ],
+                "tags": [
+                    "Jira",
+                    "Bug Triage",
+                    "PC Testing",
+                    "Balancing",
+                    "Live Ops",
+                    "Beta / PTR"
+                ],
+                "from": "2026-02",
+                "to": "2026-11"
+            },
+            {
+                "role": "Mid-level Software QA",
+                "company": "GFT Technologies",
+                "period": "Sep 2024 – Jul 2026",
+                "mode": "Remote",
+                "highlights": [
+                    "Planned and ran end-to-end testing for web and mobile apps across Salesforce and banking-correspondent (Corban) integrations",
+                    "Kept deliveries compliant with strict business requirements",
+                    "Built and maintained automated suites with Selenium, Playwright and Java, raising efficiency and coverage"
+                ],
+                "tags": [
+                    "Playwright",
+                    "Selenium",
+                    "Java",
+                    "Salesforce",
+                    "Mobile"
+                ],
+                "from": "2024-09",
+                "to": "2026-07"
+            },
+            {
+                "role": "Test Automation Developer",
+                "company": "WarmUP Consulting",
+                "period": "Mar 2023 – May 2024",
+                "mode": "Remote / Hybrid",
+                "highlights": [
+                    "Owned the full lifecycle of automated workflow testing in IBM BAW",
+                    "Built the suites with Java, Selenium, Cucumber and a custom framework",
+                    "Took part in agile ceremonies, pipeline management and documentation",
+                    "Worked with the global team in English to resolve issues"
+                ],
+                "tags": [
+                    "Java",
+                    "Selenium",
+                    "Cucumber",
+                    "IBM BAW",
+                    "CI/CD"
+                ],
+                "from": "2023-03",
+                "to": "2024-05"
+            },
+            {
+                "role": "Junior Software QA Analyst",
+                "company": "Novigi Solution",
+                "period": "Mar 2022 – Dec 2022",
+                "mode": "Remote / Hybrid",
+                "highlights": [
+                    "Led quality initiatives across four agile and traditional squads",
+                    "Took part in strategic decisions, with a user-oriented testing focus",
+                    "Coordinated onboarding and training for new team members",
+                    "Led web and API test automation with Robot Framework in Python",
+                    "Reported quality to management on a regular basis"
+                ],
+                "tags": [
+                    "Robot Framework",
+                    "Python",
+                    "API Testing",
+                    "Agile"
+                ],
+                "from": "2022-03",
+                "to": "2022-12"
+            },
+            {
+                "role": "Software QA Assistant",
+                "company": "Novigi Solution",
+                "period": "Sep 2021 – Mar 2022",
+                "mode": "Remote",
+                "highlights": [
+                    "Wrote and ran comprehensive test plans, and produced detailed quality reports",
+                    "Drove the software quality culture on the project",
+                    "Contributed to UX/UI design and the first product designs",
+                    "Turned client needs into product requirements with the architecture team"
+                ],
+                "tags": [
+                    "Test Plans",
+                    "Quality Reports",
+                    "Figma",
+                    "UX/UI"
+                ],
+                "from": "2021-09",
+                "to": "2022-03"
+            }
+        ],
+        "duration": {
+            "years_one": "{{count}} yr",
+            "years_other": "{{count}} yrs",
+            "months_one": "{{count}} mo",
+            "months_other": "{{count}} mos",
+            "join": " "
+        },
+        "inspect": "Inspector mode"
+    },
+    "skills": {
+        "title": "Skills",
+        "groups": [
+            {
+                "title": "Automation & Quality",
+                "items": [
+                    "Selenium, Playwright & Appium",
+                    "Robot Framework",
+                    "Java, JavaScript & Python",
+                    "Allure Report & test reporting",
+                    "Postman"
+                ]
+            },
+            {
+                "title": "CI/CD & Tools",
+                "items": [
+                    "CI/CD pipelines",
+                    "Git & version control",
+                    "Azure DevOps & Jira",
+                    "BrowserStack"
+                ]
+            },
+            {
+                "title": "QA Methodology & Design",
+                "items": [
+                    "REST API & mobile testing",
+                    "Functional & E2E testing",
+                    "Game QA & beta/PTR testing",
+                    "Accessibility (WCAG)",
+                    "Agile / Scrum",
+                    "Figma & UX/UI principles"
+                ]
+            }
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "items": [
+            {
+                "title": "QA Character Sheet",
+                "images": [
+                    {
+                        "src": "assets/images/projects/character-sheet-en.jpg",
+                        "label": "Character sheet",
+                        "alt": "Character sheet screen with attributes, resistances, inventory and feature menu"
+                    },
+                    {
+                        "src": "assets/images/projects/passive-tree-en.jpg",
+                        "label": "Passive tree",
+                        "alt": "Passive skill tree with QA keystones and masteries"
+                    },
+                    {
+                        "src": "assets/images/projects/qa-report-en.jpg",
+                        "label": "QA report",
+                        "alt": "QA report: unit, end-to-end and accessibility test results, coverage and mutation score"
+                    }
+                ],
+                "highlights": [
+                    "An **ARPG-style** portfolio in React and TypeScript: passive skill tree, crafting bench and a bug hunt",
+                    "Tested like a product: unit, property-based, end-to-end, visual regression and accessibility tests",
+                    "Every change gated in CI with Lighthouse budgets and WCAG checks (axe)"
+                ],
+                "tags": [
+                    "React",
+                    "TypeScript",
+                    "Vitest",
+                    "Playwright",
+                    "axe",
+                    "Lighthouse"
+                ],
+                "links": [
+                    {
+                        "label": "Live demo",
+                        "url": "https://vladmirprates.github.io/arpg-character/"
+                    },
+                    {
+                        "label": "GitHub",
+                        "url": "https://github.com/vladmirprates/arpg-character"
+                    }
+                ]
+            },
+            {
+                "title": "API Automation Technical Challenge",
+                "highlights": [
+                    "REST API suite with Playwright Test (Node.js / ESM) covering full CRUD scenarios",
+                    "Test data isolated with Faker.js and JWT authentication handled, with zero hardcoded credentials",
+                    "Shifted left with GitLab CI/CD, plus Postman collections for exploratory testing"
+                ],
+                "tags": [
+                    "Playwright",
+                    "Node.js",
+                    "Faker.js",
+                    "JWT",
+                    "GitLab CI",
+                    "Postman"
+                ],
+                "links": [
+                    {
+                        "label": "GitLab",
+                        "url": "https://gitlab.com/vladmirprates/desafio-automacao-api"
+                    }
+                ]
+            },
+            {
+                "title": "Mobile Automation Technical Challenge",
+                "highlights": [
+                    "Cross-platform-ready suite with WebdriverIO, Appium and Mocha using the Page Object Model",
+                    "E2E scenarios on Android emulators and BrowserStack cloud devices, including gestures",
+                    "Runs continuously in GitLab CI/CD with Allure reports"
+                ],
+                "tags": [
+                    "WebdriverIO",
+                    "Appium",
+                    "Mocha",
+                    "BrowserStack",
+                    "Allure"
+                ],
+                "links": [
+                    {
+                        "label": "GitLab",
+                        "url": "https://gitlab.com/vladmirprates/desafio-automacao-mobile"
+                    }
+                ]
+            }
+        ]
+    },
+    "side": {
+        "title": "Side quests",
+        "lead": "Off the clock, I put the same care into the game communities I'm part of.",
+        "items": [
+            {
+                "title": "Hell Clock Wiki & Last Epoch Tools",
+                "highlights": [
+                    "Founded the official Hell Clock community wiki on wiki.gg, designing its structure, layout and documentation",
+                    "Translated and reviewed Last Epoch Tools' UI strings into Brazilian Portuguese"
+                ],
+                "tags": [
+                    "Localization",
+                    "PT-BR",
+                    "Documentation",
+                    "wiki.gg"
+                ],
+                "links": [
+                    {
+                        "label": "Hell Clock Wiki",
+                        "url": "https://hellclock.wiki.gg/"
+                    }
+                ]
+            },
+            {
+                "title": "Last Epoch Brasil & Hell Clock Discords",
+                "highlights": [
+                    "Admin of the Last Epoch Brasil Discord server",
+                    "Moderator of the Hell Clock Discord server",
+                    "Keeping the communities welcoming and on-topic: moderation, rules and helping players"
+                ],
+                "tags": [
+                    "Discord",
+                    "Moderation",
+                    "Community Management",
+                    "Player Support"
+                ]
+            }
+        ],
+        "photo_alt": "Vladmir smiling next to a Sonic statue at a games convention"
+    },
+    "testimonials": {
+        "title": "Recommendations",
+        "subtitle": "A selection from the recommendations colleagues left on LinkedIn.",
+        "translated": "Translated from Portuguese",
+        "linkedin_cta": "See all recommendations on LinkedIn",
+        "items": [
+            {
+                "author": "Sergio Oliveira",
+                "role": "IT Executive · Head of Technology",
+                "year": "2022",
+                "text": "Vladmir has clarity of vision and his opinions are always very assertive.\nHis involvement in projects helps uncover unforeseen, undiscussed situations early, avoiding financial and schedule risks. He also strongly supports the developers in achieving quality code and better development practices.\nWithout a doubt, he is a distinctive professional, above the market average.",
+                "translated": true,
+                "highlight": "helps uncover unforeseen, undiscussed situations early, avoiding financial and schedule risks"
+            },
+            {
+                "author": "Felipe Todeschini",
+                "role": "Lead Game Designer & Team Leader · Rogue Snail",
+                "year": "2026",
+                "text": "We first met Vladimir as one of the most active and knowledgeable players in the Hell Clock community. Before joining the team, he was already creating build videos, helping players on Reddit and Discord, and maintaining a wiki for the game. His understanding of our game systems, builds, progression, and endgame was what initially caught our attention.\n\nAfter joining us as QA, that knowledge translated very well into the actual development process. Vladimir is especially good at testing complex interactions between Skills, Gear, progression systems, and different builds — which is extremely important in an ARPG where a small change can create unexpected problems somewhere else.\n\nHe also showed us a good understanding of the difference between a bug, a balance issue, and a design problem. Because he came from the community, he was also very competent at bringing relevant player feedback to the team and giving us context on why certain issues mattered.\n\nVladimir worked with us on our two main content expansions, Journey of Nightmares and Journey of Miracles, where he helped us validate large amounts of new content, balance changes and new gameplay mechanics across both updates.\n\nHe would be a great addition to any team working on ARPGs, RPGs, or other system-heavy games that require someone with a strong understanding of complex mechanics and who can somehow find those crazy bugs and unexpected interactions that slipped past the rest of the team.",
+                "highlight": "can somehow find those crazy bugs and unexpected interactions that slipped past the rest of the team"
+            },
+            {
+                "author": "Ramon Amorim",
+                "role": "Software Engineer at Rogue Snail",
+                "year": "2026",
+                "text": "Vlad is one of the most talented people I have ever had the opportunity to work with. From the very start, he showed a genuine passion for our project and an involvement that went far beyond the responsibilities of his role. One of the things I admire most about him is his proactivity. He didn't stop at identifying problems: he made a point of thinking critically about them and, more often than not, already came with possible solutions. He is someone who truly cares about the quality of the work he delivers and about the success of the project as a whole. On top of all that, Vlad adapted to our team very quickly. He always communicated excellently, expressing his ideas clearly and contributing a great deal to the teamwork. I would work with him again without a second thought, and I strongly recommend his work to anyone who has the chance to count on him.",
+                "translated": true,
+                "highlight": "more often than not, already came with possible solutions"
+            },
+            {
+                "author": "Rodrigo Lobo",
+                "role": "QA Automation Engineer",
+                "year": "2025",
+                "text": "I had the opportunity to meet and work with Vladmir as a QA Analyst, and it was an extremely positive experience. A great partner and communicator, he showed great attention to detail, always seeking the best coverage and reliability in tests and identifying scenarios that are often overlooked. We worked together with Java, Cucumber, Playwright and Allure, where he showed technical mastery and proactivity in test automation. Always committed, he contributed valuable suggestions for process improvements and best practices. On top of that, his constant drive to learn and share knowledge raises the performance of the whole team.",
+                "translated": true,
+                "highlight": "identifying scenarios that are often overlooked"
+            },
+            {
+                "author": "Erika Ferrari Viviani Schneider",
+                "role": "Strategic Transformation Manager",
+                "year": "2025",
+                "text": "I had the honour of working alongside Vladmir on a highly complex, disruptively innovative project that will help change the energy matrix and the way this asset, fundamental to society, is traded. Always calm and balanced, Vladmir brought reason to heated discussions and quality by design to the product. To whoever reads this: having Vladmir on the team means getting human and technical skills in one person. I recommend him with my eyes closed.",
+                "translated": true,
+                "highlight": "brought reason to heated discussions and quality by design to the product"
+            },
+            {
+                "author": "Lucas Duarte",
+                "role": "Senior QA Engineer",
+                "year": "2025",
+                "text": "I had the privilege of working with Vladmir and can safely say he is one of the most committed and competent Quality Assurance professionals I have ever met. Vladmir has a sharp analytical eye, attention to detail and an impressive ability to anticipate possible failures. His approach to manual and automated testing added immense value to the quality of our work. One of his standout traits is his collaborative spirit and communication, always willing to help, discuss and suggest improvements.",
+                "translated": true,
+                "highlight": "an impressive ability to anticipate possible failures"
+            },
+            {
+                "author": "Haribaskar R",
+                "role": "Manager at Cognizant",
+                "year": "2024",
+                "text": "I highly recommend Vladimir. He's a resourceful problem-solver with a keen ability to automate tasks using Selenium and Java. His passion lies in finding efficient solutions, and he consistently demonstrates a knack for breaking down challenges and developing effective approaches. Vladimir would be a valuable asset to any team seeking an automation expert with a results-oriented mindset.",
+                "highlight": "a keen ability to automate tasks using Selenium and Java"
+            }
+        ],
+        "read_more": "Read full recommendation",
+        "read_less": "Show less"
+    },
+    "contact": {
+        "title": "Let’s talk",
+        "subtitle": "Open to QA roles and collaborations. LinkedIn is the fastest way to reach me.",
+        "loc_title": "Location",
+        "loc_val": "São Paulo, SP - BR"
+    },
+    "footer": {
+        "text": "© {{year}} Vladmir Prates",
+        "gg": "GG WP — thanks for stopping by.",
+        "icons": "Bug icons:"
+    },
+    "a11y": {
+        "skip": "Skip to content",
+        "menu_open": "Open menu",
+        "menu_close": "Close menu",
+        "back_to_top": "Back to top",
+        "switch_lang": "Switch language to Portuguese",
+        "main_nav": "Main navigation",
+        "new_tab": "(opens in a new tab)"
+    },
+    "bug": {
+        "capture_hint": "click again to capture",
+        "inspect_hint": "click to inspect"
+    }
+}
