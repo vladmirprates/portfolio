@@ -101,7 +101,7 @@ const ExperienceLog = () => {
                                     {exp.role} <span data-inspect="company" className="text-text-muted font-medium">· {exp.company}</span>
                                 </h3>
 
-                                <ul data-inspect="highlights" className="mt-4 space-y-2 text-text-muted list-disc pl-5 marker:text-primary">
+                                <ul data-inspect="highlights" className="mt-4 space-y-2 text-text-muted list-disc pl-5 marker:text-accent">
                                     {exp.highlights.map((highlight) => (
                                         <li key={highlight} data-inspect="highlight">{highlight}</li>
                                     ))}

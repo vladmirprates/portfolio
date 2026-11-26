@@ -73,7 +73,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
                     aria-expanded={open}
                     aria-controls={textId}
                     onClick={() => setOpen((v) => !v)}
-                    className="mt-2 self-start text-sm font-medium text-primary hover:text-primary-hover"
+                    className="mt-2 self-start text-sm font-medium text-accent hover:text-accent-hover"
                 >
                     {open ? t('testimonials.read_less') : t('testimonials.read_more')}
                 </button>

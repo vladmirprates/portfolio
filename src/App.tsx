@@ -51,7 +51,7 @@ function App() {
             <p>{t('footer.text', { year: new Date().getFullYear() })}</p>
             <p>
               {t('footer.gg')}{' '}
-              <span className="text-text-muted/60">
+              <span>
                 {t('footer.icons')}{' '}
                 <a href="https://game-icons.net" target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-text-main">game-icons.net</a>
                 {' '}(CC BY 3.0)

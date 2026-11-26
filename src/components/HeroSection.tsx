@@ -45,7 +45,7 @@ const HeroSection = () => {
                         <a
                             href="#contato"
                             onClick={(e) => { e.preventDefault(); scrollToHash('#contato'); }}
-                            className="group inline-flex items-center gap-2 font-medium text-text-main hover:text-primary transition-colors"
+                            className="group inline-flex items-center gap-2 font-medium text-text-main hover:text-accent transition-colors"
                         >
                             {t('hero.btn_contact')}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -69,10 +69,10 @@ const HeroSection = () => {
                     <div className="px-6 pt-5 pb-4 border-b border-surface-light">
                         <p className="font-mono text-xs text-text-muted">{t('hero.case.tags')}</p>
                         <h2 id="hero-case-title" className="mt-2 text-lg font-semibold text-text-main">
-                            <span className="text-primary">{t('hero.case.feature_kw')}:</span> {t('hero.case.feature')}
+                            <span className="text-accent">{t('hero.case.feature_kw')}:</span> {t('hero.case.feature')}
                         </h2>
                         <p className="mt-1 text-text-main">
-                            <span className="font-semibold text-primary">{t('hero.case.scenario_kw')}:</span> {t('hero.case.scenario')}
+                            <span className="font-semibold text-accent">{t('hero.case.scenario_kw')}:</span> {t('hero.case.scenario')}
                         </p>
                     </div>
 
@@ -85,7 +85,7 @@ const HeroSection = () => {
                                 transition={{ delay: ROW_DELAY + i * ROW_STEP }}
                                 className="grid grid-cols-[4.5rem_1fr] gap-x-3 py-1.5 leading-relaxed"
                             >
-                                <span className="font-semibold text-primary text-right">{step.keyword}</span>
+                                <span className="font-semibold text-accent text-right">{step.keyword}</span>
                                 <span className="text-text-muted">
                                     {step.text}
                                     {step.value && <> <span className="text-text-main">"{step.value}"</span></>}

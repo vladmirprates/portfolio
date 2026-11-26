@@ -28,13 +28,13 @@ const SideQuests = () => {
                 {items.map((item) => (
                     <div key={item.title} className="border-t border-surface-light pt-6">
                         <h3 className="text-xl font-semibold">{item.title}</h3>
-                        <ul className="mt-4 space-y-2 text-text-muted list-disc pl-5 marker:text-primary">
+                        <ul className="mt-4 space-y-2 text-text-muted list-disc pl-5 marker:text-accent">
                             {item.highlights.map((highlight) => (
                                 <li key={highlight}>{highlight}</li>
                             ))}
                         </ul>
                         <p className="mt-4 font-mono text-xs text-text-muted">{item.tags.join(' · ')}</p>
-                        <ExternalLinks links={item.links} className="mt-5" />
+                        <ExternalLinks links={item.links} context={item.title} className="mt-5" />
                     </div>
                 ))}
             </div>

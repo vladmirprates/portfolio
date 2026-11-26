@@ -8,6 +8,11 @@
   --color-primary: #e11d48;
   --color-primary-hover: #be123c;
 
+  /* The accent as text: a lighter step of the same red, so it reaches WCAG AA (4.5:1) on both
+     backgrounds (5.05:1 on surface, 5.36:1 on background). Buttons keep --color-primary. */
+  --color-accent: #f43f5e;
+  --color-accent-hover: #fb7185;
+
   --color-pass: #4ade80;
 
   --color-text-main: #ececef;

@@ -11,13 +11,13 @@ const ProjectBody = ({ project, large = false }: { project: Project; large?: boo
         <h3 className={`font-semibold ${large ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'}`}>
             {project.title}
         </h3>
-        <ul className="mt-4 space-y-2 text-text-muted list-disc pl-5 marker:text-primary">
+        <ul className="mt-4 space-y-2 text-text-muted list-disc pl-5 marker:text-accent">
             {project.highlights.map((highlight) => (
                 <li key={highlight}><Emphasis text={highlight} /></li>
             ))}
         </ul>
         <p className="mt-4 font-mono text-xs text-text-muted">{project.tags.join(' · ')}</p>
-        <ExternalLinks links={project.links} className="mt-5" />
+        <ExternalLinks links={project.links} context={project.title} className="mt-5" />
     </>
 );
 

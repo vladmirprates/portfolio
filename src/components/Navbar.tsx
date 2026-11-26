@@ -101,8 +101,8 @@ const Navbar = () => {
                     {/* Logo */}
                     <a href="#top" onClick={(e) => handleLinkClick(e, '#top')} className="flex items-center group relative z-50" aria-label="Vladmir Prates">
                         <span className="text-lg md:text-xl font-heading font-extrabold">
-                            <span className="text-text-main group-hover:text-primary transition-colors">vladmir</span>
-                            <span className="text-primary">.spec.ts</span>
+                            <span className="text-text-main group-hover:text-accent transition-colors">vladmir</span>
+                            <span className="text-accent">.spec.ts</span>
                         </span>
                         {/* Animated progress line under logo */}
                         <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-300" />
@@ -135,7 +135,7 @@ const Navbar = () => {
                             className="ml-4 flex items-center gap-2 px-3 py-1.5 rounded bg-surface border border-surface-light hover:border-primary/50 text-xs font-mono text-text-muted hover:text-white transition-all group"
                             aria-label={t('a11y.switch_lang')}
                         >
-                            <Globe className="w-4 h-4 text-primary transition-colors" />
+                            <Globe className="w-4 h-4 text-accent transition-colors" />
                             <span className="uppercase">{i18n.language}</span>
                         </button>
                     </nav>
@@ -147,13 +147,13 @@ const Navbar = () => {
                             className="flex items-center gap-1.5 px-2 py-1 rounded bg-surface border border-surface-light text-xs font-mono text-text-muted"
                             aria-label={t('a11y.switch_lang')}
                         >
-                            <Globe className="w-3.5 h-3.5 text-primary" />
+                            <Globe className="w-3.5 h-3.5 text-accent" />
                             <span className="uppercase">{i18n.language}</span>
                         </button>
 
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="text-text-main hover:text-primary transition-colors p-1"
+                            className="text-text-main hover:text-accent transition-colors p-1"
                             aria-label={mobileMenuOpen ? t('a11y.menu_close') : t('a11y.menu_open')}
                             aria-expanded={mobileMenuOpen}
                             aria-controls="mobile-menu"
@@ -190,7 +190,7 @@ const Navbar = () => {
                                     aria-current={isActive(link.href) ? 'location' : undefined}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0, transition: { delay: index * 0.05 } }}
-                                    className={`text-xl font-heading font-medium hover:text-primary transition-colors w-full text-center py-2 border-b border-surface-light ${isActive(link.href) ? 'text-primary' : 'text-text-main'}`}
+                                    className={`text-xl font-heading font-medium hover:text-accent transition-colors w-full text-center py-2 border-b border-surface-light ${isActive(link.href) ? 'text-accent' : 'text-text-main'}`}
                                 >
                                     {link.label}
                                 </motion.a>
