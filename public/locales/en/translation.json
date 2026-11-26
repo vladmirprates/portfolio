@@ -84,9 +84,9 @@
         "title": "Experience",
         "items": [
             {
-                "role": "Game Quality Assurance Engineer (Freelance)",
+                "role": "Game QA Tester (Freelance)",
                 "company": "Rogue Snail · Hell Clock",
-                "period": "Feb 2026 – Nov 2026",
+                "period": "Feb 2026 – Oct 2026",
                 "mode": "Remote",
                 "highlights": [
                     "Mapped, triaged and documented 200+ bugs and crash reports in Jira, managing their lifecycle and owning the PC build's quality",
@@ -105,7 +105,7 @@
                     "Beta / PTR"
                 ],
                 "from": "2026-02",
-                "to": "2026-11"
+                "to": "2026-10"
             },
             {
                 "role": "Mid-level Software QA",
